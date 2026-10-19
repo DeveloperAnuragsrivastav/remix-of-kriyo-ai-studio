@@ -1,5 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
+import {
+  Activity, BrainCircuit, Check, Cloud, Cog, Database, FileCheck, KeyRound,
+  Menu, MessageSquare, MonitorSmartphone, Phone, Plug, Server, Workflow, X,
+} from "lucide-react";
 import { projects, process, caseStudies, WHATSAPP } from "@/lib/kriyo-data";
 import { Reveal } from "@/components/Reveal";
 import mark from "@/assets/kriyvo-mark.png";
@@ -34,7 +38,7 @@ function Eyebrow({ children }: { children: React.ReactNode }) {
     <div className="mx-auto w-fit border-y border-periwinkle/60 px-10 py-2 text-sm font-medium text-indigo">{children}</div>
   );
 }
-function Check() {
+function CheckMark() {
   return <span className="mt-0.5 grid h-4 w-4 shrink-0 place-items-center rounded-full bg-accent text-[9px] text-accent-foreground">✓</span>;
 }
 const Btn = ({ href, children, dark = true }: { href: string; children: React.ReactNode; dark?: boolean }) => (
@@ -46,42 +50,48 @@ const Btn = ({ href, children, dark = true }: { href: string; children: React.Re
 
 /* ---------- data ---------- */
 const announcements = ["Autonomous voice & phone calling agents now live", "Free AI chatbot consultation this month", "CRM & automation builds starting ₹15,000"];
-const clients = ["KOCA", "Kriyvo AI", "Aurum Conventions", "Gignaati", "BMRC Hospital", "Enterprise · NDA"];
+const clients = ["KOCA", "Aurum Conventions", "Gignaati", "BMRC Hospital", "Smartians AI", "Swaran Soft"];
 const tabs = ["Chat Agents", "Voice Agents", "Automations", "WhatsApp", "Websites"];
 const tabProject = [1, 4, 2, 3, 0];
 
 const workflow = [
-  { t: "Research", d: "Agents research prospects and your own documents, then re-plan as they learn something new.", p: 2 },
-  { t: "Lead qualification", d: "Greets every visitor, answers from grounded knowledge and qualifies intent in seconds.", p: 1 },
-  { t: "Voice calls", d: "Holds natural phone conversations and books directly into your calendar.", p: 4 },
-  { t: "Escalations", d: "Classifies sentiment and severity, then alerts the right person on WhatsApp and email.", p: 5 },
-  { t: "Integrations", d: "Connects CRMs, calendars, sheets, Telegram, Supabase and every tool you already use.", p: 3 },
+  { t: "Research", d: "Agents research prospects and your own documents, then re-plan as they learn something new.", p: 2, icon: BrainCircuit },
+  { t: "Lead qualification", d: "Greets every visitor, answers from grounded knowledge and qualifies intent in seconds.", p: 1, icon: MessageSquare },
+  { t: "Voice calls", d: "Holds natural phone conversations and books directly into your calendar.", p: 4, icon: Phone },
+  { t: "Escalations", d: "Classifies sentiment and severity, then alerts the right person on WhatsApp and email.", p: 5, icon: Activity },
+  { t: "Integrations", d: "Connects CRMs, calendars, sheets, Telegram, Supabase and every tool you already use.", p: 3, icon: Plug },
 ];
 
 const integrations = ["n8n", "OpenAI", "Pinecone", "Qdrant", "Retell AI", "WhatsApp", "FastAPI", "Supabase", "Google Calendar", "Google Drive", "Telegram", "Gmail", "Next.js", "Python"];
 
 const bento = [
-  ["Chat Agents", "Web & WhatsApp assistants grounded in your data"],
-  ["Voice Agents", "Sub-250ms conversational phone calls"],
-  ["Workflows", "Multi-step n8n pipelines with human checkpoints"],
-  ["Knowledge Base", "Docs vectorised into Pinecone or Qdrant"],
+  { icon: MessageSquare, t: "Chat Agents", d: "Web & WhatsApp assistants grounded in your data" },
+  { icon: Phone, t: "Voice Agents", d: "Sub-250ms conversational phone calls" },
+  { icon: Workflow, t: "Workflows", d: "Multi-step n8n pipelines with human checkpoints" },
+  { icon: Database, t: "Knowledge Base", d: "Docs vectorised into Pinecone or Qdrant" },
 ];
 
 const fullstack = [
-  { bg: "bg-card-blue", t: "Customer-facing Applications", d: "Products your customers actually use — chat widgets, WhatsApp funnels, phone lines and brand websites.", links: ["Website Chatbots", "WhatsApp Bots", "Voice Agents", "Brand Websites"] },
-  { bg: "bg-card-orange", t: "Grounded Intelligence", d: "LLM reasoning grounded in your documents with RAG, sentiment triage and dynamic prompt chains.", links: ["RAG Knowledge Base", "Sentiment Analysis", "Personalised Copy", "Lead Scoring"] },
-  { bg: "bg-card-green", t: "Automation Infrastructure", d: "Webhooks and workflows that connect every system and run reliably with monitoring built in.", links: ["n8n Workflows", "FastAPI Services", "CRM Sync", "Alerts & Logging"] },
+  { icon: MonitorSmartphone, t: "Customer-facing Applications", d: "Products your customers actually use — chat widgets, WhatsApp funnels, phone lines and brand websites.", links: ["Website Chatbots", "WhatsApp Bots", "Voice Agents", "Brand Websites"] },
+  { icon: BrainCircuit, t: "Grounded Intelligence", d: "LLM reasoning grounded in your documents with RAG, sentiment triage and dynamic prompt chains.", links: ["RAG Knowledge Base", "Sentiment Analysis", "Personalised Copy", "Lead Scoring"] },
+  { icon: Cog, t: "Automation Infrastructure", d: "Webhooks and workflows that connect every system and run reliably with monitoring built in.", links: ["n8n Workflows", "FastAPI Services", "CRM Sync", "Alerts & Logging"] },
 ];
 
 const deploy = [
-  { bg: "bg-card-blue", t: "Kriyvo Managed", d: "We host, monitor and improve — fastest time to value" },
-  { bg: "bg-card-rose", t: "Your Cloud", d: "Deployed inside your own accounts and keys" },
-  { bg: "bg-card-green", t: "Full Handover", d: "Complete code, docs and operational ownership" },
+  { icon: Cloud, t: "Kriyvo Managed", d: "We host, monitor and improve — fastest time to value" },
+  { icon: Server, t: "Your Cloud", d: "Deployed inside your own accounts and keys" },
+  { icon: KeyRound, t: "Full Handover", d: "Complete code, docs and operational ownership" },
 ];
+
+const stats: [string, string][] = [["06", "Systems in production"], ["80%+", "Calls automated"], ["<5s", "Lead response"], ["<60s", "Critical escalation"]];
+
+const navLinks: [string, string][] = [["Products", "#platform"], ["How we build", "#build"], ["Case Studies", "#work"], ["Enterprise", "#enterprise"]];
 
 /* ---------- page ---------- */
 function Index() {
   const [ann, setAnn] = useState(0);
+  const [annOff, setAnnOff] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const [tab, setTab] = useState(0);
   const [wf, setWf] = useState(0);
   const [tst, setTst] = useState(0);
@@ -101,35 +111,53 @@ function Index() {
 
   const tp = P(tabProject[tab] ?? 0);
   const code = {
-    py: `from kriyvo import Agent\n\nagent = Agent(\n    name="lead-assistant",\n    knowledge="./docs",\n    channels=["web", "whatsapp"],\n)\n\nagent.on("qualified", crm.sync)\nagent.deploy()`,
-    js: `import { Agent } from "kriyvo";\n\nconst agent = new Agent({\n  name: "lead-assistant",\n  knowledge: "./docs",\n  channels: ["web", "whatsapp"],\n});\n\nagent.on("qualified", crm.sync);\nawait agent.deploy();`,
-    curl: `curl -X POST https://api.kriyvo.ai/v1/agents \\\n  -H "Authorization: Bearer $KEY" \\\n  -d '{\n    "name": "lead-assistant",\n    "channels": ["web","whatsapp"]\n  }'`,
+    py: `# What we actually ship: a FastAPI webhook\n# behind a WhatsApp lead-qualification bot\n\nfrom fastapi import FastAPI, Request\n\napp = FastAPI()\n\n@app.post("/webhook/whatsapp")\nasync def inbound(req: Request):\n    msg = await req.json()\n    reply = await agent.answer(\n        msg["text"], knowledge="your-docs")\n    await whatsapp.send(msg["from"], reply)\n    if reply.qualified:\n        await crm.sync(msg["from"])\n    return {"ok": True}`,
+    js: `// The same webhook in Node —\n// every build is real code you own\n\nimport express from "express";\n\nconst app = express().use(express.json());\n\napp.post("/webhook/whatsapp", async (req, res) => {\n  const msg = req.body;\n  const reply = await agent.answer(msg.text, {\n    knowledge: "your-docs",\n  });\n  await whatsapp.send(msg.from, reply);\n  if (reply.qualified) await crm.sync(msg.from);\n  res.json({ ok: true });\n});`,
+    curl: `# Test the webhook the way Meta calls it\ncurl -X POST https://your-domain.com/webhook/whatsapp \\\n  -H "Content-Type: application/json" \\\n  -d '{\n    "from": "+91 98xxxxxx21",\n    "text": "What does the enterprise plan include?"\n  }'`,
   }[lang];
   const tq = P(tst);
 
   return (
     <div className="min-h-screen overflow-x-clip">
       {/* Announcement bar */}
-      <div className="relative z-50 border-b border-periwinkle/40 bg-card/80 py-2 text-center text-[13px]">
-        <span className="mr-3 rounded-full border border-border px-2 py-0.5 text-[11px] font-semibold text-indigo">New</span>
-        <span key={ann} className="inline-block animate-rise">{announcements[ann]}</span>
-        <a href={WHATSAPP} target="_blank" rel="noreferrer" className="ml-3 font-medium text-indigo underline underline-offset-2">Talk to us</a>
-      </div>
+      {!annOff && (
+        <div className="relative z-50 flex items-center justify-center gap-3 border-b border-periwinkle/40 bg-card/80 px-10 py-2 text-center text-[13px]">
+          <span className="rounded-full border border-border px-2 py-0.5 text-[11px] font-semibold text-indigo">New</span>
+          <span key={ann} className="inline-block animate-rise">{announcements[ann]}</span>
+          <a href={WHATSAPP} target="_blank" rel="noreferrer" className="font-medium text-indigo underline underline-offset-2">Talk to us</a>
+          <button aria-label="Dismiss announcement" onClick={() => setAnnOff(true)} className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full p-1 text-muted-foreground transition hover:text-foreground">
+            <X className="h-3.5 w-3.5" />
+          </button>
+        </div>
+      )}
 
       {/* Nav */}
-      <header className={`sticky top-0 z-40 transition-all duration-500 ${scrolled ? "border-b border-border bg-background/80 backdrop-blur-xl" : ""}`}>
+      <header className={`sticky top-0 z-40 transition-all duration-500 ${scrolled || menuOpen ? "border-b border-border bg-background/80 backdrop-blur-xl" : ""}`}>
         <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-          <a href="#"><Logo /></a>
+          <a href="#" onClick={() => setMenuOpen(false)}><Logo /></a>
           <div className="hidden gap-8 text-[15px] md:flex">
-            {[["Products", "#platform"], ["Developers", "#build"], ["Case Studies", "#work"], ["Company", "#enterprise"]].map(([l, h]) => (
+            {navLinks.map(([l, h]) => (
               <a key={l} href={h} className="text-foreground/80 transition hover:text-foreground">{l}</a>
             ))}
           </div>
-          <div className="flex gap-2">
+          <div className="flex items-center gap-2">
             <a href="#work" className="hidden rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground sm:inline-flex">Our Work</a>
-            <a href={WHATSAPP} target="_blank" rel="noreferrer" className="rounded-full border border-border bg-card px-5 py-2.5 text-sm font-medium">Contact Us</a>
+            <a href={WHATSAPP} target="_blank" rel="noreferrer" className="hidden rounded-full border border-border bg-card px-5 py-2.5 text-sm font-medium sm:inline-flex">Contact Us</a>
+            <button aria-label="Toggle menu" onClick={() => setMenuOpen((o) => !o)} className="grid h-10 w-10 place-items-center rounded-full border border-border bg-card md:hidden">
+              {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            </button>
           </div>
         </nav>
+        {menuOpen && (
+          <div className="border-t border-border bg-background/95 px-6 py-4 backdrop-blur-xl md:hidden animate-rise">
+            <div className="flex flex-col gap-1 text-[15px]">
+              {navLinks.map(([l, h]) => (
+                <a key={l} href={h} onClick={() => setMenuOpen(false)} className="rounded-xl px-3 py-3 text-foreground/80 transition hover:bg-secondary hover:text-foreground">{l}</a>
+              ))}
+              <a href={WHATSAPP} target="_blank" rel="noreferrer" className="mt-2 rounded-full bg-primary px-5 py-3 text-center text-sm font-medium text-primary-foreground">Contact Us</a>
+            </div>
+          </div>
+        )}
       </header>
 
       {/* Hero */}
@@ -140,7 +168,7 @@ function Index() {
             <span key={d} className="absolute left-1/2 top-1/2 h-[700px] w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-periwinkle/40 animate-ripple" style={{ animationDelay: `${d}s` }} />
           ))}
         </div>
-        <div className="relative mx-auto max-w-4xl px-6 pt-24 pb-20 text-center">
+        <div className="relative mx-auto max-w-4xl px-6 pt-24 pb-14 text-center">
           <img src={mark} alt="" className="mx-auto mb-8 h-14 w-auto animate-rise drop-shadow-lg" />
           <div className="animate-rise" style={{ animationDelay: "100ms" }}><Eyebrow>India's Applied AI Studio</Eyebrow></div>
           <h1 className="mt-8 text-6xl md:text-[5.2rem] leading-[1] animate-rise" style={{ animationDelay: "200ms" }}>AI that works for every business</h1>
@@ -151,13 +179,19 @@ function Index() {
             <Btn href={WHATSAPP}>Book a call</Btn>
             <Btn href="#work" dark={false}>See our work</Btn>
           </div>
+          <div className="mx-auto mt-14 grid max-w-2xl grid-cols-2 gap-6 md:grid-cols-4 animate-rise" style={{ animationDelay: "500ms" }}>
+            {stats.map(([n, l]) => (
+              <div key={l}><p className="font-display text-4xl">{n}</p><p className="mt-1 text-xs text-muted-foreground">{l}</p></div>
+            ))}
+          </div>
+          <p className="mt-4 text-[11px] text-muted-foreground/70 animate-rise" style={{ animationDelay: "550ms" }}>Measured across live client deployments, 2025</p>
         </div>
-        <div className="relative pb-16 pt-24">
+        <div className="relative pb-16 pt-10">
           <p className="mb-8 text-center text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">Businesses build with Kriyvo</p>
           <div className="overflow-hidden [mask-image:linear-gradient(90deg,transparent,black_12%,black_88%,transparent)]">
             <div className="flex w-max animate-marquee gap-20">
               {[...clients, ...clients, ...clients, ...clients].map((c, i) => (
-                <span key={i} className="whitespace-nowrap font-display text-2xl font-semibold text-foreground/35">{c}</span>
+                <span key={i} className="whitespace-nowrap font-display text-2xl font-semibold text-foreground/60">{c}</span>
               ))}
             </div>
           </div>
@@ -183,7 +217,7 @@ function Index() {
                   <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">{tp.client}</p>
                   <h3 className="mt-3 text-3xl leading-tight">{tp.title}</h3>
                   <p className="mt-3 text-[15px] leading-relaxed text-muted-foreground">{tp.subtitle}</p>
-                  <ul className="mt-6 space-y-3">{tp.deliverables.map((d) => <li key={d} className="flex gap-3 text-sm"><Check />{d}</li>)}</ul>
+                  <ul className="mt-6 space-y-3">{tp.deliverables.map((d) => <li key={d} className="flex gap-3 text-sm"><CheckMark />{d}</li>)}</ul>
                   <div className="mt-auto pt-8">
                     <p className="font-display text-4xl font-medium text-gradient">{tp.metric}</p>
                     <p className="mt-1 text-sm text-muted-foreground">{tp.result}</p>
@@ -202,11 +236,12 @@ function Index() {
             <h2 className="text-4xl md:text-5xl">Kriyvo Agents</h2>
             <p className="mt-3 max-w-md text-muted-foreground">AI teammates that research, qualify, call, escalate and get work done.</p>
           </Reveal>
-          <Btn href={WHATSAPP} dark={false}>Explore Kriyvo Agents</Btn>
+          <Btn href="#work" dark={false}>See them in action</Btn>
         </div>
         <div className="mt-10 flex h-auto flex-col gap-2 md:h-[480px] md:flex-row">
           {workflow.map((w, i) => {
             const on = i === wf;
+            const Icon = w.icon;
             return (
               <div key={w.t} onClick={() => setWf(i)} onMouseEnter={() => setWf(i)}
                 className={`relative cursor-pointer overflow-hidden rounded-3xl border border-border bg-card transition-all duration-700 ease-[cubic-bezier(.2,.7,.2,1)] ${on ? "md:flex-[8]" : "md:flex-[1]"}`}>
@@ -215,15 +250,15 @@ function Index() {
                     <span className="text-xs text-muted-foreground">0{i + 1}</span>
                     <h3 className="mt-1 text-3xl">{w.t}</h3>
                     <p className="mt-2 max-w-sm text-sm text-muted-foreground">{w.d}</p>
-                    <div className="relative mt-6 flex-1 overflow-hidden rounded-2xl bg-[radial-gradient(80%_80%_at_20%_100%,var(--saffron),var(--periwinkle)_60%,transparent)] p-4 md:p-6">
+                    <div className="relative mt-6 flex-1 overflow-hidden rounded-2xl bg-secondary p-4 md:p-6">
                       <img src={P(w.p).image} alt={P(w.p).title} className="h-full max-h-72 w-full rounded-xl object-cover shadow-soft md:max-h-none" />
                     </div>
                   </div>
                 ) : (
-                  <div className="flex h-full items-center justify-between p-5 md:flex-col md:py-7">
+                  <div className="flex h-full items-center justify-between gap-3 p-5 md:flex-col md:justify-start md:gap-4 md:py-7">
                     <span className="text-xs text-muted-foreground">0{i + 1}</span>
-                    <span className="text-[15px] md:writing-vertical">{w.t}</span>
-                    <span className="text-xl text-muted-foreground">+</span>
+                    <Icon className="h-5 w-5 text-muted-foreground" />
+                    <span className="text-[15px] md:hidden">{w.t}</span>
                   </div>
                 )}
               </div>
@@ -241,17 +276,18 @@ function Index() {
         </div>
       </section>
 
-      {/* Developers: code + bento */}
+      {/* Developers: real code + bento */}
       <section id="build" className="mx-auto max-w-6xl px-6 py-24">
-        <Reveal><h2 className="text-center text-5xl md:text-6xl">Build anything with<br />Kriyvo agents</h2></Reveal>
+        <Reveal><h2 className="text-center text-5xl md:text-6xl">Real code,<br />not a black box</h2></Reveal>
         <div className="mt-14 grid gap-4 lg:grid-cols-2">
           <Reveal>
-            <div className="h-full rounded-3xl border border-border bg-[linear-gradient(180deg,var(--card),color-mix(in_oklab,var(--periwinkle)_25%,var(--card)))] p-7">
-              <h3 className="text-3xl">Add a <span className="text-gradient">grounded AI agent</span><br />to your business in days</h3>
-              <div className="mt-6 overflow-hidden rounded-2xl border border-border bg-card">
+            <div className="h-full rounded-3xl border border-border bg-card p-7">
+              <h3 className="text-3xl">This is what a build<br /><span className="text-gradient">actually looks like</span></h3>
+              <p className="mt-3 text-sm text-muted-foreground">A simplified excerpt from a production WhatsApp bot we shipped — you get the full source on handover.</p>
+              <div className="mt-6 overflow-hidden rounded-2xl border border-border bg-secondary/50">
                 <div className="flex items-center gap-1 border-b border-border px-3 py-2 text-xs">
                   {(["py", "js", "curl"] as const).map((l) => (
-                    <button key={l} onClick={() => setLang(l)} className={`rounded-lg px-3 py-1.5 ${lang === l ? "bg-secondary font-medium" : "text-muted-foreground"}`}>{{ py: "Python", js: "JavaScript", curl: "cURL" }[l]}</button>
+                    <button key={l} onClick={() => setLang(l)} className={`rounded-lg px-3 py-1.5 ${lang === l ? "bg-card font-medium shadow-sm" : "text-muted-foreground"}`}>{{ py: "Python", js: "JavaScript", curl: "cURL" }[l]}</button>
                   ))}
                 </div>
                 <pre key={lang} className="h-60 overflow-auto p-5 font-mono text-[13px] leading-relaxed text-foreground/80 animate-rise">{code}</pre>
@@ -260,65 +296,23 @@ function Index() {
             </div>
           </Reveal>
           <div className="grid grid-cols-2 gap-4">
-            {bento.map(([t, d], i) => (
-              <Reveal key={t} delay={i * 80}>
+            {bento.map((b, i) => (
+              <Reveal key={b.t} delay={i * 80}>
                 <div className="group h-full rounded-3xl border border-border bg-card p-6 transition duration-500 hover:-translate-y-1 hover:border-accent/40 hover:shadow-soft">
-                  <img src={mark} alt="" className="h-7 w-auto opacity-40 transition group-hover:opacity-100" />
-                  <h4 className="mt-10 font-display text-xl">{t}</h4>
-                  <p className="mt-1 text-sm text-muted-foreground">{d}</p>
+                  <b.icon className="h-6 w-6 text-muted-foreground transition group-hover:text-accent" />
+                  <h4 className="mt-10 font-display text-xl">{b.t}</h4>
+                  <p className="mt-1 text-sm text-muted-foreground">{b.d}</p>
                 </div>
               </Reveal>
             ))}
-            {["REST & Webhooks", "Full Handover", "Live Monitoring"].map((t, i) => (
-              <Reveal key={t} delay={300 + i * 80} className={i === 2 ? "col-span-2" : ""}>
-                <div className="rounded-3xl border border-border bg-card p-5"><h4 className="font-display text-lg">{t}</h4></div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Kriyvo Can */}
-      <section className="mx-auto max-w-6xl px-6 py-10">
-        <Reveal>
-          <div className="relative overflow-hidden rounded-[32px] bg-ink p-10 text-ink-foreground md:p-16">
-            <div className="pointer-events-none absolute -right-24 -top-24 h-96 w-96 rounded-full bg-accent-gradient opacity-40 blur-3xl animate-glow" />
-            <img src={mark} alt="" className="pointer-events-none absolute -bottom-10 right-10 h-80 w-auto opacity-15" />
-            <h2 className="relative text-6xl md:text-8xl">Kriyvo <span className="text-gradient">Can</span></h2>
-            <p className="relative mt-6 max-w-lg text-ink-foreground/65">From a celebrity restaurant launch to a hospital that escalates critical complaints in under a minute — turning manual bottlenecks into autonomous systems.</p>
-            <div className="relative mt-14 grid grid-cols-2 gap-8 md:grid-cols-4">
-              {[["06", "Systems in production"], ["80%+", "Calls automated"], ["<5s", "Lead response"], ["<60s", "Critical escalation"]].map(([n, l]) => (
-                <div key={l}><p className="font-display text-5xl">{n}</p><p className="mt-1 text-sm text-ink-foreground/55">{l}</p></div>
-              ))}
-            </div>
-            <div className="relative mt-12"><a href={WHATSAPP} target="_blank" rel="noreferrer" className="inline-flex rounded-full bg-card px-6 py-3 text-sm font-medium text-card-foreground">Explore Kriyvo</a></div>
-          </div>
-        </Reveal>
-      </section>
-
-      {/* Pillars */}
-      <section className="mx-auto max-w-6xl px-6 py-24">
-        <Reveal><h2 className="text-center text-4xl md:text-5xl">Powering the AI-first business</h2></Reveal>
-        <div className="mt-14 grid items-center gap-12 md:grid-cols-[1fr_1.4fr]">
-          <Reveal>
-            <div className="relative grid aspect-[4/5] place-items-center overflow-hidden rounded-3xl bg-card-blue">
-              <span className="absolute h-64 w-64 rounded-full border border-card/50 animate-ripple" />
-              <span className="absolute h-64 w-64 rounded-full border border-card/50 animate-ripple" style={{ animationDelay: "3s" }} />
-              <img src={mark} alt="" className="relative h-28 w-auto animate-float drop-shadow-xl" />
-            </div>
-          </Reveal>
-          <div className="space-y-9">
-            {[["Grounded by design", "Every agent answers from your own documents and data through RAG — built, deployed and run on your terms."],
-              ["Production-grade models", "GPT-4, Retell AI and vector search orchestrated for latency, accuracy and cost."],
-              ["Human at the core", "Human-in-the-loop checkpoints and clean sales handoffs wherever judgement matters."]].map(([t, d], i) => (
-              <Reveal key={t} delay={i * 120}>
-                <div className="flex gap-4">
-                  <span className="mt-1.5 text-lg text-accent">✦</span>
-                  <div><h3 className="text-2xl">{t}</h3><p className="mt-1.5 text-muted-foreground">{d}</p></div>
+            {[{ icon: Plug, t: "REST & Webhooks" }, { icon: FileCheck, t: "Full Handover" }, { icon: Activity, t: "Live Monitoring" }].map((x, i) => (
+              <Reveal key={x.t} delay={300 + i * 80} className={i === 2 ? "col-span-2" : ""}>
+                <div className="flex items-center gap-3 rounded-3xl border border-border bg-card p-5">
+                  <x.icon className="h-5 w-5 text-muted-foreground" />
+                  <h4 className="font-display text-lg">{x.t}</h4>
                 </div>
               </Reveal>
             ))}
-            <Reveal delay={400}><a href={WHATSAPP} target="_blank" rel="noreferrer" className="block rounded-full bg-primary py-3.5 text-center text-sm font-medium text-primary-foreground">Get Started</a></Reveal>
           </div>
         </div>
       </section>
@@ -329,27 +323,25 @@ function Index() {
         <div className="mt-14 grid gap-8 md:grid-cols-3">
           {fullstack.map((c, i) => (
             <Reveal key={c.t} delay={i * 120}>
-              <div className="group">
-                <div className={`grid h-44 place-items-center overflow-hidden rounded-2xl ${c.bg}`}>
-                  <img src={mark} alt="" className="h-16 w-auto brightness-0 invert opacity-90 transition duration-700 group-hover:scale-125 group-hover:rotate-6" />
+              <div className="group h-full rounded-3xl border border-border bg-card p-7 transition duration-500 hover:-translate-y-1 hover:shadow-soft">
+                <div className="grid h-12 w-12 place-items-center rounded-2xl bg-secondary">
+                  <c.icon className="h-6 w-6 text-accent" />
                 </div>
                 <h3 className="mt-6 text-2xl">{c.t}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{c.d}</p>
-                <ul className="mt-5">
+                <ul className="mt-5 space-y-3">
                   {c.links.map((l) => (
-                    <li key={l} className="group/l flex items-center justify-between border-b border-border py-3 text-sm">
-                      {l}<span className="text-muted-foreground transition group-hover/l:translate-x-1 group-hover/l:text-accent">→</span>
-                    </li>
+                    <li key={l} className="flex gap-3 text-sm"><CheckMark />{l}</li>
                   ))}
                 </ul>
               </div>
             </Reveal>
           ))}
         </div>
-        <div className="mt-12 text-center"><Btn href={WHATSAPP}>Start building with Kriyvo</Btn></div>
+        <div className="mt-12 text-center"><Btn href="#work" dark={false}>See case studies</Btn></div>
       </section>
 
-      {/* Enterprise */}
+      {/* Enterprise + deployment */}
       <section id="enterprise" className="mx-auto max-w-6xl px-6 py-24">
         <Reveal>
           <h2 className="text-center text-4xl md:text-5xl">Enterprise-grade. Out of<br />the box.</h2>
@@ -362,7 +354,7 @@ function Index() {
               <div className="h-full rounded-3xl border border-border bg-card p-8">
                 <h3 className="text-2xl">{t as string}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{d as string}</p>
-                <ul className="mt-6 space-y-3">{(l as string[]).map((x) => <li key={x} className="flex gap-3 text-sm"><Check />{x}</li>)}</ul>
+                <ul className="mt-6 space-y-3">{(l as string[]).map((x) => <li key={x} className="flex gap-3 text-sm"><CheckMark />{x}</li>)}</ul>
               </div>
             </Reveal>
           ))}
@@ -380,40 +372,36 @@ function Index() {
             </div>
           </Reveal>
         </div>
-        <div className="mt-10 text-center"><Btn href={WHATSAPP}>Contact Us</Btn></div>
-      </section>
-
-      {/* Deploy anywhere */}
-      <section className="mx-auto max-w-6xl px-6 py-16">
-        <Reveal><h2 className="text-center text-4xl md:text-5xl">Built to run anywhere<br />your business runs</h2></Reveal>
-        <div className="mt-12 grid gap-4 md:grid-cols-3">
+        <div className="mt-4 grid gap-4 md:grid-cols-3">
           {deploy.map((d, i) => (
             <Reveal key={d.t} delay={i * 100}>
               <div className="flex items-center gap-4 rounded-2xl border border-border bg-card p-4 transition hover:shadow-soft">
-                <div className={`grid h-16 w-16 shrink-0 place-items-center rounded-xl ${d.bg}`}><img src={mark} alt="" className="h-7 w-auto brightness-0 invert" /></div>
+                <div className="grid h-14 w-14 shrink-0 place-items-center rounded-xl bg-secondary"><d.icon className="h-6 w-6 text-accent" /></div>
                 <div><h4 className="font-display text-lg font-medium">{d.t}</h4><p className="text-sm text-muted-foreground">{d.d}</p></div>
               </div>
             </Reveal>
           ))}
         </div>
+        <div className="mt-10 text-center"><Btn href={WHATSAPP}>Talk to us about your setup</Btn></div>
       </section>
 
       {/* Outcomes carousel */}
       <section className="mx-auto max-w-6xl px-6 py-24">
-        <Reveal><h2 className="text-center text-4xl md:text-5xl">What our clients achieved</h2></Reveal>
+        <Reveal><h2 className="text-center text-4xl md:text-5xl">Outcomes from live deployments</h2></Reveal>
         <Reveal delay={120}>
           <div className="relative mt-12 overflow-hidden rounded-3xl border border-border bg-card p-8 md:p-12">
             <div key={tst} className="grid items-center gap-10 md:grid-cols-[1.4fr_1fr] animate-rise">
               <div>
                 <p className="text-center font-display text-xl font-semibold tracking-wide text-accent md:text-left">{tq.client}</p>
-                <p className="mt-6 text-2xl leading-snug md:text-3xl">"{tq.result}"</p>
+                <p className="mt-6 font-display text-4xl font-medium text-gradient md:text-5xl">{tq.metric}</p>
+                <p className="mt-4 text-lg leading-snug text-foreground/80">{tq.result}</p>
                 <p className="mt-6 text-sm text-muted-foreground">{tq.title} · {tq.sector}</p>
               </div>
               <img src={tq.image} alt={tq.title} className="aspect-[4/3] w-full rounded-2xl object-cover" />
             </div>
-            <div className="mt-8 flex justify-center gap-2">
+            <div className="mt-8 flex justify-center gap-2.5">
               {projects.map((_, i) => (
-                <button key={i} aria-label={`Show outcome ${i + 1}`} onClick={() => setTst(i)} className={`h-1.5 rounded-full transition-all duration-500 ${i === tst ? "w-8 bg-accent" : "w-1.5 bg-border"}`} />
+                <button key={i} aria-label={`Show outcome ${i + 1}`} onClick={() => setTst(i)} className={`h-2.5 rounded-full transition-all duration-500 ${i === tst ? "w-9 bg-accent" : "w-2.5 bg-border hover:bg-muted-foreground/40"}`} />
               ))}
             </div>
           </div>
@@ -487,9 +475,9 @@ function Index() {
             <div className="pointer-events-none absolute inset-x-0 -top-40 mx-auto h-96 w-[600px] rounded-full bg-accent-gradient opacity-50 blur-3xl animate-glow" />
             <h2 className="relative text-5xl md:text-6xl">Ready to build something<br />extraordinary?</h2>
             <p className="relative mx-auto mt-5 max-w-lg text-ink-foreground/65">Production-ready code with guaranteed handover. Let's turn your ideas into systems people love.</p>
-            <div className="relative mt-9 flex justify-center gap-3">
+            <div className="relative mt-9 flex flex-wrap justify-center gap-3">
               <a href={WHATSAPP} target="_blank" rel="noreferrer" className="rounded-full bg-card px-6 py-3 text-sm font-medium text-card-foreground">Chat on WhatsApp</a>
-              <a href={WHATSAPP} target="_blank" rel="noreferrer" className="rounded-full border border-ink-foreground/25 px-6 py-3 text-sm font-medium">Book a Discovery Call</a>
+              <a href="#work" className="rounded-full border border-ink-foreground/25 px-6 py-3 text-sm font-medium">Browse case studies</a>
             </div>
           </div>
         </Reveal>
@@ -503,13 +491,19 @@ function Index() {
             <p className="mt-2 text-sm text-muted-foreground">AI that works for every business</p>
             <p className="mt-8 text-xs text-muted-foreground">© 2026 Kriyvo AI<br />Delhi NCR, India</p>
           </div>
-          {[["Products", ["Chat Agents", "Voice Agents", "WhatsApp Bots", "Automations", "Websites"]],
-            ["Capabilities", ["RAG Knowledge Base", "Lead Qualification", "Sentiment Triage", "CRM Sync"]],
-            ["Work", projects.slice(0, 4).map((p) => p.client.split(" (")[0] as string)],
-            ["Company", ["Process", "Case Studies", "Contact", "WhatsApp"]]].map(([h, items]) => (
-            <div key={h as string}>
-              <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">{h as string}</p>
-              <ul className="mt-4 space-y-2.5 text-sm">{(items as string[]).map((x) => <li key={x}><a href={WHATSAPP} target="_blank" rel="noreferrer" className="hover:text-accent">{x}</a></li>)}</ul>
+          {([
+            ["Products", [["Chat Agents", "#platform"], ["Voice Agents", "#platform"], ["WhatsApp Bots", "#platform"], ["Automations", "#platform"], ["Websites", "#platform"]]],
+            ["Capabilities", [["RAG Knowledge Base", "#build"], ["Lead Qualification", "#build"], ["Sentiment Triage", "#build"], ["CRM Sync", "#build"]]],
+            ["Work", caseStudies.map((c) => [c.client, "#work"] as [string, string])],
+            ["Company", [["Process", "#enterprise"], ["Case Studies", "#work"], ["Contact", WHATSAPP], ["WhatsApp", WHATSAPP]]],
+          ] as [string, [string, string][]][]).map(([h, items]) => (
+            <div key={h}>
+              <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">{h}</p>
+              <ul className="mt-4 space-y-2.5 text-sm">
+                {items.map(([x, h2]) => (
+                  <li key={x}><a href={h2} target={h2.startsWith("http") ? "_blank" : undefined} rel="noreferrer" className="hover:text-accent">{x}</a></li>
+                ))}
+              </ul>
             </div>
           ))}
         </div>
