@@ -1,0 +1,9 @@
+import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { AgencyLayout, ProjectCTA } from "@/components/AgencyLayout";
+import { caseStudies } from "@/lib/kriyo-data";
+import { pageMeta } from "@/lib/page-meta";
+export const Route = createFileRoute("/case-studies/$slug")({
+  loader: ({ params }) => { const study = caseStudies.find(c => c.client.toLowerCase().replace(/[^a-z0-9]+/g, "-") === params.slug); if (!study) throw notFound(); return study; },
+  head: ({ loaderData }) => pageMeta(loaderData?.title ?? "Case study", loaderData?.outcome ?? "Explore a Kriyvo AI project in detail."), component: Study,
+});
+function Study() { const study = Route.useLoaderData(); return <AgencyLayout><article className="mx-auto max-w-6xl px-6 py-16"><Link to="/case-studies" className="text-sm text-muted-foreground hover:text-accent">← All case studies</Link><p className="mt-10 text-sm font-medium text-accent">{study.client}</p><h1 className="mt-5 max-w-4xl text-4xl leading-tight md:text-6xl">{study.title}</h1><img src={study.image} alt={study.title} width={1280} height={800} className="mt-10 aspect-[16/8] w-full rounded-lg object-cover" /><div className="mt-14 grid gap-10 md:grid-cols-[1fr_2fr]"><aside><p className="text-xs font-semibold uppercase text-muted-foreground">Tools & technologies</p><div className="mt-4 flex flex-wrap gap-2">{study.stack.map(s => <span key={s} className="rounded-md border border-border px-3 py-2 text-xs">{s}</span>)}</div></aside><div className="space-y-10">{[["The problem", study.problem], ["The project delivery", study.built], ["The outcome", study.outcome]].map(([title, text]) => <section key={title}><h2 className="text-3xl">{title}</h2><p className="mt-4 text-base leading-loose text-muted-foreground">{text}</p></section>)}</div></div></article><ProjectCTA /></AgencyLayout>; }

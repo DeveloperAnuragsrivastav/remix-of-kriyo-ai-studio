@@ -1,0 +1,7 @@
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { ArrowUpRight } from "lucide-react";
+import { AgencyLayout, PageIntro, ProjectCTA } from "@/components/AgencyLayout";
+import { caseStudies } from "@/lib/kriyo-data";
+import { pageMeta } from "@/lib/page-meta";
+export const Route = createFileRoute("/case-studies/")({ head: () => pageMeta("Case studies", "Explore Kriyvo AI project work in patient feedback automation, AI setup tools, outreach pipelines and real-time voice assistants."), component: CaseStudies });
+function CaseStudies() { return <AgencyLayout><PageIntro label="Selected project work" title="Inside the builds." description="The business need, the development work and the delivery. A closer look at four projects in AI and automation." /><section className="mx-auto grid max-w-6xl gap-x-8 gap-y-12 px-6 pb-12 md:grid-cols-2">{caseStudies.map(c => <Link key={c.client} to="/case-studies/$slug" params={{ slug: c.client.toLowerCase().replace(/[^a-z0-9]+/g, "-") }} className="group"><img src={c.image} alt={c.title} width={1280} height={800} className="aspect-[16/10] w-full rounded-lg object-cover" /><p className="mt-5 text-xs font-semibold text-accent">{c.client}</p><h2 className="mt-3 text-2xl leading-snug group-hover:text-accent">{c.title}</h2><p className="mt-3 text-sm leading-relaxed text-muted-foreground">{c.outcome}</p><span className="mt-5 inline-flex items-center gap-2 text-sm font-medium">Read case study <ArrowUpRight className="h-4 w-4" /></span></Link>)}</section><ProjectCTA /></AgencyLayout>; }
