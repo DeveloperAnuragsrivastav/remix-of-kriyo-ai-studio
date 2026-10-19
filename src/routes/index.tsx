@@ -149,7 +149,7 @@ function Index() {
           </div>
         </nav>
         {menuOpen && (
-          <div className="border-t border-border bg-background/95 px-6 py-4 backdrop-blur-xl md:hidden animate-rise">
+          <div className="border-t border-border bg-background px-6 py-4 md:hidden animate-rise">
             <div className="flex flex-col gap-1 text-[15px]">
               {navLinks.map(([l, h]) => (
                 <a key={l} href={h} onClick={() => setMenuOpen(false)} className="rounded-xl px-3 py-3 text-foreground/80 transition hover:bg-secondary hover:text-foreground">{l}</a>
