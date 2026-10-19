@@ -163,11 +163,6 @@ function Index() {
       {/* Hero */}
       <section className="relative -mt-[73px] pt-[73px]">
         <div className="pointer-events-none absolute inset-x-0 top-0 h-[720px] bg-glow animate-glow" />
-        <div className="pointer-events-none absolute left-1/2 top-[380px] -translate-x-1/2">
-          {[0, 2, 4].map((d) => (
-            <span key={d} className="absolute left-1/2 top-1/2 h-[700px] w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-periwinkle/40 animate-ripple" style={{ animationDelay: `${d}s` }} />
-          ))}
-        </div>
         <div className="relative mx-auto max-w-4xl px-6 pt-24 pb-14 text-center">
           <img src={mark} alt="" className="mx-auto mb-8 h-14 w-auto animate-rise drop-shadow-lg" />
           <div className="animate-rise" style={{ animationDelay: "100ms" }}><Eyebrow>India's Applied AI Studio</Eyebrow></div>
