@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { projects, process, WHATSAPP } from "@/lib/kriyo-data";
+import { projects, process, caseStudies, WHATSAPP } from "@/lib/kriyo-data";
 import { Reveal } from "@/components/Reveal";
 import mark from "@/assets/kriyvo-mark.png";
 
@@ -438,6 +438,46 @@ function Index() {
           ))}
         </div>
         <div className="mt-12 text-center"><Btn href={WHATSAPP} dark={false}>Build something similar</Btn></div>
+      </section>
+
+      {/* In-depth case studies */}
+      <section className="mx-auto max-w-6xl px-6 py-24">
+        <Reveal>
+          <h2 className="text-center text-4xl md:text-5xl">Inside the builds</h2>
+          <p className="mx-auto mt-4 max-w-xl text-center text-muted-foreground">The problem, what we built and what it delivered — four production systems, end to end.</p>
+        </Reveal>
+        <div className="mt-16 space-y-20">
+          {caseStudies.map((c, i) => (
+            <Reveal key={c.title}>
+              <div className={`grid items-center gap-10 md:grid-cols-2 ${i % 2 ? "md:[&>*:first-child]:order-2" : ""}`}>
+                <div className="overflow-hidden rounded-3xl border border-border shadow-soft">
+                  <img src={c.image} alt={c.title} loading="lazy" width={1280} height={800} className="aspect-[16/10] w-full object-cover" />
+                </div>
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-widest text-accent">{c.client}</p>
+                  <h3 className="mt-2 text-3xl leading-tight md:text-4xl">{c.title}</h3>
+                  <div className="mt-6 space-y-5">
+                    <div>
+                      <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">The problem</p>
+                      <p className="mt-1.5 text-[15px] leading-relaxed text-foreground/80">{c.problem}</p>
+                    </div>
+                    <div>
+                      <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">What we built</p>
+                      <p className="mt-1.5 text-[15px] leading-relaxed text-foreground/80">{c.built}</p>
+                    </div>
+                  </div>
+                  <div className="mt-6 flex flex-wrap gap-2">
+                    {c.stack.map((s) => (
+                      <span key={s} className="rounded-lg border border-border bg-card px-3 py-1.5 text-xs font-medium">{s}</span>
+                    ))}
+                  </div>
+                  <p className="mt-6 border-l-2 border-accent pl-4 font-display text-lg font-medium leading-snug">{c.outcome}</p>
+                </div>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+        <div className="mt-16 text-center"><Btn href={WHATSAPP}>Discuss your project</Btn></div>
       </section>
 
       {/* CTA */}
