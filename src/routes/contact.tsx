@@ -1,0 +1,14 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
+import { ArrowUpRight, MessageSquare } from "lucide-react";
+import { AgencyLayout, PageIntro } from "@/components/AgencyLayout";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { WHATSAPP } from "@/lib/kriyo-data";
+import { pageMeta } from "@/lib/page-meta";
+export const Route = createFileRoute("/contact")({ head: () => pageMeta("Discuss your project", "Contact Kriyvo AI about a website, AI assistant or business automation project. Share your brief directly over WhatsApp."), component: Contact });
+function Contact() {
+  const [name, setName] = useState(""); const [brief, setBrief] = useState("");
+  return <AgencyLayout><PageIntro label="Contact" title="Let's talk about your next project." description="Tell us what you need, what is already in place and your target timeline. Start with a short brief and we can discuss the next step." /><section className="mx-auto grid max-w-6xl gap-12 px-6 pb-24 md:grid-cols-2"><form onSubmit={e => { e.preventDefault(); const url = new URL(WHATSAPP); url.searchParams.set("text", `Hi Kriyvo AI, I'm ${name}.\n\n${brief}`); window.open(url.toString(), "_blank", "noopener,noreferrer"); }} className="space-y-6"><div><label htmlFor="name" className="mb-2 block text-sm font-medium">Your name</label><Input id="name" value={name} onChange={e => setName(e.target.value)} required placeholder="Your name" autoComplete="name" /></div><div><label htmlFor="brief" className="mb-2 block text-sm font-medium">Project brief</label><Textarea id="brief" value={brief} onChange={e => setBrief(e.target.value)} required placeholder="What are you looking to build?" className="min-h-44" /></div><Button type="submit" size="lg">Continue on WhatsApp <ArrowUpRight /></Button><p className="text-xs text-muted-foreground">Your message opens in WhatsApp for you to review and send.</p></form><div className="border-t border-border pt-8 md:border-t-0 md:border-l md:pl-12"><MessageSquare className="h-8 w-8 text-accent" /><h2 className="mt-5 text-3xl">A good place to start</h2><ul className="mt-6 space-y-4 text-sm text-muted-foreground"><li>The business goal or problem you want to solve</li><li>Your existing website, content or business tools</li><li>The pages, features or integrations you need</li><li>Your budget range and target timeline</li></ul><Button asChild variant="outline" className="mt-8"><a href={WHATSAPP} target="_blank" rel="noreferrer">Chat directly <ArrowUpRight /></a></Button></div></section></AgencyLayout>;
+}

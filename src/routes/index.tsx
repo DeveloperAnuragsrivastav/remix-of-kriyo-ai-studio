@@ -6,6 +6,7 @@ import {
 } from "lucide-react";
 import { projects, process, caseStudies, WHATSAPP } from "@/lib/kriyo-data";
 import { Reveal } from "@/components/Reveal";
+import { AgencyHeader } from "@/components/AgencyLayout";
 import mark from "@/assets/kriyvo-mark.png";
 
 export const Route = createFileRoute("/")({
@@ -85,24 +86,19 @@ const deploy = [
 
 const stats: [string, string][] = [["Web", "Design & development"], ["AI", "Custom integrations"], ["Flows", "Business automation"], ["Care", "Handover & support"]];
 
-const navLinks: [string, string][] = [["Services", "#platform"], ["Deliverables", "#build"], ["Case Studies", "#work"], ["Working together", "#enterprise"]];
 
 /* ---------- page ---------- */
 function Index() {
   const [ann, setAnn] = useState(0);
   const [annOff, setAnnOff] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
   const [tab, setTab] = useState(0);
   const [wf, setWf] = useState(0);
   const [tst, setTst] = useState(0);
   const [lang, setLang] = useState<"py" | "js" | "curl">("py");
-  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const a = setInterval(() => setAnn((x) => (x + 1) % announcements.length), 4000);
-    const f = () => setScrolled(window.scrollY > 10);
-    window.addEventListener("scroll", f, { passive: true });
-    return () => { clearInterval(a); window.removeEventListener("scroll", f); };
+    return () => clearInterval(a);
   }, []);
   useEffect(() => {
     const t = setTimeout(() => setTst((x) => (x + 1) % projects.length), 6000);
@@ -167,34 +163,7 @@ Agree any maintenance or follow-on work.`,
         </div>
       )}
 
-      {/* Nav */}
-      <header className={`sticky top-0 z-40 transition-all duration-500 ${scrolled || menuOpen ? "border-b border-border bg-background/80 backdrop-blur-xl" : ""}`}>
-        <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-          <a href="#" onClick={() => setMenuOpen(false)}><Logo /></a>
-          <div className="hidden gap-8 text-[15px] md:flex">
-            {navLinks.map(([l, h]) => (
-              <a key={l} href={h} className="text-foreground/80 transition hover:text-foreground">{l}</a>
-            ))}
-          </div>
-          <div className="flex items-center gap-2">
-            <a href="#work" className="hidden rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground sm:inline-flex">Our Work</a>
-            <a href={WHATSAPP} target="_blank" rel="noreferrer" className="hidden rounded-full border border-border bg-card px-5 py-2.5 text-sm font-medium sm:inline-flex">Contact Us</a>
-            <button aria-label="Toggle menu" onClick={() => setMenuOpen((o) => !o)} className="grid h-10 w-10 place-items-center rounded-full border border-border bg-card md:hidden">
-              {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-            </button>
-          </div>
-        </nav>
-        {menuOpen && (
-          <div className="border-t border-border bg-background px-6 py-4 md:hidden animate-rise">
-            <div className="flex flex-col gap-1 text-[15px]">
-              {navLinks.map(([l, h]) => (
-                <a key={l} href={h} onClick={() => setMenuOpen(false)} className="rounded-xl px-3 py-3 text-foreground/80 transition hover:bg-secondary hover:text-foreground">{l}</a>
-              ))}
-              <a href={WHATSAPP} target="_blank" rel="noreferrer" className="mt-2 rounded-full bg-primary px-5 py-3 text-center text-sm font-medium text-primary-foreground">Contact Us</a>
-            </div>
-          </div>
-        )}
-      </header>
+      <AgencyHeader />
 
       {/* Hero */}
       <section className="relative -mt-[73px] pt-[73px]">
@@ -208,7 +177,7 @@ Agree any maintenance or follow-on work.`,
           </p>
           <div className="mt-10 flex justify-center gap-3 animate-rise" style={{ animationDelay: "400ms" }}>
             <Btn href={WHATSAPP}>Discuss your project</Btn>
-            <Btn href="#work" dark={false}>See our work</Btn>
+            <Btn href="/case-studies" dark={false}>See our work</Btn>
           </div>
           <div className="mx-auto mt-14 grid max-w-2xl grid-cols-2 gap-6 md:grid-cols-4 animate-rise" style={{ animationDelay: "500ms" }}>
             {stats.map(([n, l]) => (
@@ -233,7 +202,7 @@ Agree any maintenance or follow-on work.`,
       <section id="platform" className="relative py-24">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_50%_at_100%_30%,var(--periwinkle),transparent_70%)] opacity-40" />
         <div className="relative mx-auto max-w-6xl px-6">
-          <Reveal><h2 className="text-center text-5xl md:text-6xl">Freelance services.<br />Built around your brief.</h2></Reveal>
+          <Reveal><h2 className="text-center text-5xl md:text-6xl">Freelance services.<br />Built around your brief.</h2><div className="mt-6 text-center"><Btn href="/services" dark={false}>Explore all services</Btn></div></Reveal>
           <Reveal delay={150}>
             <div className="mt-14 overflow-hidden rounded-[28px] border border-border bg-card shadow-soft">
               <div className="flex overflow-x-auto border-b border-border bg-secondary/60 p-1.5">
@@ -267,7 +236,7 @@ Agree any maintenance or follow-on work.`,
             <h2 className="text-4xl md:text-5xl">What we can build for you</h2>
             <p className="mt-3 max-w-md text-muted-foreground">From a single business bottleneck to a connected customer journey — choose the work that fits your project.</p>
           </Reveal>
-          <Btn href="#work" dark={false}>Explore project work</Btn>
+          <Btn href="/case-studies" dark={false}>Explore project work</Btn>
         </div>
         <div className="mt-10 flex h-auto flex-col gap-2 md:h-[480px] md:flex-row">
           {workflow.map((w, i) => {
@@ -309,7 +278,7 @@ Agree any maintenance or follow-on work.`,
 
       {/* Developers: real code + bento */}
       <section id="build" className="mx-auto max-w-6xl px-6 py-24">
-        <Reveal><h2 className="text-center text-5xl md:text-6xl">Clear deliverables.<br />A considered handover.</h2></Reveal>
+        <Reveal><h2 className="text-center text-5xl md:text-6xl">Clear deliverables.<br />A considered handover.</h2><div className="mt-6 text-center"><Btn href="/deliverables" dark={false}>Explore deliverables</Btn></div></Reveal>
         <div className="mt-14 grid gap-4 lg:grid-cols-2">
           <Reveal>
             <div className="h-full rounded-3xl border border-border bg-card p-7">
@@ -369,7 +338,7 @@ Agree any maintenance or follow-on work.`,
             </Reveal>
           ))}
         </div>
-        <div className="mt-12 text-center"><Btn href="#work" dark={false}>See case studies</Btn></div>
+        <div className="mt-12 text-center"><Btn href="/case-studies" dark={false}>See case studies</Btn></div>
       </section>
 
       {/* Enterprise + deployment */}
@@ -413,7 +382,7 @@ Agree any maintenance or follow-on work.`,
             </Reveal>
           ))}
         </div>
-        <div className="mt-10 text-center"><Btn href={WHATSAPP}>Discuss how we can work together</Btn></div>
+        <div className="mt-10 text-center"><Btn href="/working-together">How we work together</Btn></div>
       </section>
 
       {/* Outcomes carousel */}
@@ -445,7 +414,7 @@ Agree any maintenance or follow-on work.`,
         <div className="mt-12 grid gap-8 md:grid-cols-2">
           {caseStudies.map((c, i) => (
             <Reveal key={c.title} delay={(i % 2) * 100}>
-              <a href={WHATSAPP} target="_blank" rel="noreferrer" className="group block">
+              <a href={`/case-studies/${c.client.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`} className="group block">
                 <div className="overflow-hidden rounded-2xl">
                   <img src={c.image} alt={c.title} loading="lazy" width={1280} height={800} className="aspect-[16/10] w-full object-cover transition duration-700 group-hover:scale-105" />
                 </div>
@@ -508,7 +477,7 @@ Agree any maintenance or follow-on work.`,
             <p className="relative mx-auto mt-5 max-w-lg text-ink-foreground/65">Tell us what you need, what is already in place and your target timeline. We can discuss the scope and the next step.</p>
             <div className="relative mt-9 flex flex-wrap justify-center gap-3">
               <a href={WHATSAPP} target="_blank" rel="noreferrer" className="rounded-full bg-card px-6 py-3 text-sm font-medium text-card-foreground">Chat on WhatsApp</a>
-              <a href="#work" className="rounded-full border border-ink-foreground/25 px-6 py-3 text-sm font-medium">Browse case studies</a>
+              <a href="/case-studies" className="rounded-full border border-ink-foreground/25 px-6 py-3 text-sm font-medium">Browse case studies</a>
             </div>
           </div>
         </Reveal>
@@ -523,10 +492,10 @@ Agree any maintenance or follow-on work.`,
             <p className="mt-8 text-xs text-muted-foreground">© 2026 Kriyvo AI<br />Delhi NCR, India</p>
           </div>
           {([
-            ["Services", [["AI Assistants", "#platform"], ["Voice Agents", "#platform"], ["WhatsApp Bots", "#platform"], ["Automations", "#platform"], ["Websites", "#platform"]]],
-            ["Project deliverables", [["RAG Knowledge Base", "#build"], ["Lead Qualification", "#build"], ["Sentiment Triage", "#build"], ["CRM Sync", "#build"]]],
-            ["Work", caseStudies.map((c) => [c.client, "#work"] as [string, string])],
-            ["Agency", [["Working together", "#enterprise"], ["Case Studies", "#work"], ["Contact", WHATSAPP], ["WhatsApp", WHATSAPP]]],
+            ["Services", [["AI Assistants", "/services"], ["Voice Agents", "/services"], ["WhatsApp Bots", "/services"], ["Automations", "/services"], ["Websites", "/services"]]],
+            ["Project deliverables", [["RAG Knowledge Base", "/deliverables"], ["Lead Qualification", "/deliverables"], ["Sentiment Triage", "/deliverables"], ["CRM Sync", "/deliverables"]]],
+            ["Work", caseStudies.map((c) => [c.client, "/case-studies"] as [string, string])],
+            ["Agency", [["Working together", "/working-together"], ["Case Studies", "/case-studies"], ["Contact", "/contact"], ["Blog", "/blog"], ["WhatsApp", WHATSAPP]]],
           ] as [string, [string, string][]][]).map(([h, items]) => (
             <div key={h}>
               <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">{h}</p>
