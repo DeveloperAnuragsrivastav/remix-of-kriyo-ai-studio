@@ -423,16 +423,16 @@ function Index() {
       {/* Case studies as "Research & Updates" cards */}
       <section id="work" className="mx-auto max-w-6xl px-6 py-24">
         <Reveal><h2 className="text-center text-4xl md:text-5xl">Case studies</h2></Reveal>
-        <div className="mt-12 grid gap-8 md:grid-cols-3">
-          {projects.map((p, i) => (
-            <Reveal key={p.title} delay={(i % 3) * 100}>
+        <div className="mt-12 grid gap-8 md:grid-cols-2">
+          {caseStudies.map((c, i) => (
+            <Reveal key={c.title} delay={(i % 2) * 100}>
               <a href={WHATSAPP} target="_blank" rel="noreferrer" className="group block">
                 <div className="overflow-hidden rounded-2xl">
-                  <img src={p.image} alt={p.title} loading="lazy" className="aspect-[16/10] w-full object-cover transition duration-700 group-hover:scale-105" />
+                  <img src={c.image} alt={c.title} loading="lazy" width={1280} height={800} className="aspect-[16/10] w-full object-cover transition duration-700 group-hover:scale-105" />
                 </div>
-                <p className="mt-4 text-xs text-muted-foreground">{p.client} · {p.category}</p>
-                <h3 className="mt-1.5 font-display text-lg font-medium leading-snug tracking-tight group-hover:text-accent">{p.title}</h3>
-                <p className="mt-1 text-sm text-muted-foreground">{p.metric}</p>
+                <p className="mt-4 text-xs text-muted-foreground">{c.client}</p>
+                <h3 className="mt-1.5 font-display text-lg font-medium leading-snug tracking-tight group-hover:text-accent">{c.title}</h3>
+                <p className="mt-1 text-sm text-muted-foreground">{c.outcome}</p>
               </a>
             </Reveal>
           ))}
