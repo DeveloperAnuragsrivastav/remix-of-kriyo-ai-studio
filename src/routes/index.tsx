@@ -11,10 +11,10 @@ import mark from "@/assets/kriyvo-mark.png";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Kriyvo AI — AI Agents, Automation & Digital Products" },
-      { name: "description", content: "Kriyvo AI builds AI chatbots, voice agents, n8n automations and premium websites that deliver measurable results." },
-      { property: "og:title", content: "Kriyvo AI — AI that works for every business" },
-      { property: "og:description", content: "Chatbots, voice agents, automation workflows and websites — production-ready, from India." },
+      { title: "Kriyvo AI — Freelance Web Development & AI Automation Agency" },
+      { name: "description", content: "A freelance agency for custom websites, AI assistants and workflow automation. Explore project work and discuss your next build with Kriyvo AI." },
+      { property: "og:title", content: "Kriyvo AI — Your Freelance Digital Partner" },
+      { property: "og:description", content: "Custom web development, AI integrations and automation projects, from brief to handover." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -49,43 +49,43 @@ const Btn = ({ href, children, dark = true }: { href: string; children: React.Re
 );
 
 /* ---------- data ---------- */
-const announcements = ["Autonomous voice & phone calling agents now live", "Free AI chatbot consultation this month", "CRM & automation builds starting ₹15,000"];
+const announcements = ["Custom websites, AI assistants & business automation", "Have a project in mind? Let’s discuss the brief", "From a focused integration to a complete digital build"];
 const clients = ["KOCA", "Aurum Conventions", "Gignaati", "BMRC Hospital", "Smartians AI", "Swaran Soft"];
-const tabs = ["Chat Agents", "Voice Agents", "Automations", "WhatsApp", "Websites"];
+const tabs = ["AI Assistants", "Voice AI", "Automation", "WhatsApp", "Websites"];
 const tabProject = [1, 4, 2, 3, 0];
 
 const workflow = [
-  { t: "Research", d: "Agents research prospects and your own documents, then re-plan as they learn something new.", p: 2, icon: BrainCircuit },
-  { t: "Lead qualification", d: "Greets every visitor, answers from grounded knowledge and qualifies intent in seconds.", p: 1, icon: MessageSquare },
-  { t: "Voice calls", d: "Holds natural phone conversations and books directly into your calendar.", p: 4, icon: Phone },
-  { t: "Escalations", d: "Classifies sentiment and severity, then alerts the right person on WhatsApp and email.", p: 5, icon: Activity },
-  { t: "Integrations", d: "Connects CRMs, calendars, sheets, Telegram, Supabase and every tool you already use.", p: 3, icon: Plug },
+  { t: "Research", d: "Turn your research and document tasks into a custom workflow, with review points where your team needs them.", p: 2, icon: BrainCircuit },
+  { t: "Lead qualification", d: "Build a visitor-to-enquiry journey that collects the details your sales team needs and routes the conversation.", p: 1, icon: MessageSquare },
+  { t: "Voice calls", d: "Develop a voice assistant for your specific call flow, with calendar connections and human handoff where needed.", p: 4, icon: Phone },
+  { t: "Escalations", d: "Connect feedback forms, priority rules and notifications so important requests reach the right person.", p: 5, icon: Activity },
+  { t: "Integrations", d: "Link your CRM, calendar and business tools through the integrations agreed in your project scope.", p: 3, icon: Plug },
 ];
 
 const integrations = ["n8n", "OpenAI", "Pinecone", "Qdrant", "Retell AI", "WhatsApp", "FastAPI", "Supabase", "Google Calendar", "Google Drive", "Telegram", "Gmail", "Next.js", "Python"];
 
 const bento = [
-  { icon: MessageSquare, t: "Chat Agents", d: "Web & WhatsApp assistants grounded in your data" },
-  { icon: Phone, t: "Voice Agents", d: "Sub-250ms conversational phone calls" },
-  { icon: Workflow, t: "Workflows", d: "Multi-step n8n pipelines with human checkpoints" },
-  { icon: Database, t: "Knowledge Base", d: "Docs vectorised into Pinecone or Qdrant" },
+  { icon: MessageSquare, t: "Chat Agents", d: "Custom assistants shaped around your content and customer questions" },
+  { icon: Phone, t: "Voice Agents", d: "Call flows, streaming conversations and scheduling integrations" },
+  { icon: Workflow, t: "Workflows", d: "Connected business tasks with review points and clear handoffs" },
+  { icon: Database, t: "Knowledge Base", d: "Searchable company documents for your custom AI assistant" },
 ];
 
 const fullstack = [
-  { icon: MonitorSmartphone, t: "Customer-facing Applications", d: "Products your customers actually use — chat widgets, WhatsApp funnels, phone lines and brand websites.", links: ["Website Chatbots", "WhatsApp Bots", "Voice Agents", "Brand Websites"] },
-  { icon: BrainCircuit, t: "Grounded Intelligence", d: "LLM reasoning grounded in your documents with RAG, sentiment triage and dynamic prompt chains.", links: ["RAG Knowledge Base", "Sentiment Analysis", "Personalised Copy", "Lead Scoring"] },
-  { icon: Cog, t: "Automation Infrastructure", d: "Webhooks and workflows that connect every system and run reliably with monitoring built in.", links: ["n8n Workflows", "FastAPI Services", "CRM Sync", "Alerts & Logging"] },
+  { icon: MonitorSmartphone, t: "Website design & development", d: "A considered website or web application, designed around your audience, content and enquiry journey.", links: ["Brand websites", "Landing pages", "Web applications", "Enquiry & booking flows"] },
+  { icon: BrainCircuit, t: "AI development & integrations", d: "Add an assistant or AI feature to your business without treating a generic chatbot as the whole solution.", links: ["Website assistants", "Document search", "Voice AI", "Feedback classification"] },
+  { icon: Cog, t: "Business workflow automation", d: "Replace disconnected manual steps with a workflow that connects your forms, communications and business tools.", links: ["n8n workflows", "CRM integrations", "Email & WhatsApp flows", "Custom API connections"] },
 ];
 
 const deploy = [
-  { icon: Cloud, t: "Kriyvo Managed", d: "We host, monitor and improve — fastest time to value" },
-  { icon: Server, t: "Your Cloud", d: "Deployed inside your own accounts and keys" },
-  { icon: KeyRound, t: "Full Handover", d: "Complete code, docs and operational ownership" },
+  { icon: Cloud, t: "Ongoing support", d: "Agree maintenance and improvements as part of your engagement" },
+  { icon: Server, t: "Your accounts", d: "Choose hosting and third-party accounts during project planning" },
+  { icon: KeyRound, t: "Project handover", d: "Scope source files, documentation and a walkthrough before work begins" },
 ];
 
-const stats: [string, string][] = [["06", "Systems in production"], ["80%+", "Calls automated"], ["<5s", "Lead response"], ["<60s", "Critical escalation"]];
+const stats: [string, string][] = [["Web", "Design & development"], ["AI", "Custom integrations"], ["Flows", "Business automation"], ["Care", "Handover & support"]];
 
-const navLinks: [string, string][] = [["Products", "#platform"], ["How we build", "#build"], ["Case Studies", "#work"], ["Enterprise", "#enterprise"]];
+const navLinks: [string, string][] = [["Services", "#platform"], ["Deliverables", "#build"], ["Case Studies", "#work"], ["Working together", "#enterprise"]];
 
 /* ---------- page ---------- */
 function Index() {
@@ -111,9 +111,45 @@ function Index() {
 
   const tp = P(tabProject[tab] ?? 0);
   const code = {
-    py: `# What we actually ship: a FastAPI webhook\n# behind a WhatsApp lead-qualification bot\n\nfrom fastapi import FastAPI, Request\n\napp = FastAPI()\n\n@app.post("/webhook/whatsapp")\nasync def inbound(req: Request):\n    msg = await req.json()\n    reply = await agent.answer(\n        msg["text"], knowledge="your-docs")\n    await whatsapp.send(msg["from"], reply)\n    if reply.qualified:\n        await crm.sync(msg["from"])\n    return {"ok": True}`,
-    js: `// The same webhook in Node —\n// every build is real code you own\n\nimport express from "express";\n\nconst app = express().use(express.json());\n\napp.post("/webhook/whatsapp", async (req, res) => {\n  const msg = req.body;\n  const reply = await agent.answer(msg.text, {\n    knowledge: "your-docs",\n  });\n  await whatsapp.send(msg.from, reply);\n  if (reply.qualified) await crm.sync(msg.from);\n  res.json({ ok: true });\n});`,
-    curl: `# Test the webhook the way Meta calls it\ncurl -X POST https://your-domain.com/webhook/whatsapp \\\n  -H "Content-Type: application/json" \\\n  -d '{\n    "from": "+91 98xxxxxx21",\n    "text": "What does the enterprise plan include?"\n  }'`,
+    py: `PROJECT BRIEF
+
+Your goal
+What needs to change for your business?
+
+The scope
+Pages, features and integrations to include.
+
+The practical details
+Content, access, budget and target timeline.
+
+The proposal
+Deliverables, milestones and exclusions.`,
+    js: `BUILD & REVIEW
+
+Design direction
+Agree the key screens or workflow.
+
+Development
+Build the features in the agreed scope.
+
+Review points
+Check progress and collect your feedback.
+
+Launch preparation
+Test the agreed flows and plan deployment.`,
+    curl: `PROJECT HANDOVER
+
+Source files
+The code and assets agreed in your scope.
+
+Documentation
+Setup notes and integration details.
+
+Walkthrough
+A review of the delivered project.
+
+Next steps
+Agree any maintenance or follow-on work.`,
   }[lang];
   const tq = P(tst);
 
@@ -122,7 +158,7 @@ function Index() {
       {/* Announcement bar */}
       {!annOff && (
         <div className="relative z-50 flex items-center justify-center gap-3 border-b border-periwinkle/40 bg-card/80 px-10 py-2 text-center text-[13px]">
-          <span className="rounded-full border border-border px-2 py-0.5 text-[11px] font-semibold text-indigo">New</span>
+          <span className="rounded-full border border-border px-2 py-0.5 text-[11px] font-semibold text-indigo">Agency</span>
           <span key={ann} className="inline-block animate-rise">{announcements[ann]}</span>
           <a href={WHATSAPP} target="_blank" rel="noreferrer" className="font-medium text-indigo underline underline-offset-2">Talk to us</a>
           <button aria-label="Dismiss announcement" onClick={() => setAnnOff(true)} className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full p-1 text-muted-foreground transition hover:text-foreground">
@@ -165,13 +201,13 @@ function Index() {
         <div className="pointer-events-none absolute inset-x-0 top-0 h-[720px] bg-glow animate-glow" />
         <div className="relative mx-auto max-w-4xl px-6 pt-24 pb-14 text-center">
           <img src={mark} alt="" className="mx-auto mb-8 h-14 w-auto animate-rise drop-shadow-lg" />
-          <div className="animate-rise" style={{ animationDelay: "100ms" }}><Eyebrow>India's Applied AI Studio</Eyebrow></div>
-          <h1 className="mt-8 text-6xl md:text-[5.2rem] leading-[1] animate-rise" style={{ animationDelay: "200ms" }}>AI that works for every business</h1>
+          <div className="animate-rise" style={{ animationDelay: "100ms" }}><Eyebrow>Freelance development & automation agency</Eyebrow></div>
+          <h1 className="mt-8 text-6xl md:text-[5.2rem] leading-[1] animate-rise" style={{ animationDelay: "200ms" }}>Kriyvo AI — your digital project partner</h1>
           <p className="mx-auto mt-7 max-w-xl text-lg leading-relaxed text-foreground/70 animate-rise" style={{ animationDelay: "300ms" }}>
-            Built on production-grade engineering. Powered by grounded frontier models.<br className="hidden md:block" /> Delivering measurable impact from day one.
+            Websites, AI assistants and connected workflows, built around your brief.<br className="hidden md:block" /> A freelance agency for the work your business needs next.
           </p>
           <div className="mt-10 flex justify-center gap-3 animate-rise" style={{ animationDelay: "400ms" }}>
-            <Btn href={WHATSAPP}>Book a call</Btn>
+            <Btn href={WHATSAPP}>Discuss your project</Btn>
             <Btn href="#work" dark={false}>See our work</Btn>
           </div>
           <div className="mx-auto mt-14 grid max-w-2xl grid-cols-2 gap-6 md:grid-cols-4 animate-rise" style={{ animationDelay: "500ms" }}>
@@ -179,10 +215,10 @@ function Index() {
               <div key={l}><p className="font-display text-4xl">{n}</p><p className="mt-1 text-xs text-muted-foreground">{l}</p></div>
             ))}
           </div>
-          <p className="mt-4 text-[11px] text-muted-foreground/70 animate-rise" style={{ animationDelay: "550ms" }}>Measured across live client deployments, 2025</p>
+          <p className="mt-4 text-[11px] text-muted-foreground/70 animate-rise" style={{ animationDelay: "550ms" }}>Project-based services, shaped around your goals and scope</p>
         </div>
         <div className="relative pb-16 pt-10">
-          <p className="mb-8 text-center text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">Businesses build with Kriyvo</p>
+          <p className="mb-8 text-center text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">Selected names from the project portfolio</p>
           <div className="overflow-hidden [mask-image:linear-gradient(90deg,transparent,black_12%,black_88%,transparent)]">
             <div className="flex w-max animate-marquee gap-20">
               {[...clients, ...clients, ...clients, ...clients].map((c, i) => (
@@ -197,7 +233,7 @@ function Index() {
       <section id="platform" className="relative py-24">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_50%_at_100%_30%,var(--periwinkle),transparent_70%)] opacity-40" />
         <div className="relative mx-auto max-w-6xl px-6">
-          <Reveal><h2 className="text-center text-5xl md:text-6xl">The AI platform<br />businesses build on</h2></Reveal>
+          <Reveal><h2 className="text-center text-5xl md:text-6xl">Freelance services.<br />Built around your brief.</h2></Reveal>
           <Reveal delay={150}>
             <div className="mt-14 overflow-hidden rounded-[28px] border border-border bg-card shadow-soft">
               <div className="flex overflow-x-auto border-b border-border bg-secondary/60 p-1.5">
@@ -228,10 +264,10 @@ function Index() {
       <section className="mx-auto max-w-6xl px-6 py-20">
         <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
           <Reveal>
-            <h2 className="text-4xl md:text-5xl">Kriyvo Agents</h2>
-            <p className="mt-3 max-w-md text-muted-foreground">AI teammates that research, qualify, call, escalate and get work done.</p>
+            <h2 className="text-4xl md:text-5xl">What we can build for you</h2>
+            <p className="mt-3 max-w-md text-muted-foreground">From a single business bottleneck to a connected customer journey — choose the work that fits your project.</p>
           </Reveal>
-          <Btn href="#work" dark={false}>See them in action</Btn>
+          <Btn href="#work" dark={false}>Explore project work</Btn>
         </div>
         <div className="mt-10 flex h-auto flex-col gap-2 md:h-[480px] md:flex-row">
           {workflow.map((w, i) => {
@@ -273,16 +309,16 @@ function Index() {
 
       {/* Developers: real code + bento */}
       <section id="build" className="mx-auto max-w-6xl px-6 py-24">
-        <Reveal><h2 className="text-center text-5xl md:text-6xl">Real code,<br />not a black box</h2></Reveal>
+        <Reveal><h2 className="text-center text-5xl md:text-6xl">Clear deliverables.<br />A considered handover.</h2></Reveal>
         <div className="mt-14 grid gap-4 lg:grid-cols-2">
           <Reveal>
             <div className="h-full rounded-3xl border border-border bg-card p-7">
-              <h3 className="text-3xl">This is what a build<br /><span className="text-gradient">actually looks like</span></h3>
-              <p className="mt-3 text-sm text-muted-foreground">A simplified excerpt from a production WhatsApp bot we shipped — you get the full source on handover.</p>
+              <h3 className="text-3xl">Your project,<br /><span className="text-gradient">clearly scoped</span></h3>
+              <p className="mt-3 text-sm text-muted-foreground">Before the build begins, we agree what is included, how you will review it and what you receive at handover.</p>
               <div className="mt-6 overflow-hidden rounded-2xl border border-border bg-secondary/50">
                 <div className="flex items-center gap-1 border-b border-border px-3 py-2 text-xs">
                   {(["py", "js", "curl"] as const).map((l) => (
-                    <button key={l} onClick={() => setLang(l)} className={`rounded-lg px-3 py-1.5 ${lang === l ? "bg-card font-medium shadow-sm" : "text-muted-foreground"}`}>{{ py: "Python", js: "JavaScript", curl: "cURL" }[l]}</button>
+                    <button key={l} onClick={() => setLang(l)} className={`rounded-lg px-3 py-1.5 ${lang === l ? "bg-card font-medium shadow-sm" : "text-muted-foreground"}`}>{{ py: "Brief", js: "Build", curl: "Handover" }[l]}</button>
                   ))}
                 </div>
                 <pre key={lang} className="h-60 overflow-auto p-5 font-mono text-[13px] leading-relaxed text-foreground/80 animate-rise">{code}</pre>
@@ -300,7 +336,7 @@ function Index() {
                 </div>
               </Reveal>
             ))}
-            {[{ icon: Plug, t: "REST & Webhooks" }, { icon: FileCheck, t: "Full Handover" }, { icon: Activity, t: "Live Monitoring" }].map((x, i) => (
+            {[{ icon: Plug, t: "Agreed integrations" }, { icon: FileCheck, t: "Project handover" }, { icon: Activity, t: "Support scoped to your needs" }].map((x, i) => (
               <Reveal key={x.t} delay={300 + i * 80} className={i === 2 ? "col-span-2" : ""}>
                 <div className="flex items-center gap-3 rounded-3xl border border-border bg-card p-5">
                   <x.icon className="h-5 w-5 text-muted-foreground" />
@@ -314,7 +350,7 @@ function Index() {
 
       {/* Full-stack */}
       <section className="mx-auto max-w-6xl px-6 py-24">
-        <Reveal><h2 className="text-center text-4xl md:text-5xl">India's full-stack<br />applied AI partner</h2></Reveal>
+        <Reveal><h2 className="text-center text-4xl md:text-5xl">Three ways we can<br />help your business</h2></Reveal>
         <div className="mt-14 grid gap-8 md:grid-cols-3">
           {fullstack.map((c, i) => (
             <Reveal key={c.t} delay={i * 120}>
@@ -339,12 +375,12 @@ function Index() {
       {/* Enterprise + deployment */}
       <section id="enterprise" className="mx-auto max-w-6xl px-6 py-24">
         <Reveal>
-          <h2 className="text-center text-4xl md:text-5xl">Enterprise-grade. Out of<br />the box.</h2>
-          <p className="mt-4 text-center text-muted-foreground">Monitoring, control and confidence. Not bolted on. Built in from day one.</p>
+          <h2 className="text-center text-4xl md:text-5xl">A freelance engagement.<br />Not a software subscription.</h2>
+          <p className="mt-4 text-center text-muted-foreground">A defined brief, practical milestones and a handover planned around your team.</p>
         </Reveal>
         <div className="mt-14 grid gap-4 md:grid-cols-2">
-          {[["Forward deployed", "We work alongside your team, designing agents, integrating systems and staying until you're live. Not a handoff. A partnership.", process.map((p) => p.title)],
-            ["Deployment flexibility", "Agents run where your data already lives — your CRM, your cloud, your channels. Your agents, your terms.", ["Web, WhatsApp, phone or email", "Bring your own model or use ours", "Swap tools without rewriting workflows", "Complete documentation & handover"]]].map(([t, d, l], i) => (
+          {[["From brief to launch", "We start with your business goal, outline the work and agree review points before development. You can see how the project moves from discovery to handover.", process.map((p) => p.title)],
+            ["An engagement that fits", "Bring a new idea, an existing website or a workflow that needs improving. The proposal defines the deliverables, dependencies and next steps.", ["New builds or focused improvements", "Integrations matched to your existing tools", "Milestones and review points agreed upfront", "Hosting, handover and support clearly scoped"]]].map(([t, d, l], i) => (
             <Reveal key={t as string} delay={i * 120}>
               <div className="h-full rounded-3xl border border-border bg-card p-8">
                 <h3 className="text-2xl">{t as string}</h3>
@@ -356,11 +392,11 @@ function Index() {
           <Reveal className="md:col-span-2">
             <div className="flex flex-col gap-6 rounded-3xl border border-border bg-card p-8 md:flex-row md:items-center md:justify-between">
               <div className="max-w-lg">
-                <h3 className="text-2xl">Reliability and governance</h3>
-                <p className="mt-2 text-sm text-muted-foreground">Every agent action is logged and traceable — exception alerts, evaluation benchmarks and human escalation checkpoints are built into the core.</p>
+                <h3 className="text-2xl">No surprises in the scope</h3>
+                <p className="mt-2 text-sm text-muted-foreground">We separate the build from ongoing needs such as hosting, API usage and maintenance. Any extra work is discussed before it becomes part of the project.</p>
               </div>
               <div className="flex flex-wrap gap-2">
-                {["Live monitoring", "Exception alerts", "Audit logs", "Human handoff", "NDA protected"].map((b) => (
+                {["Project brief", "Deliverables", "Review points", "Third-party costs", "Handover"].map((b) => (
                   <span key={b} className="rounded-xl border border-accent/30 bg-accent/5 px-3 py-2 text-xs font-medium text-accent">{b}</span>
                 ))}
               </div>
@@ -377,12 +413,12 @@ function Index() {
             </Reveal>
           ))}
         </div>
-        <div className="mt-10 text-center"><Btn href={WHATSAPP}>Talk to us about your setup</Btn></div>
+        <div className="mt-10 text-center"><Btn href={WHATSAPP}>Discuss how we can work together</Btn></div>
       </section>
 
       {/* Outcomes carousel */}
       <section className="mx-auto max-w-6xl px-6 py-24">
-        <Reveal><h2 className="text-center text-4xl md:text-5xl">Outcomes from live deployments</h2></Reveal>
+        <Reveal><h2 className="text-center text-4xl md:text-5xl">A closer look at the portfolio</h2></Reveal>
         <Reveal delay={120}>
           <div className="relative mt-12 overflow-hidden rounded-3xl border border-border bg-card p-8 md:p-12">
             <div key={tst} className="grid items-center gap-10 md:grid-cols-[1.4fr_1fr] animate-rise">
@@ -396,7 +432,7 @@ function Index() {
             </div>
             <div className="mt-8 flex justify-center gap-2.5">
               {projects.map((_, i) => (
-                <button key={i} aria-label={`Show outcome ${i + 1}`} onClick={() => setTst(i)} className={`h-2.5 rounded-full transition-all duration-500 ${i === tst ? "w-9 bg-accent" : "w-2.5 bg-border hover:bg-muted-foreground/40"}`} />
+                <button key={i} aria-label={`Show project ${i + 1}`} onClick={() => setTst(i)} className={`h-2.5 rounded-full transition-all duration-500 ${i === tst ? "w-9 bg-accent" : "w-2.5 bg-border hover:bg-muted-foreground/40"}`} />
               ))}
             </div>
           </div>
@@ -405,7 +441,7 @@ function Index() {
 
       {/* Case studies as "Research & Updates" cards */}
       <section id="work" className="mx-auto max-w-6xl px-6 py-24">
-        <Reveal><h2 className="text-center text-4xl md:text-5xl">Case studies</h2></Reveal>
+        <Reveal><h2 className="text-center text-4xl md:text-5xl">Selected project work</h2></Reveal>
         <div className="mt-12 grid gap-8 md:grid-cols-2">
           {caseStudies.map((c, i) => (
             <Reveal key={c.title} delay={(i % 2) * 100}>
@@ -427,7 +463,7 @@ function Index() {
       <section className="mx-auto max-w-6xl px-6 py-24">
         <Reveal>
           <h2 className="text-center text-4xl md:text-5xl">Inside the builds</h2>
-          <p className="mx-auto mt-4 max-w-xl text-center text-muted-foreground">The problem, what we built and what it delivered — four production systems, end to end.</p>
+          <p className="mx-auto mt-4 max-w-xl text-center text-muted-foreground">A closer look at four projects from the supplied portfolio: the client need, the development work and the delivery.</p>
         </Reveal>
         <div className="mt-16 space-y-20">
           {caseStudies.map((c, i) => (
@@ -445,7 +481,7 @@ function Index() {
                       <p className="mt-1.5 text-[15px] leading-relaxed text-foreground/80">{c.problem}</p>
                     </div>
                     <div>
-                      <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">What we built</p>
+                      <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">The project delivery</p>
                       <p className="mt-1.5 text-[15px] leading-relaxed text-foreground/80">{c.built}</p>
                     </div>
                   </div>
@@ -468,8 +504,8 @@ function Index() {
         <Reveal>
           <div className="relative overflow-hidden rounded-[32px] bg-ink px-8 py-20 text-center text-ink-foreground">
             <div className="pointer-events-none absolute inset-x-0 -top-40 mx-auto h-96 w-[600px] rounded-full bg-accent-gradient opacity-50 blur-3xl animate-glow" />
-            <h2 className="relative text-5xl md:text-6xl">Ready to build something<br />extraordinary?</h2>
-            <p className="relative mx-auto mt-5 max-w-lg text-ink-foreground/65">Production-ready code with guaranteed handover. Let's turn your ideas into systems people love.</p>
+            <h2 className="relative text-5xl md:text-6xl">What are you<br />working on next?</h2>
+            <p className="relative mx-auto mt-5 max-w-lg text-ink-foreground/65">Tell us what you need, what is already in place and your target timeline. We can discuss the scope and the next step.</p>
             <div className="relative mt-9 flex flex-wrap justify-center gap-3">
               <a href={WHATSAPP} target="_blank" rel="noreferrer" className="rounded-full bg-card px-6 py-3 text-sm font-medium text-card-foreground">Chat on WhatsApp</a>
               <a href="#work" className="rounded-full border border-ink-foreground/25 px-6 py-3 text-sm font-medium">Browse case studies</a>
@@ -483,14 +519,14 @@ function Index() {
         <div className="mx-auto grid max-w-6xl gap-10 px-6 md:grid-cols-[1.3fr_repeat(4,1fr)]">
           <div>
             <Logo />
-            <p className="mt-2 text-sm text-muted-foreground">AI that works for every business</p>
+            <p className="mt-2 text-sm text-muted-foreground">Freelance web development, AI & automation</p>
             <p className="mt-8 text-xs text-muted-foreground">© 2026 Kriyvo AI<br />Delhi NCR, India</p>
           </div>
           {([
-            ["Products", [["Chat Agents", "#platform"], ["Voice Agents", "#platform"], ["WhatsApp Bots", "#platform"], ["Automations", "#platform"], ["Websites", "#platform"]]],
-            ["Capabilities", [["RAG Knowledge Base", "#build"], ["Lead Qualification", "#build"], ["Sentiment Triage", "#build"], ["CRM Sync", "#build"]]],
+            ["Services", [["AI Assistants", "#platform"], ["Voice Agents", "#platform"], ["WhatsApp Bots", "#platform"], ["Automations", "#platform"], ["Websites", "#platform"]]],
+            ["Project deliverables", [["RAG Knowledge Base", "#build"], ["Lead Qualification", "#build"], ["Sentiment Triage", "#build"], ["CRM Sync", "#build"]]],
             ["Work", caseStudies.map((c) => [c.client, "#work"] as [string, string])],
-            ["Company", [["Process", "#enterprise"], ["Case Studies", "#work"], ["Contact", WHATSAPP], ["WhatsApp", WHATSAPP]]],
+            ["Agency", [["Working together", "#enterprise"], ["Case Studies", "#work"], ["Contact", WHATSAPP], ["WhatsApp", WHATSAPP]]],
           ] as [string, [string, string][]][]).map(([h, items]) => (
             <div key={h}>
               <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">{h}</p>
