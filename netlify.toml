@@ -6,3 +6,8 @@
 
 [build.environment]
   NODE_VERSION = "22"
+  # These variables hold public, non-secret values (model names, a voice id, the Apify actor name,
+  # the browser-side Turnstile site key, the site URL, the sender address). Their values also appear
+  # in code as defaults or ship to the browser by design, so the secrets scanner must not flag them.
+  # Real secrets (API keys and tokens) are still scanned.
+  SECRETS_SCAN_OMIT_KEYS = "GROQ_CHAT_MODEL,GROQ_FALLBACK_MODEL,ELEVENLABS_TTS_MODEL,ELEVENLABS_VOICE_ID,APIFY_ACTOR,VITE_TURNSTILE_SITE_KEY,SITE_URL,INVITE_FROM,UPSTASH_REDIS_REST_URL"
