@@ -91,7 +91,21 @@ const businessSchema = {
   ],
 };
 
+/**
+ * Security headers on every server-rendered page (netlify.toml sets the same ones for static files).
+ * The CSP is report-only: browsers log what it would block without blocking anything. Keep it in sync
+ * with netlify.toml, and switch both to an enforced Content-Security-Policy once the live site shows no violations.
+ */
+const SECURITY_HEADERS = {
+  "Referrer-Policy": "strict-origin-when-cross-origin",
+  "X-Frame-Options": "SAMEORIGIN",
+  "X-Content-Type-Options": "nosniff",
+  "Permissions-Policy": "camera=(), geolocation=(), payment=(), usb=(), microphone=(self)",
+  "Content-Security-Policy-Report-Only": "default-src 'self'; script-src 'self' 'unsafe-inline' https://challenges.cloudflare.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://api.producthunt.com https://media.licdn.com; media-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' https://challenges.cloudflare.com https://cloudflareinsights.com; frame-src https://challenges.cloudflare.com; frame-ancestors 'self'; base-uri 'self'; form-action 'self'; object-src 'none'",
+};
+
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
+  headers: () => SECURITY_HEADERS,
   head: ({ matches }) => {
     const path = matches[matches.length - 1]?.pathname ?? "/";
     const canonical = `${BUSINESS.url}${path === "/" ? "/" : path.replace(/\/$/, "")}`;

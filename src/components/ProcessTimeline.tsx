@@ -44,7 +44,7 @@ export function ProcessTimeline({ text = "A clear process, with how long each st
         const on = fill >= (i + 0.25) / timeline.length;
         return <li key={t.step} className="relative pb-10 pl-12 last:pb-0">
           <span aria-hidden className={`absolute left-0 top-1 grid h-6 w-6 place-items-center rounded-full border-2 transition-colors duration-500 ${on ? "border-flame bg-flame" : "border-border bg-background"}`}><span className={`h-2 w-2 rounded-full ${on ? "bg-white" : "bg-border"}`} /></span>
-          <div className={`transition-opacity duration-500 ${on ? "opacity-100" : "opacity-55"}`}>
+          <div>
             <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5"><h3 className="font-display text-[1.5rem] font-normal md:text-[1.75rem]">{t.step}</h3><span className="rounded-full bg-stone px-3 py-1 text-[13px] text-foreground/70">{t.time}</span></div>
             <p className="mt-2 max-w-lg text-[16px] leading-relaxed text-foreground/75">{t.text}</p>
           </div>

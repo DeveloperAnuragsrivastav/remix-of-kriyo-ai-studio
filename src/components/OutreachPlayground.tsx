@@ -148,7 +148,7 @@ export function OutreachPlayground({ trigger }: { trigger?: ReactNode } = {}) {
               </div>
               <label className="flex cursor-pointer items-start gap-3 rounded-2xl bg-stone p-4 text-[15px] leading-relaxed">
                 <input type="checkbox" checked={consent} onChange={e => setConsent(e.target.checked)} required className="mt-0.5 h-4 w-4 shrink-0 accent-[var(--accent)]" />
-                <span>Use my <strong>public</strong> LinkedIn profile to personalise this demo. It's used once to write the invite and isn't stored.</span>
+                <span>Use my <strong>public</strong> LinkedIn profile to personalise this demo. It's used once to write the invite and isn't stored. <a href="/privacy-policy#demos" target="_blank" rel="noreferrer" className="text-accent underline underline-offset-4">How demo data is handled</a></span>
               </label>
               <Turnstile onToken={setCaptcha} />
               {error && <p role="alert" className="rounded-xl border border-destructive/30 bg-destructive/5 p-3 text-sm text-destructive">{error}</p>}

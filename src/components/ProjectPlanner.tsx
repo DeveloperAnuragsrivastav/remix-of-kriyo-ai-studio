@@ -120,7 +120,7 @@ export function ProjectPlanner({ compact = false }: { compact?: boolean }) {
         <button type="button" onClick={send} className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-ink-foreground px-6 py-4 text-[15px] font-medium text-ink transition hover:bg-ink-foreground/85">
           Get my estimate on WhatsApp <ArrowUpRight className="h-4 w-4" />
         </button>
-        <p className="mt-3 text-sm leading-relaxed text-ink-foreground/60">Prices are from the published packages. I reply personally to confirm the final price and timeline.</p>
+        <p className="mt-3 text-sm leading-relaxed text-ink-foreground/60">Prices are from the published packages. I reply personally to confirm the final price and timeline. The button opens WhatsApp with your brief ready to review; nothing is sent until you press send. <a href="/privacy-policy#contact" className="text-ink-foreground/80 underline underline-offset-4 hover:text-ink-foreground">Privacy</a></p>
       </div>
     </div>
   );

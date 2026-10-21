@@ -60,7 +60,7 @@ export function SwipeRow({ children, grid, at = "lg", label }: { children: React
       {items.map((c, n) => <div key={n} className={`flex w-[86%] max-w-[420px] shrink-0 snap-center ${md ? "md:w-auto md:max-w-none" : "lg:w-auto lg:max-w-none"}`}>{c}</div>)}
     </div>
     <div className={`mt-5 flex justify-center gap-1 ${md ? "md:hidden" : "lg:hidden"}`}>
-      {items.map((_, n) => <button key={n} type="button" aria-label={`Show item ${n + 1} of ${items.length}`} onClick={() => to(n)} className="grid h-6 place-items-center px-0.5"><span className={`block h-1.5 rounded-full transition-all duration-500 ${n === i ? "w-6 bg-ink" : "w-1.5 bg-foreground/20"}`} /></button>)}
+      {items.map((_, n) => <button key={n} type="button" aria-label={`Show item ${n + 1} of ${items.length}`} onClick={() => to(n)} className="grid h-6 min-w-6 place-items-center rounded-full px-0.5"><span className={`block h-1.5 rounded-full transition-all duration-500 ${n === i ? "w-6 bg-ink" : "w-1.5 bg-foreground/20"}`} /></button>)}
     </div>
   </div>;
 }

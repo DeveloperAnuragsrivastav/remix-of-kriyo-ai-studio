@@ -81,7 +81,7 @@ export function AgencyFooter() {
         <ul className="grid content-start gap-0.5 text-[15px]">{footerLinks.slice(7).map(([label, to]) => <li key={to}><Link to={to} className="inline-block py-1.5 text-muted-foreground transition-colors hover:text-foreground">{label}</Link></li>)}</ul>
         </div>
       </div>
-      <p className="mt-14 text-[13px] text-muted-foreground">© 2026 Kriyvo AI · Freelance website designer, developer & AI automation engineer</p>
+      <div className="mt-14 flex flex-col gap-3 text-[13px] text-muted-foreground sm:flex-row sm:items-center sm:justify-between"><p>© 2026 Kriyvo AI · Freelance website designer, developer & AI automation engineer</p><p className="flex gap-5"><Link to="/privacy-policy" className="py-1.5 hover:text-foreground">Privacy Policy</Link><Link to="/terms" className="py-1.5 hover:text-foreground">Terms of Service</Link></p></div>
     </div>
     <p aria-hidden className="wordmark-fill mt-6 select-none overflow-hidden whitespace-nowrap px-2 text-center font-sans text-[25vw] font-semibold leading-[0.95] tracking-[-0.04em] pb-[0.14em]" style={{ backgroundImage: `linear-gradient(115deg, oklch(0.82 0.15 75 / 0.55), oklch(0.68 0.21 42 / 0.6) 55%, oklch(0.5 0.17 35 / 0.55)), url(${texture})`, filter: "brightness(1.35) saturate(1.1)" }}>kriyvo</p>
   </footer>;

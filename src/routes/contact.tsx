@@ -44,6 +44,7 @@ function Contact() {
             <div><label htmlFor="service" className="mb-2 block text-[15px]">What do you need?</label><select id="service" value={service} onChange={e => setService(e.target.value)} className={`h-[52px] ${field}`}>{serviceOptions.map(o => <option key={o}>{o}</option>)}</select></div>
             <div><label htmlFor="brief" className="mb-2 block text-[15px]">Project brief</label><textarea id="brief" value={brief} onChange={e => setBrief(e.target.value)} required placeholder="What are you looking to build? Any deadline or budget in mind?" className={`min-h-40 py-3.5 ${field}`} /></div>
             <button type="submit" className="btn btn-dark w-full !py-4">Continue on WhatsApp <ArrowUpRight aria-hidden className="h-4 w-4" /></button>
+            <p className="text-center text-[14px] text-muted-foreground">Opens WhatsApp with your message ready to review. Nothing is sent until you press send. <a href="/privacy-policy#contact" className="underline underline-offset-4 hover:text-foreground">Privacy</a></p>
           </div>
         </form>
       </div>

@@ -18,8 +18,10 @@ import { Route as DeliverablesRouteImport } from './routes/deliverables'
 import { Route as EstimateRouteImport } from './routes/estimate'
 import { Route as PortfolioRouteImport } from './routes/portfolio'
 import { Route as PricingRouteImport } from './routes/pricing'
+import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as TermsRouteImport } from './routes/terms'
 import { Route as WebDeveloperDelhiNcrRouteImport } from './routes/web-developer-delhi-ncr'
 import { Route as WebsiteDeveloperEastDelhiRouteImport } from './routes/website-developer-east-delhi'
 import { Route as WorkingTogetherRouteImport } from './routes/working-together'
@@ -77,6 +79,11 @@ const PricingRoute = PricingRouteImport.update({
   path: '/pricing',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
+  id: '/privacy-policy',
+  path: '/privacy-policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ServicesRoute = ServicesRouteImport.update({
   id: '/services',
   path: '/services',
@@ -85,6 +92,11 @@ const ServicesRoute = ServicesRouteImport.update({
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
   getParentRoute: () => rootRouteImport,
 } as any)
 const WebDeveloperDelhiNcrRoute = WebDeveloperDelhiNcrRouteImport.update({
@@ -154,8 +166,10 @@ export interface FileRoutesByFullPath {
   '/estimate': typeof EstimateRoute
   '/portfolio': typeof PortfolioRouteWithChildren
   '/pricing': typeof PricingRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
   '/services': typeof ServicesRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/terms': typeof TermsRoute
   '/web-developer-delhi-ncr': typeof WebDeveloperDelhiNcrRoute
   '/website-developer-east-delhi': typeof WebsiteDeveloperEastDelhiRoute
   '/working-together': typeof WorkingTogetherRoute
@@ -175,7 +189,9 @@ export interface FileRoutesByTo {
   '/deliverables': typeof DeliverablesRoute
   '/estimate': typeof EstimateRoute
   '/pricing': typeof PricingRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/terms': typeof TermsRoute
   '/web-developer-delhi-ncr': typeof WebDeveloperDelhiNcrRoute
   '/website-developer-east-delhi': typeof WebsiteDeveloperEastDelhiRoute
   '/working-together': typeof WorkingTogetherRoute
@@ -199,8 +215,10 @@ export interface FileRoutesById {
   '/estimate': typeof EstimateRoute
   '/portfolio': typeof PortfolioRouteWithChildren
   '/pricing': typeof PricingRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
   '/services': typeof ServicesRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/terms': typeof TermsRoute
   '/web-developer-delhi-ncr': typeof WebDeveloperDelhiNcrRoute
   '/website-developer-east-delhi': typeof WebsiteDeveloperEastDelhiRoute
   '/working-together': typeof WorkingTogetherRoute
@@ -225,8 +243,10 @@ export interface FileRouteTypes {
     | '/estimate'
     | '/portfolio'
     | '/pricing'
+    | '/privacy-policy'
     | '/services'
     | '/sitemap.xml'
+    | '/terms'
     | '/web-developer-delhi-ncr'
     | '/website-developer-east-delhi'
     | '/working-together'
@@ -246,7 +266,9 @@ export interface FileRouteTypes {
     | '/deliverables'
     | '/estimate'
     | '/pricing'
+    | '/privacy-policy'
     | '/sitemap.xml'
+    | '/terms'
     | '/web-developer-delhi-ncr'
     | '/website-developer-east-delhi'
     | '/working-together'
@@ -269,8 +291,10 @@ export interface FileRouteTypes {
     | '/estimate'
     | '/portfolio'
     | '/pricing'
+    | '/privacy-policy'
     | '/services'
     | '/sitemap.xml'
+    | '/terms'
     | '/web-developer-delhi-ncr'
     | '/website-developer-east-delhi'
     | '/working-together'
@@ -294,8 +318,10 @@ export interface RootRouteChildren {
   EstimateRoute: typeof EstimateRoute
   PortfolioRoute: typeof PortfolioRouteWithChildren
   PricingRoute: typeof PricingRoute
+  PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   ServicesRoute: typeof ServicesRouteWithChildren
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  TermsRoute: typeof TermsRoute
   WebDeveloperDelhiNcrRoute: typeof WebDeveloperDelhiNcrRoute
   WebsiteDeveloperEastDelhiRoute: typeof WebsiteDeveloperEastDelhiRoute
   WorkingTogetherRoute: typeof WorkingTogetherRoute
@@ -366,6 +392,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PricingRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/privacy-policy': {
+      id: '/privacy-policy'
+      path: '/privacy-policy'
+      fullPath: '/privacy-policy'
+      preLoaderRoute: typeof PrivacyPolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/services': {
       id: '/services'
       path: '/services'
@@ -378,6 +411,13 @@ declare module '@tanstack/react-router' {
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/web-developer-delhi-ncr': {
@@ -524,8 +564,10 @@ const rootRouteChildren: RootRouteChildren = {
   EstimateRoute: EstimateRoute,
   PortfolioRoute: PortfolioRouteWithChildren,
   PricingRoute: PricingRoute,
+  PrivacyPolicyRoute: PrivacyPolicyRoute,
   ServicesRoute: ServicesRouteWithChildren,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  TermsRoute: TermsRoute,
   WebDeveloperDelhiNcrRoute: WebDeveloperDelhiNcrRoute,
   WebsiteDeveloperEastDelhiRoute: WebsiteDeveloperEastDelhiRoute,
   WorkingTogetherRoute: WorkingTogetherRoute,

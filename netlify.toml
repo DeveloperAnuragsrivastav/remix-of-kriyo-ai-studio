@@ -11,3 +11,16 @@
   # in code as defaults or ship to the browser by design, so the secrets scanner must not flag them.
   # Real secrets (API keys and tokens) are still scanned.
   SECRETS_SCAN_OMIT_KEYS = "GROQ_CHAT_MODEL,GROQ_FALLBACK_MODEL,ELEVENLABS_TTS_MODEL,ELEVENLABS_VOICE_ID,APIFY_ACTOR,VITE_TURNSTILE_SITE_KEY,SITE_URL,INVITE_FROM,UPSTASH_REDIS_REST_URL"
+
+# Security headers. These are low-risk and enforced. The Content-Security-Policy is report-only for now:
+# browsers log anything it would block (DevTools console) without blocking it. Once the live site shows
+# no violations, rename the key to "Content-Security-Policy" to enforce it.
+# Origins in use: Cloudflare Turnstile (script + frame), Cloudflare Web Analytics beacon (injected by the Cloudflare proxy), Product Hunt badge image, LinkedIn profile photos
+# inside the demo invite preview, inline data: audio for the voice demo.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "SAMEORIGIN"
+    Permissions-Policy = "camera=(), geolocation=(), payment=(), usb=(), microphone=(self)"
+    Content-Security-Policy-Report-Only = "default-src 'self'; script-src 'self' 'unsafe-inline' https://challenges.cloudflare.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://api.producthunt.com https://media.licdn.com; media-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' https://challenges.cloudflare.com https://cloudflareinsights.com; frame-src https://challenges.cloudflare.com; frame-ancestors 'self'; base-uri 'self'; form-action 'self'; object-src 'none'"

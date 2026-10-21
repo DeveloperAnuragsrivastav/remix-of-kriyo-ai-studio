@@ -29,7 +29,7 @@ export function FaqSection({ title = "Frequently asked questions", text, faqs, e
           <h3 className="font-sans text-[17px] font-normal leading-snug md:text-lg">
             <button type="button" id={`${id}-q${i}`} aria-expanded={on} aria-controls={`${id}-a${i}`} onClick={() => setOpen(on ? null : i)}
               className="flex w-full items-center gap-4 px-5 py-5 text-left md:gap-6 md:px-7 md:py-6">
-              <span aria-hidden className={`w-7 shrink-0 font-display text-[15px] tabular transition-colors ${on ? "text-accent" : "text-foreground/35"}`}>{String(i + 1).padStart(2, "0")}</span>
+              <span aria-hidden className={`w-7 shrink-0 font-display text-[15px] tabular transition-colors ${on ? "text-accent" : "text-foreground/60"}`}>{String(i + 1).padStart(2, "0")}</span>
               <span className="flex-1">{f.q}</span>
               <span aria-hidden className={`grid h-10 w-10 shrink-0 place-items-center rounded-full transition-all duration-500 ease-[cubic-bezier(.16,1,.3,1)] ${on ? "rotate-45 bg-ink text-ink-foreground" : "bg-card text-foreground"}`}><Plus className="h-4 w-4" /></span>
             </button>
