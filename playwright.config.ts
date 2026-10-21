@@ -20,5 +20,7 @@ export default defineConfig({
     url: `http://localhost:${PORT}`,
     reuseExistingServer: true,
     timeout: 120_000,
+    // Cloudflare's published Turnstile test keys: the widget always passes, so tests never hit a real challenge.
+    env: { VITE_TURNSTILE_SITE_KEY: "1x00000000000000000000AA", TURNSTILE_SECRET_KEY: "1x0000000000000000000000000000000AA" },
   },
 });
