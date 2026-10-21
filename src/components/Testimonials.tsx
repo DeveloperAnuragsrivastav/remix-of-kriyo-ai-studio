@@ -38,11 +38,11 @@ export function Testimonials({ title = "What our clients say" }: { title?: strin
           <span aria-hidden className="grid h-14 w-14 shrink-0 place-items-center rounded-full text-xl font-medium text-white" style={{ background: avatarColor(r.name) }}>{[...r.name][0]?.toUpperCase()}</span>
           <span><span className="block text-[18px] font-medium">{r.name}</span><span className="mt-0.5 flex items-center gap-2 text-[14px] text-muted-foreground"><Stars rating={r.rating} size="h-3.5 w-3.5" />Google review</span></span>
         </div>
-        <div className="flex w-full items-center gap-2 sm:w-auto">
+        <div className="flex w-full flex-wrap items-center gap-2 sm:w-auto sm:flex-nowrap">
           <button type="button" aria-label="Previous review" onClick={() => go(-1)} className="btn btn-light !h-11 !w-11 !p-0"><ChevronLeft aria-hidden className="h-5 w-5" /></button>
           <span className="w-12 text-center text-[14px] text-muted-foreground tabular">{i + 1} / {reviews.length}</span>
           <button type="button" aria-label="Next review" onClick={() => go(1)} className="btn btn-light !h-11 !w-11 !p-0"><ChevronRight aria-hidden className="h-5 w-5" /></button>
-          <a href={GOOGLE_REVIEWS_URL} target="_blank" rel="noopener noreferrer" className="btn btn-light ml-auto sm:ml-2">Read on Google</a>
+          <a href={GOOGLE_REVIEWS_URL} target="_blank" rel="noopener noreferrer" className="btn btn-light w-full shrink-0 whitespace-nowrap sm:ml-2 sm:w-auto">Read on Google</a>
         </div>
       </div>
     </div></Reveal>

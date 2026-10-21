@@ -14,6 +14,7 @@ export const BUSINESS = {
   postalCode: "110096",
   country: "IN",
   instagram: "https://www.instagram.com/kriyvo.ai/",
+  linkedin: "https://www.linkedin.com/company/kriyvoai/",
   description: "Kriyvo AI is an independent studio in New Ashok Nagar, New Delhi, building custom websites, WordPress and PHP sites, AI chatbots, WhatsApp bots, voice agents and n8n workflow automation for service businesses.",
 } as const;
 

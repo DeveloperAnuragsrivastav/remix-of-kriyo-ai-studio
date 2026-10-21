@@ -4,7 +4,7 @@ import { articles } from "@/lib/blog-data";
 import { caseStudies, projects } from "@/lib/kriyo-data";
 import { services } from "@/lib/services-data";
 
-const STATIC_PAGES = ["/", "/services", "/pricing", "/portfolio", "/case-studies", "/blog", "/about", "/estimate", "/contact", "/deliverables", "/working-together", "/website-developer-east-delhi", "/web-developer-delhi-ncr"];
+const STATIC_PAGES = ["/", "/services", "/pricing", "/portfolio", "/case-studies", "/blog", "/about", "/estimate", "/contact", "/deliverables", "/working-together", "/website-developer-east-delhi", "/web-developer-delhi-ncr", "/privacy-policy", "/terms"];
 
 export const Route = createFileRoute("/sitemap.xml")({
   server: {

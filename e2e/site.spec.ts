@@ -62,7 +62,10 @@ test("all internal links resolve and none jump to home-page sections", async ({ 
     const html = await res.text();
     for (const [, href] of html.matchAll(/href="([^"]+)"/g)) {
       if (!href) continue;
-      if (/^\/[^/]*#|^#/.test(href) && !href.startsWith("#section") && href !== "#estimate") anchors.push(`${url} -> ${href}`);
+      // Links into home-page sections ("/#pricing", or "#x" on the home page) break when the layout changes.
+      // In-page anchors on other pages, like a policy's table of contents, are fine.
+      const intoHome = href.startsWith("/#") || (url === "/" && href.startsWith("#") && !href.startsWith("#section") && href !== "#estimate");
+      if (intoHome) anchors.push(`${url} -> ${href}`);
       if (href.startsWith("/") && !href.startsWith("//") && !/\.(css|js|png|webp|ico|svg|txt)(\?|$)/.test(href)) {
         const path = href.split("#")[0]!.split("?")[0]!;
         if (path && !seen.has(path)) { seen.add(path); queue.push(path); }

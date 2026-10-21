@@ -1,2 +1,10 @@
 # Only serve the site on its own domain (static files included).
 https://kriyvo-ai.netlify.app/*  https://kriyvoai.online/:splat  301!
+
+# Common policy URLs point to the two real policy pages.
+/privacy            /privacy-policy           301
+/privacy/           /privacy-policy           301
+/cookie-policy      /privacy-policy#cookies   301
+/cookies            /privacy-policy#cookies   301
+/terms-of-service   /terms                    301
+/terms-and-conditions /terms                  301

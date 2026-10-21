@@ -1,6 +1,7 @@
 import { Children, useRef, useState, type ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, Instagram, Linkedin } from "lucide-react";
+import { BUSINESS } from "@/lib/business";
 import { Reveal } from "@/components/Reveal";
 
 /** Shared pieces of the site's visual language, so every page speaks the same way. */
@@ -60,7 +61,35 @@ export function SwipeRow({ children, grid, at = "lg", label }: { children: React
       {items.map((c, n) => <div key={n} className={`flex w-[86%] max-w-[420px] shrink-0 snap-center ${md ? "md:w-auto md:max-w-none" : "lg:w-auto lg:max-w-none"}`}>{c}</div>)}
     </div>
     <div className={`mt-5 flex justify-center gap-1 ${md ? "md:hidden" : "lg:hidden"}`}>
-      {items.map((_, n) => <button key={n} type="button" aria-label={`Show item ${n + 1} of ${items.length}`} onClick={() => to(n)} className="grid h-6 place-items-center px-0.5"><span className={`block h-1.5 rounded-full transition-all duration-500 ${n === i ? "w-6 bg-ink" : "w-1.5 bg-foreground/20"}`} /></button>)}
+      {items.map((_, n) => <button key={n} type="button" aria-label={`Show item ${n + 1} of ${items.length}`} onClick={() => to(n)} className="grid h-6 min-w-6 place-items-center rounded-full px-0.5"><span className={`block h-1.5 rounded-full transition-all duration-500 ${n === i ? "w-6 bg-ink" : "w-1.5 bg-foreground/20"}`} /></button>)}
     </div>
   </div>;
+}
+
+const socials = [
+  { label: "Instagram", handle: "@kriyvo.ai", href: BUSINESS.instagram, icon: Instagram, note: "Builds, demos and behind the scenes" },
+  { label: "LinkedIn", handle: "Kriyvo AI", href: BUSINESS.linkedin, icon: Linkedin, note: "Case studies and project updates" },
+] as const;
+
+/**
+ * Kriyvo's social profiles. "pills" is the compact footer form; "cards" is the larger contact-page form.
+ * On hover the pill fills with ink and the arrow lifts, matching the site's buttons.
+ */
+export function Socials({ variant = "pills", dark = false }: { variant?: "pills" | "cards"; dark?: boolean }) {
+  if (variant === "cards") return <ul className="space-y-3">
+    {socials.map(s => <li key={s.label}><a href={s.href} target="_blank" rel="noopener noreferrer me" aria-label={`${s.label}: ${s.handle} (opens in a new tab)`}
+      className="group flex h-full items-center gap-4 rounded-[20px] bg-stone px-5 py-4 transition-colors duration-300 hover:bg-ink hover:text-ink-foreground">
+      <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-card shadow-[inset_0_0_0_1px_var(--color-border)] transition-colors duration-300 group-hover:bg-ink-foreground/10 group-hover:shadow-none"><s.icon aria-hidden className="h-5 w-5" /></span>
+      <span className="min-w-0 flex-1"><span className="block text-[16px] font-medium">{s.label} · <span className="font-normal">{s.handle}</span></span><span className="block text-[14px] text-muted-foreground transition-colors group-hover:text-ink-foreground/65">{s.note}</span></span>
+      <ArrowUpRight aria-hidden className="h-5 w-5 shrink-0 text-muted-foreground transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-ink-foreground" />
+    </a></li>)}
+  </ul>;
+  return <ul className="flex flex-wrap gap-2">
+    {socials.map(s => <li key={s.label}><a href={s.href} target="_blank" rel="noopener noreferrer me" aria-label={`${s.label}: ${s.handle} (opens in a new tab)`}
+      className={`group inline-flex h-11 items-center gap-2.5 rounded-full pl-1.5 pr-4 text-[15px] transition-colors duration-300 ${dark ? "bg-ink-foreground/10 text-ink-foreground hover:bg-ink-foreground hover:text-ink" : "bg-card shadow-[inset_0_0_0_1px_var(--color-border)] hover:bg-ink hover:text-ink-foreground hover:shadow-none"}`}>
+      <span className={`grid h-8 w-8 place-items-center rounded-full transition-colors duration-300 ${dark ? "bg-ink-foreground/10 group-hover:bg-ink/10" : "bg-stone group-hover:bg-ink-foreground/15"}`}><s.icon aria-hidden className="h-4 w-4" /></span>
+      {s.label}
+      <ArrowUpRight aria-hidden className="h-3.5 w-3.5 opacity-50 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:opacity-100" />
+    </a></li>)}
+  </ul>;
 }

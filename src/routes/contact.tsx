@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { ArrowUpRight, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+import { Socials } from "@/components/Kit";
 import { AgencyLayout } from "@/components/AgencyLayout";
 import { WHATSAPP, EMAIL } from "@/lib/kriyo-data";
 import { ADDRESS_LINE, BUSINESS } from "@/lib/business";
@@ -32,6 +33,7 @@ function Contact() {
               <ArrowUpRight aria-hidden className="h-5 w-5 shrink-0 text-muted-foreground transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-foreground" />
             </a></li>)}
           </ul>
+          <div className="mt-3 animate-rise" style={{ animationDelay: "550ms" }}><Socials variant="cards" /></div>
           <p className="mt-6 flex items-center gap-2 text-[15px] text-muted-foreground"><MapPin aria-hidden className="h-4 w-4 text-accent" />{ADDRESS_LINE} · working remotely with clients everywhere</p>
         </div>
 
@@ -44,6 +46,7 @@ function Contact() {
             <div><label htmlFor="service" className="mb-2 block text-[15px]">What do you need?</label><select id="service" value={service} onChange={e => setService(e.target.value)} className={`h-[52px] ${field}`}>{serviceOptions.map(o => <option key={o}>{o}</option>)}</select></div>
             <div><label htmlFor="brief" className="mb-2 block text-[15px]">Project brief</label><textarea id="brief" value={brief} onChange={e => setBrief(e.target.value)} required placeholder="What are you looking to build? Any deadline or budget in mind?" className={`min-h-40 py-3.5 ${field}`} /></div>
             <button type="submit" className="btn btn-dark w-full !py-4">Continue on WhatsApp <ArrowUpRight aria-hidden className="h-4 w-4" /></button>
+            <p className="text-center text-[14px] text-muted-foreground">Opens WhatsApp with your message ready to review. Nothing is sent until you press send. <a href="/privacy-policy#contact" className="underline underline-offset-4 hover:text-foreground">Privacy</a></p>
           </div>
         </form>
       </div>

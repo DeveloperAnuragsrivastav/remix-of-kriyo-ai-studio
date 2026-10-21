@@ -25,7 +25,7 @@ export const Route = createFileRoute("/pricing")({
   head: () => {
     const url = `${BUSINESS.url}/pricing`;
     const schema = { "@context": "https://schema.org", "@graph": [
-      { "@type": "OfferCatalog", name: "Website packages", url, itemListElement: plans.map(p => ({ "@type": "Offer", name: p.name, price: p.price.replace(/[^\d]/g, ""), priceCurrency: "INR", description: p.features.join(", "), seller: { "@id": `${BUSINESS.url}/#business` } })) },
+      { "@type": "OfferCatalog", name: "Website, AI and automation packages", url, itemListElement: plans.map(p => ({ "@type": "Offer", name: p.name, price: p.price.replace(/[^\d]/g, ""), priceCurrency: "INR", description: p.features.join(", "), seller: { "@id": `${BUSINESS.url}/#business` } })) },
       { "@type": "FAQPage", mainEntity: faqs.map(f => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) },
     ] };
     return { ...pageMeta("Pricing: Websites from ₹999, AI Chatbots from ₹1,999", "Fixed prices from Kriyvo AI: websites from ₹999 per page, AI chatbots from ₹1,999, WhatsApp AI bots ₹4,999 and n8n automation from ₹3,999."), scripts: [{ type: "application/ld+json", children: JSON.stringify(schema) }] };
@@ -45,7 +45,7 @@ function Pricing() {
         <div className="mt-10 flex justify-center animate-rise" style={{ animationDelay: "350ms" }}><Segmented label="Price list" options={["Websites", "AI & automation"]} value={tab} onChange={setTab} /></div>
       </div>
     </section>
-    <section id="ai" className="mx-auto max-w-[1240px] px-4 sm:px-6"><div key={tab} className="animate-stage"><PricingPlans plans={tab === "Websites" ? websitePlans : aiPlans} /></div></section>
+    <section id="ai" aria-labelledby="plans-heading" className="mx-auto max-w-[1240px] px-4 sm:px-6"><h2 id="plans-heading" className="sr-only">{tab} packages</h2><div key={tab} className="animate-stage"><PricingPlans plans={tab === "Websites" ? websitePlans : aiPlans} /></div></section>
 
     {/* What every build includes */}
     <section className="mx-auto mt-24 max-w-[1240px] px-4 sm:px-6">
