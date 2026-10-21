@@ -306,7 +306,10 @@ function VoiceDemo() {
     setPhase("speaking");
     const u = new SpeechSynthesisUtterance(text);
     const voices = synth.getVoices();
-    u.voice = voices.find(v => v.lang === "en-IN") ?? voices.find(v => v.lang.startsWith("en")) ?? null;
+    // Prefer the natural-sounding voices browsers ship (neural/"Natural", Google, Apple's newer ones) over the old robotic defaults.
+    const en = voices.filter(v => v.lang.startsWith("en"));
+    const rank = (v: SpeechSynthesisVoice) => (/natural|neural|online/i.test(v.name) ? 0 : /google/i.test(v.name) ? 1 : /samantha|ava|allison|serena|karen|moira|veena|rishi/i.test(v.name) ? 2 : 3) + (v.lang === "en-IN" ? -0.5 : v.lang === "en-GB" || v.lang === "en-US" ? 0 : 0.3);
+    u.voice = en.sort((a, b) => rank(a) - rank(b))[0] ?? null;
     u.rate = 1.02;
     let pulse = 0;
     const id = window.setInterval(() => { pulse += 1; setEnergy(0.45 + Math.abs(Math.sin(pulse * 0.9)) * 0.35); }, 110);

@@ -101,16 +101,45 @@ export async function rateLimit(key: string, limit: number, windowSec: number) {
   if (await over(key, limit, windowSec)) fail("You've reached today's limit for this demo. Message me on WhatsApp and I'll run it for you.");
 }
 
-export async function verifyTurnstile(token: string | undefined) {
+/**
+ * Frontend hostnames a Turnstile token may come from. Production only accepts the real domains;
+ * localhost is allowed in local development. Override with TURNSTILE_HOSTNAMES (comma-separated).
+ */
+function turnstileHostOk(host: string | undefined) {
+  if (!host) return false;
+  const list = env("TURNSTILE_HOSTNAMES") ? env("TURNSTILE_HOSTNAMES").split(",").map(h => h.trim()) : ["kriyvoai.online", "www.kriyvoai.online", "kriyvo-ai.netlify.app"];
+  if (list.includes(host) || host.endsWith("--kriyvo-ai.netlify.app")) return true; // deploy previews
+  return process.env["NODE_ENV"] !== "production" && (host === "localhost" || host === "127.0.0.1");
+}
+
+/**
+ * Verifies a Turnstile token with Cloudflare. Fails closed: a missing, oversized, replayed or
+ * wrong-action token, a foreign hostname, or Cloudflare being unreachable all reject the request.
+ */
+export async function verifyTurnstile(token: string | undefined, action: string) {
   const secret = env("TURNSTILE_SECRET_KEY");
   if (!secret) return; // Not configured yet: rate limits still apply.
-  if (!token) fail("Please complete the quick human check.");
-  const res = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
-    method: "POST",
-    body: new URLSearchParams({ secret, response: token!, remoteip: clientIp() }),
-  });
-  const out = (await res.json()) as { success: boolean };
-  if (!out.success) fail("The human check failed. Please refresh and try again.");
+  if (typeof token !== "string" || !token || token.length > 2048) fail("Please complete the quick human check.");
+  let out: { success: boolean; action?: string; hostname?: string; "error-codes"?: string[] };
+  try {
+    const res = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
+      method: "POST",
+      signal: AbortSignal.timeout(8000),
+      body: new URLSearchParams({ secret, response: token!, remoteip: clientIp() }),
+    });
+    if (!res.ok) throw new Error(`siteverify ${res.status}`);
+    out = await res.json();
+  } catch (e) {
+    console.error("[turnstile]", e instanceof Error ? e.message : e);
+    return fail("The human check couldn't be confirmed right now. Please try again in a moment.");
+  }
+  if (!out.success) {
+    const codes = out["error-codes"] ?? [];
+    if (codes.includes("invalid-input-secret")) console.error("[turnstile] TURNSTILE_SECRET_KEY is wrong or missing in this environment");
+    fail(codes.includes("timeout-or-duplicate") ? "That human check expired. Please tick it again." : "The human check failed. Please refresh and try again.");
+  }
+  if (out.action !== action) { console.error("[turnstile] action mismatch", out.action); fail("The human check failed. Please refresh and try again."); }
+  if (!turnstileHostOk(out.hostname)) { console.error("[turnstile] hostname not allowed", out.hostname); fail("The human check failed. Please refresh and try again."); }
 }
 
 export const wrap = async <T,>(fn: () => Promise<T>): Promise<T | { error: string }> => {

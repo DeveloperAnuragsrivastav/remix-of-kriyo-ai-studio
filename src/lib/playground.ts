@@ -91,7 +91,7 @@ export const startPlayground = createServerFn({ method: "POST" })
     if (!LINKEDIN_RE.test(linkedinUrl)) fail("Please paste your LinkedIn profile URL, like https://www.linkedin.com/in/your-name");
     if (!EMAIL_RE.test(email)) fail("Please enter a valid email address.");
     if (data.consent !== true) fail("Please tick the consent box so I can use your public profile for this demo.");
-    await verifyTurnstile(data.turnstileToken);
+    await verifyTurnstile(data.turnstileToken, "outreach-demo");
     const allowed = await guard("outreach");
     await rateLimit(`pg:profile:${linkedinUrl.toLowerCase()}`, 2, 24 * 60 * 60);
     const sample = () => sign({ email, sample: linkedinUrl });

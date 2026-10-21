@@ -8,23 +8,53 @@ type Phase = "form" | "running" | "done";
 const STAGES = ["Reading your public LinkedIn profile…", "Finding ideas that fit your role…", "Writing your personal invite…"];
 const TURNSTILE_SITE_KEY = import.meta.env["VITE_TURNSTILE_SITE_KEY"] as string | undefined;
 
+export const TURNSTILE_ACTION = "outreach-demo";
+
 declare global {
-  interface Window { turnstile?: { render: (el: HTMLElement, opts: Record<string, unknown>) => string; reset: (id?: string) => void } }
+  interface Window { turnstile?: { render: (el: HTMLElement, opts: Record<string, unknown>) => string; reset: (id?: string) => void; remove: (id: string) => void } }
 }
 
-/** Cloudflare Turnstile human check. Renders nothing until a site key is configured. */
+let scriptLoading: Promise<void> | null = null;
+const loadTurnstile = () => scriptLoading ??= new Promise<void>((resolve, reject) => {
+  if (window.turnstile) { resolve(); return; }
+  const s = document.createElement("script");
+  s.src = "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
+  s.async = true; s.defer = true;
+  s.onload = () => resolve();
+  s.onerror = () => { scriptLoading = null; reject(new Error("turnstile")); };
+  document.head.appendChild(s);
+});
+
+/**
+ * Cloudflare Turnstile human check, rendered explicitly so each form gets a fresh widget. Tokens are
+ * single-use: the form remounts this after every attempt, which renders a new widget and a new token.
+ * An expired or failed check clears the token so the submit button waits for a new one.
+ * Renders nothing until a site key is configured.
+ */
 function Turnstile({ onToken }: { onToken: (t: string) => void }) {
   const ref = useRef<HTMLDivElement>(null);
+  const [failed, setFailed] = useState(false);
   useEffect(() => {
     if (!TURNSTILE_SITE_KEY || !ref.current) return;
-    const mount = () => ref.current && window.turnstile?.render(ref.current, { sitekey: TURNSTILE_SITE_KEY, callback: onToken, theme: "light" });
-    if (window.turnstile) { mount(); return; }
-    const s = document.createElement("script");
-    s.src = "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
-    s.async = true; s.onload = mount;
-    document.head.appendChild(s);
+    let id: string | undefined, gone = false;
+    loadTurnstile().then(() => {
+      if (gone || !ref.current || !window.turnstile) return;
+      id = window.turnstile.render(ref.current, {
+        sitekey: TURNSTILE_SITE_KEY,
+        action: TURNSTILE_ACTION,
+        theme: "light",
+        callback: (t: string) => { setFailed(false); onToken(t); },
+        "expired-callback": () => onToken(""),
+        "error-callback": () => { onToken(""); setFailed(true); },
+      });
+    }).catch(() => setFailed(true));
+    return () => { gone = true; if (id) window.turnstile?.remove(id); };
   }, [onToken]);
-  return TURNSTILE_SITE_KEY ? <div ref={ref} className="min-h-[65px]" /> : null;
+  if (!TURNSTILE_SITE_KEY) return null;
+  return <div>
+    <div ref={ref} className="min-h-[65px]" />
+    {failed && <p className="mt-1 text-[14px] text-muted-foreground">The human check couldn't load. Turn off any blocker for challenges.cloudflare.com, or message me on WhatsApp.</p>}
+  </div>;
 }
 
 export function OutreachPlayground({ trigger }: { trigger?: ReactNode } = {}) {
@@ -52,8 +82,11 @@ export function OutreachPlayground({ trigger }: { trigger?: ReactNode } = {}) {
 
   async function run(e: React.FormEvent) {
     e.preventDefault();
+    if (TURNSTILE_SITE_KEY && !captcha) { setError("Please complete the quick human check first."); return; }
     setError(""); setStage(0); setPhase("running"); cancelled.current = false;
-    const started = await startPlayground({ data: { linkedinUrl, email, consent, turnstileToken: captcha } });
+    const turnstileToken = captcha;
+    setCaptcha(""); // single-use: the form shows a fresh check if this attempt fails
+    const started = await startPlayground({ data: { linkedinUrl, email, consent, turnstileToken } });
     if ("error" in started) { setError(started.error); setPhase("form"); return; }
     const deadline = Date.now() + 120_000;
     while (!cancelled.current && Date.now() < deadline) {
@@ -119,7 +152,7 @@ export function OutreachPlayground({ trigger }: { trigger?: ReactNode } = {}) {
               </label>
               <Turnstile onToken={setCaptcha} />
               {error && <p role="alert" className="rounded-xl border border-destructive/30 bg-destructive/5 p-3 text-sm text-destructive">{error}</p>}
-              <button type="submit" disabled={!consent} className="btn btn-dark w-full disabled:opacity-50">
+              <button type="submit" disabled={!consent || (!!TURNSTILE_SITE_KEY && !captcha)} className="btn btn-dark w-full disabled:opacity-50">
                 <Sparkles aria-hidden className="h-4 w-4" /> Write my invite
               </button>
               <p className="text-center text-[14px] text-muted-foreground">Free demo · 3 tries per day · Takes about 10 seconds</p>
