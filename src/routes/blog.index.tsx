@@ -2,17 +2,51 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { ArrowUpRight, Search } from "lucide-react";
 import { AgencyLayout, PageIntro, ProjectCTA } from "@/components/AgencyLayout";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import { Segmented } from "@/components/Kit";
+import { Reveal } from "@/components/Reveal";
 import { articles } from "@/lib/blog-data";
 import { pageMeta } from "@/lib/page-meta";
-export const Route = createFileRoute("/blog/")({ head: () => pageMeta("Agency journal", "Practical articles on AI automation, n8n, voice agents, workflow design and production engineering from Kriyvo AI."), component: Blog });
-const categories = ["All articles", "AI & automation", "Workflow design", "Voice AI", "Engineering", "AI perspectives"];
+export const Route = createFileRoute("/blog/")({ head: () => pageMeta("AI Automation & Web Development Blog", "Practical articles on AI automation, n8n, voice agents, workflow design and production engineering from Kriyvo AI."), component: Blog });
+const categories = ["All articles", "AI & automation", "Workflow design", "Voice AI", "Engineering", "AI perspectives", "Costs & hiring"];
+
 function Blog() {
-  const [category, setCategory] = useState("All articles"); const [search, setSearch] = useState("");
+  const [category, setCategory] = useState("All articles");
+  const [search, setSearch] = useState("");
   const featured = articles.find(a => a.slug === "multilingual-feedback-routing-workflow");
   const filtered = articles.filter(a => (category === "All articles" || a.category === category) && `${a.title} ${a.description}`.toLowerCase().includes(search.toLowerCase()));
-  return <AgencyLayout><PageIntro label="The Kriyvo journal" title="Ideas behind better digital work." description="Practical reading on AI, automation and the engineering details that turn an idea into a dependable business workflow." />
-    {featured && <section className="mx-auto max-w-6xl px-6 pb-14"><Link to="/blog/$slug" params={{ slug: featured.slug }} className="group grid items-center gap-8 border-y border-border py-8 md:grid-cols-[1.3fr_1fr]"><img src={featured.image} alt="Project review with feedback notes and workflow sketches" width={1280} height={800} className="aspect-[16/10] w-full rounded-lg object-cover" /><div><p className="text-xs font-semibold uppercase text-accent">Editor's pick · {featured.category}</p><h2 className="mt-4 text-3xl leading-tight md:text-4xl group-hover:text-accent">{featured.title}</h2><p className="mt-4 text-sm leading-relaxed text-muted-foreground">{featured.description}</p><span className="mt-6 inline-flex items-center gap-2 text-sm font-medium">Read article <ArrowUpRight className="h-4 w-4" /></span></div></Link></section>}
-    <section className="mx-auto max-w-6xl px-6 pb-16"><div className="flex flex-col justify-between gap-6 border-b border-border pb-6 xl:flex-row xl:items-center"><div className="flex flex-wrap gap-2" role="group" aria-label="Article categories">{categories.map(c => <Button key={c} variant={c === category ? "default" : "ghost"} size="sm" aria-pressed={c === category} onClick={() => setCategory(c)}>{c}</Button>)}</div><div className="relative w-full xl:w-60"><Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" /><Input aria-label="Search articles" placeholder="Search articles" value={search} onChange={e => setSearch(e.target.value)} className="h-10 pl-9" /></div></div><p className="mt-6 text-xs text-muted-foreground" aria-live="polite">{filtered.length} articles</p><div className="mt-8 grid gap-x-7 gap-y-12 md:grid-cols-2 lg:grid-cols-3">{filtered.map(a => <Link key={a.slug} to="/blog/$slug" params={{ slug: a.slug }} className="group"><img src={a.image} alt={`${a.category} editorial photograph`} loading="lazy" width={1280} height={800} className="aspect-[16/10] w-full rounded-lg object-cover" /><div className="mt-4 flex items-center gap-3 text-xs"><span className="font-medium text-accent">{a.category}</span><span className="text-muted-foreground">{a.readTime} min read</span></div><h2 className="mt-3 text-xl leading-snug group-hover:text-accent">{a.title}</h2><p className="mt-3 text-sm leading-relaxed text-muted-foreground">{a.description}</p><span className="mt-4 inline-flex items-center gap-2 text-sm">Read article <ArrowUpRight className="h-4 w-4" /></span></Link>)}</div>{!filtered.length && <div className="py-20 text-center"><h2 className="text-2xl">No articles found</h2><Button variant="outline" className="mt-6" onClick={() => { setSearch(""); setCategory("All articles"); }}>Clear filters</Button></div>}</section><ProjectCTA /></AgencyLayout>;
+  // The featured article sits above the grid; skip it in the unfiltered list so it is not shown twice.
+  const grid = category === "All articles" && !search && featured ? filtered.filter(a => a.slug !== featured.slug) : filtered;
+  return <AgencyLayout>
+    <PageIntro label="Journal" title="Notes from building real systems" description="Practical reading on websites, AI and automation: what it costs, how it is built and what makes it dependable." />
+
+    {featured && category === "All articles" && !search && <section className="mx-auto max-w-[1240px] px-4 pb-16 sm:px-6">
+      <Link to="/blog/$slug" params={{ slug: featured.slug }} className="group grid items-center gap-8 rounded-[28px] bg-stone p-4 md:grid-cols-[1.25fr_1fr] md:gap-12 md:p-6">
+        <div className="overflow-hidden rounded-[20px]"><img src={featured.image} alt="Project review with feedback notes and workflow sketches" width={1280} height={800} className="aspect-[16/10] w-full object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(.16,1,.3,1)] group-hover:scale-[1.03]" /></div>
+        <div className="pb-4 md:pb-0 md:pr-6">
+          <h2 className="text-[1.9rem] leading-tight md:text-[2.25rem]">{featured.title}</h2>
+          <p className="mt-4 text-[16px] leading-relaxed text-foreground/75">{featured.description}</p>
+          <p className="mt-4 text-[15px] text-muted-foreground">Featured · {featured.category} · {featured.readTime} min read</p>
+          <span className="btn btn-dark mt-7">Read the article <ArrowUpRight aria-hidden className="h-4 w-4" /></span>
+        </div>
+      </Link>
+    </section>}
+
+    <section className="mx-auto max-w-[1240px] px-4 pb-8 sm:px-6">
+      <div className="flex flex-col justify-between gap-5 xl:flex-row xl:items-center">
+        <Segmented label="Article categories" options={categories} value={category} onChange={setCategory} />
+        <label className="relative block w-full xl:w-72"><span className="sr-only">Search articles</span><Search aria-hidden className="absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" /><input value={search} onChange={e => setSearch(e.target.value)} placeholder="Search articles" className="h-12 w-full rounded-full bg-stone pl-11 pr-4 text-[15px] outline-none ring-flame/40 placeholder:text-muted-foreground focus:ring-2" /></label>
+      </div>
+      <p className="mt-6 text-[15px] text-muted-foreground" aria-live="polite">{filtered.length} articles</p>
+      <div className="mt-8 grid gap-x-8 gap-y-14 md:grid-cols-2 lg:grid-cols-3">
+        {grid.map((a, i) => <Reveal key={a.slug} delay={(i % 3) * 70}><Link to="/blog/$slug" params={{ slug: a.slug }} className="group block">
+          <div className="overflow-hidden rounded-[20px] bg-stone"><img src={a.image} alt={`${a.category} cover`} loading="lazy" width={1280} height={800} className="aspect-[16/10] w-full object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(.16,1,.3,1)] group-hover:scale-[1.04]" /></div>
+          <h2 className="mt-5 font-display text-xl font-normal leading-snug transition-colors group-hover:text-accent">{a.title}</h2>
+          <p className="mt-2 line-clamp-2 text-[15px] leading-relaxed text-foreground/70">{a.description}</p>
+          <p className="mt-3 text-[14px] text-muted-foreground">{a.category} · {a.readTime} min read</p>
+        </Link></Reveal>)}
+      </div>
+      {!filtered.length && <div className="py-20 text-center"><h2 className="text-2xl">No articles found</h2><button type="button" className="btn btn-light mt-6" onClick={() => { setSearch(""); setCategory("All articles"); }}>Clear filters</button></div>}
+    </section>
+    <ProjectCTA />
+  </AgencyLayout>;
 }

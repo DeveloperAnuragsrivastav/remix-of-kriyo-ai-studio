@@ -25,6 +25,13 @@ describe("App routing", () => {
     ["/blog", "/blog/"],
     ["/blog/multilingual-feedback-routing-workflow", "/blog/$slug"],
     ["/contact", "/contact"],
+    ["/pricing", "/pricing"],
+    ["/about", "/about"],
+    ["/estimate", "/estimate"],
+    ["/portfolio", "/portfolio/"],
+    ["/portfolio/koca-restaurant-website", "/portfolio/$slug"],
+    ["/website-developer-east-delhi", "/website-developer-east-delhi"],
+    ["/web-developer-delhi-ncr", "/web-developer-delhi-ncr"],
   ])("matches dedicated page %s", (path, routeId) => {
     const router = createRouter({ routeTree, context: { queryClient: new QueryClient() } });
     expect(router.matchRoutes(path).at(-1)?.routeId).toBe(routeId);

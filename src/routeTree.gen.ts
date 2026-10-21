@@ -10,22 +10,36 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as BlogRouteImport } from './routes/blog'
 import { Route as CaseStudiesRouteImport } from './routes/case-studies'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as DeliverablesRouteImport } from './routes/deliverables'
+import { Route as EstimateRouteImport } from './routes/estimate'
+import { Route as PortfolioRouteImport } from './routes/portfolio'
+import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as ServicesRouteImport } from './routes/services'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as WebDeveloperDelhiNcrRouteImport } from './routes/web-developer-delhi-ncr'
+import { Route as WebsiteDeveloperEastDelhiRouteImport } from './routes/website-developer-east-delhi'
 import { Route as WorkingTogetherRouteImport } from './routes/working-together'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 import { Route as CaseStudiesIndexRouteImport } from './routes/case-studies.index'
 import { Route as CaseStudiesSlugRouteImport } from './routes/case-studies.$slug'
+import { Route as PortfolioIndexRouteImport } from './routes/portfolio.index'
+import { Route as PortfolioSlugRouteImport } from './routes/portfolio.$slug'
 import { Route as ServicesIndexRouteImport } from './routes/services.index'
 import { Route as ServicesSlugRouteImport } from './routes/services.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BlogRoute = BlogRouteImport.update({
@@ -48,11 +62,42 @@ const DeliverablesRoute = DeliverablesRouteImport.update({
   path: '/deliverables',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EstimateRoute = EstimateRouteImport.update({
+  id: '/estimate',
+  path: '/estimate',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PortfolioRoute = PortfolioRouteImport.update({
+  id: '/portfolio',
+  path: '/portfolio',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PricingRoute = PricingRouteImport.update({
+  id: '/pricing',
+  path: '/pricing',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ServicesRoute = ServicesRouteImport.update({
   id: '/services',
   path: '/services',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WebDeveloperDelhiNcrRoute = WebDeveloperDelhiNcrRouteImport.update({
+  id: '/web-developer-delhi-ncr',
+  path: '/web-developer-delhi-ncr',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WebsiteDeveloperEastDelhiRoute =
+  WebsiteDeveloperEastDelhiRouteImport.update({
+    id: '/website-developer-east-delhi',
+    path: '/website-developer-east-delhi',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const WorkingTogetherRoute = WorkingTogetherRouteImport.update({
   id: '/working-together',
   path: '/working-together',
@@ -78,6 +123,16 @@ const CaseStudiesSlugRoute = CaseStudiesSlugRouteImport.update({
   path: '/$slug',
   getParentRoute: () => CaseStudiesRoute,
 } as any)
+const PortfolioIndexRoute = PortfolioIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => PortfolioRoute,
+} as any)
+const PortfolioSlugRoute = PortfolioSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => PortfolioRoute,
+} as any)
 const ServicesIndexRoute = ServicesIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -91,99 +146,158 @@ const ServicesSlugRoute = ServicesSlugRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/blog': typeof BlogRouteWithChildren
   '/case-studies': typeof CaseStudiesRouteWithChildren
   '/contact': typeof ContactRoute
   '/deliverables': typeof DeliverablesRoute
+  '/estimate': typeof EstimateRoute
+  '/portfolio': typeof PortfolioRouteWithChildren
+  '/pricing': typeof PricingRoute
   '/services': typeof ServicesRouteWithChildren
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/web-developer-delhi-ncr': typeof WebDeveloperDelhiNcrRoute
+  '/website-developer-east-delhi': typeof WebsiteDeveloperEastDelhiRoute
   '/working-together': typeof WorkingTogetherRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/case-studies/$slug': typeof CaseStudiesSlugRoute
+  '/portfolio/$slug': typeof PortfolioSlugRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/blog/': typeof BlogIndexRoute
   '/case-studies/': typeof CaseStudiesIndexRoute
+  '/portfolio/': typeof PortfolioIndexRoute
   '/services/': typeof ServicesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/deliverables': typeof DeliverablesRoute
+  '/estimate': typeof EstimateRoute
+  '/pricing': typeof PricingRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/web-developer-delhi-ncr': typeof WebDeveloperDelhiNcrRoute
+  '/website-developer-east-delhi': typeof WebsiteDeveloperEastDelhiRoute
   '/working-together': typeof WorkingTogetherRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/case-studies/$slug': typeof CaseStudiesSlugRoute
+  '/portfolio/$slug': typeof PortfolioSlugRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/blog': typeof BlogIndexRoute
   '/case-studies': typeof CaseStudiesIndexRoute
+  '/portfolio': typeof PortfolioIndexRoute
   '/services': typeof ServicesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/blog': typeof BlogRouteWithChildren
   '/case-studies': typeof CaseStudiesRouteWithChildren
   '/contact': typeof ContactRoute
   '/deliverables': typeof DeliverablesRoute
+  '/estimate': typeof EstimateRoute
+  '/portfolio': typeof PortfolioRouteWithChildren
+  '/pricing': typeof PricingRoute
   '/services': typeof ServicesRouteWithChildren
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/web-developer-delhi-ncr': typeof WebDeveloperDelhiNcrRoute
+  '/website-developer-east-delhi': typeof WebsiteDeveloperEastDelhiRoute
   '/working-together': typeof WorkingTogetherRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/case-studies/$slug': typeof CaseStudiesSlugRoute
+  '/portfolio/$slug': typeof PortfolioSlugRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/blog/': typeof BlogIndexRoute
   '/case-studies/': typeof CaseStudiesIndexRoute
+  '/portfolio/': typeof PortfolioIndexRoute
   '/services/': typeof ServicesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/about'
     | '/blog'
     | '/case-studies'
     | '/contact'
     | '/deliverables'
+    | '/estimate'
+    | '/portfolio'
+    | '/pricing'
     | '/services'
+    | '/sitemap.xml'
+    | '/web-developer-delhi-ncr'
+    | '/website-developer-east-delhi'
     | '/working-together'
     | '/blog/$slug'
     | '/case-studies/$slug'
+    | '/portfolio/$slug'
     | '/services/$slug'
     | '/blog/'
     | '/case-studies/'
+    | '/portfolio/'
     | '/services/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/about'
     | '/contact'
     | '/deliverables'
+    | '/estimate'
+    | '/pricing'
+    | '/sitemap.xml'
+    | '/web-developer-delhi-ncr'
+    | '/website-developer-east-delhi'
     | '/working-together'
     | '/blog/$slug'
     | '/case-studies/$slug'
+    | '/portfolio/$slug'
     | '/services/$slug'
     | '/blog'
     | '/case-studies'
+    | '/portfolio'
     | '/services'
   id:
     | '__root__'
     | '/'
+    | '/about'
     | '/blog'
     | '/case-studies'
     | '/contact'
     | '/deliverables'
+    | '/estimate'
+    | '/portfolio'
+    | '/pricing'
     | '/services'
+    | '/sitemap.xml'
+    | '/web-developer-delhi-ncr'
+    | '/website-developer-east-delhi'
     | '/working-together'
     | '/blog/$slug'
     | '/case-studies/$slug'
+    | '/portfolio/$slug'
     | '/services/$slug'
     | '/blog/'
     | '/case-studies/'
+    | '/portfolio/'
     | '/services/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
   BlogRoute: typeof BlogRouteWithChildren
   CaseStudiesRoute: typeof CaseStudiesRouteWithChildren
   ContactRoute: typeof ContactRoute
   DeliverablesRoute: typeof DeliverablesRoute
+  EstimateRoute: typeof EstimateRoute
+  PortfolioRoute: typeof PortfolioRouteWithChildren
+  PricingRoute: typeof PricingRoute
   ServicesRoute: typeof ServicesRouteWithChildren
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  WebDeveloperDelhiNcrRoute: typeof WebDeveloperDelhiNcrRoute
+  WebsiteDeveloperEastDelhiRoute: typeof WebsiteDeveloperEastDelhiRoute
   WorkingTogetherRoute: typeof WorkingTogetherRoute
 }
 
@@ -194,6 +308,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/blog': {
@@ -224,11 +345,53 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DeliverablesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/estimate': {
+      id: '/estimate'
+      path: '/estimate'
+      fullPath: '/estimate'
+      preLoaderRoute: typeof EstimateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/portfolio': {
+      id: '/portfolio'
+      path: '/portfolio'
+      fullPath: '/portfolio'
+      preLoaderRoute: typeof PortfolioRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pricing': {
+      id: '/pricing'
+      path: '/pricing'
+      fullPath: '/pricing'
+      preLoaderRoute: typeof PricingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/services': {
       id: '/services'
       path: '/services'
       fullPath: '/services'
       preLoaderRoute: typeof ServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/web-developer-delhi-ncr': {
+      id: '/web-developer-delhi-ncr'
+      path: '/web-developer-delhi-ncr'
+      fullPath: '/web-developer-delhi-ncr'
+      preLoaderRoute: typeof WebDeveloperDelhiNcrRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/website-developer-east-delhi': {
+      id: '/website-developer-east-delhi'
+      path: '/website-developer-east-delhi'
+      fullPath: '/website-developer-east-delhi'
+      preLoaderRoute: typeof WebsiteDeveloperEastDelhiRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/working-together': {
@@ -265,6 +428,20 @@ declare module '@tanstack/react-router' {
       fullPath: '/case-studies/$slug'
       preLoaderRoute: typeof CaseStudiesSlugRouteImport
       parentRoute: typeof CaseStudiesRoute
+    }
+    '/portfolio/': {
+      id: '/portfolio/'
+      path: '/'
+      fullPath: '/portfolio/'
+      preLoaderRoute: typeof PortfolioIndexRouteImport
+      parentRoute: typeof PortfolioRoute
+    }
+    '/portfolio/$slug': {
+      id: '/portfolio/$slug'
+      path: '/$slug'
+      fullPath: '/portfolio/$slug'
+      preLoaderRoute: typeof PortfolioSlugRouteImport
+      parentRoute: typeof PortfolioRoute
     }
     '/services/': {
       id: '/services/'
@@ -309,6 +486,20 @@ const CaseStudiesRouteWithChildren = CaseStudiesRoute._addFileChildren(
   CaseStudiesRouteChildren,
 )
 
+interface PortfolioRouteChildren {
+  PortfolioSlugRoute: typeof PortfolioSlugRoute
+  PortfolioIndexRoute: typeof PortfolioIndexRoute
+}
+
+const PortfolioRouteChildren: PortfolioRouteChildren = {
+  PortfolioSlugRoute: PortfolioSlugRoute,
+  PortfolioIndexRoute: PortfolioIndexRoute,
+}
+
+const PortfolioRouteWithChildren = PortfolioRoute._addFileChildren(
+  PortfolioRouteChildren,
+)
+
 interface ServicesRouteChildren {
   ServicesSlugRoute: typeof ServicesSlugRoute
   ServicesIndexRoute: typeof ServicesIndexRoute
@@ -325,11 +516,18 @@ const ServicesRouteWithChildren = ServicesRoute._addFileChildren(
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
   BlogRoute: BlogRouteWithChildren,
   CaseStudiesRoute: CaseStudiesRouteWithChildren,
   ContactRoute: ContactRoute,
   DeliverablesRoute: DeliverablesRoute,
+  EstimateRoute: EstimateRoute,
+  PortfolioRoute: PortfolioRouteWithChildren,
+  PricingRoute: PricingRoute,
   ServicesRoute: ServicesRouteWithChildren,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
+  WebDeveloperDelhiNcrRoute: WebDeveloperDelhiNcrRoute,
+  WebsiteDeveloperEastDelhiRoute: WebsiteDeveloperEastDelhiRoute,
   WorkingTogetherRoute: WorkingTogetherRoute,
 }
 export const routeTree = rootRouteImport

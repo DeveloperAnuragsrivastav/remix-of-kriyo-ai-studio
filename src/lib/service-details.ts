@@ -48,5 +48,15 @@ export const serviceDetails: Record<string, { heading: string; text: string }[]>
       "heading": "Plan content and delivery together",
       "text": "Scope the pages, design direction, content responsibilities and integration access before estimating delivery. Testing and handover are part of planning the complete project."
     }
+  ],
+  "wordpress-php-development": [
+    {
+      "heading": "Editable without a developer",
+      "text": "Set up WordPress so your team can update pages, posts and images on their own, with a structure that keeps the design consistent as content changes."
+    },
+    {
+      "heading": "Custom PHP where it's needed",
+      "text": "Use custom themes, plugins or core PHP and MySQL for the parts an off-the-shelf plugin can't handle — forms, integrations, dashboards or data imports."
+    }
   ]
 };

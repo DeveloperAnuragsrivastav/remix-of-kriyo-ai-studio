@@ -1,0 +1,24 @@
+# Kriyvo AI
+
+> Kriyvo AI is an independent studio in Delhi NCR, India. One web developer and AI automation engineer designs, builds and hands over custom websites, WordPress and PHP sites, AI chatbots, WhatsApp bots, voice agents and n8n / Python workflow automation. Projects start from ₹15K. 115+ projects delivered.
+
+## Services
+- [Custom website development](https://kriyvoai.online/services/freelance-website-developer-noida): React, Next.js or PHP websites and web apps
+- [WordPress & PHP development](https://kriyvoai.online/services/wordpress-php-development): editable WordPress sites, custom themes, plugins and fixes
+- [AI chatbot for your website](https://kriyvoai.online/services/ai-chatbot-for-website): grounded answers, lead capture and human handoff
+- [LLM and AI agent development](https://kriyvoai.online/services/llm-ai-agent-development): bounded agents with retrieval and evaluation
+- [n8n workflow automation](https://kriyvoai.online/services/n8n-workflow-automation): integrations, triggers, logging and failure handling
+- [AI automation engineering](https://kriyvoai.online/services/ai-automation): lead processing, feedback routing and reporting
+
+## Locations
+- [Website developer in East Delhi](https://kriyvoai.online/website-developer-east-delhi): New Ashok Nagar, Mayur Vihar, Laxmi Nagar, Preet Vihar
+- [Web developer in Delhi NCR](https://kriyvoai.online/web-developer-delhi-ncr): Noida, Greater Noida, Ghaziabad, Gurgaon, Faridabad
+
+## Work
+- [Portfolio](https://kriyvoai.online/portfolio): six client projects with details
+- [Case studies](https://kriyvoai.online/case-studies): four systems explained in depth
+- [Blog](https://kriyvoai.online/blog): practical articles on AI automation, n8n, voice agents and LLMs
+
+## Contact
+- [Project estimator](https://kriyvoai.online/estimate): build a brief and send it on WhatsApp
+- [Contact](https://kriyvoai.online/contact): email kriyvo.ai@gmail.com or WhatsApp +91 86040 50596

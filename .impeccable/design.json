@@ -1,0 +1,502 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-21T08:16:52.676143+00:00",
+  "title": "Design System: Kriyvo AI",
+  "extensions": {
+    "colorMeta": {
+      "ground": {
+        "role": "neutral",
+        "displayName": "Ground",
+        "canonical": "oklch(0.985 0.0015 90)",
+        "tonalRamp": [
+          "oklch(0.15 0.0015 90)",
+          "oklch(0.26 0.0015 90)",
+          "oklch(0.38 0.0015 90)",
+          "oklch(0.50 0.0015 90)",
+          "oklch(0.62 0.0015 90)",
+          "oklch(0.74 0.0015 90)",
+          "oklch(0.85 0.0015 90)",
+          "oklch(0.95 0.0015 90)"
+        ]
+      },
+      "card": {
+        "role": "neutral",
+        "displayName": "Card White",
+        "canonical": "oklch(1 0 0)",
+        "tonalRamp": [
+          "oklch(0.15 0 0)",
+          "oklch(0.26 0 0)",
+          "oklch(0.38 0 0)",
+          "oklch(0.50 0 0)",
+          "oklch(0.62 0 0)",
+          "oklch(0.74 0 0)",
+          "oklch(0.85 0 0)",
+          "oklch(0.95 0 0)"
+        ]
+      },
+      "stone": {
+        "role": "neutral",
+        "displayName": "Stone",
+        "canonical": "oklch(0.96 0.002 90)",
+        "tonalRamp": [
+          "oklch(0.15 0.002 90)",
+          "oklch(0.26 0.002 90)",
+          "oklch(0.38 0.002 90)",
+          "oklch(0.50 0.002 90)",
+          "oklch(0.62 0.002 90)",
+          "oklch(0.74 0.002 90)",
+          "oklch(0.85 0.002 90)",
+          "oklch(0.95 0.002 90)"
+        ]
+      },
+      "border": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "oklch(0.915 0.003 90)",
+        "tonalRamp": [
+          "oklch(0.15 0.003 90)",
+          "oklch(0.26 0.003 90)",
+          "oklch(0.38 0.003 90)",
+          "oklch(0.50 0.003 90)",
+          "oklch(0.62 0.003 90)",
+          "oklch(0.74 0.003 90)",
+          "oklch(0.85 0.003 90)",
+          "oklch(0.95 0.003 90)"
+        ]
+      },
+      "input": {
+        "role": "neutral",
+        "displayName": "Input Stroke",
+        "canonical": "oklch(0.88 0.01 80)",
+        "tonalRamp": [
+          "oklch(0.15 0.01 80)",
+          "oklch(0.26 0.01 80)",
+          "oklch(0.38 0.01 80)",
+          "oklch(0.50 0.01 80)",
+          "oklch(0.62 0.01 80)",
+          "oklch(0.74 0.01 80)",
+          "oklch(0.85 0.01 80)",
+          "oklch(0.95 0.01 80)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "oklch(0.18 0.006 70)",
+        "tonalRamp": [
+          "oklch(0.15 0.006 70)",
+          "oklch(0.26 0.006 70)",
+          "oklch(0.38 0.006 70)",
+          "oklch(0.50 0.006 70)",
+          "oklch(0.62 0.006 70)",
+          "oklch(0.74 0.006 70)",
+          "oklch(0.85 0.006 70)",
+          "oklch(0.95 0.006 70)"
+        ]
+      },
+      "ink-foreground": {
+        "role": "neutral",
+        "displayName": "Paper on Ink",
+        "canonical": "oklch(0.975 0.002 90)",
+        "tonalRamp": [
+          "oklch(0.15 0.002 90)",
+          "oklch(0.26 0.002 90)",
+          "oklch(0.38 0.002 90)",
+          "oklch(0.50 0.002 90)",
+          "oklch(0.62 0.002 90)",
+          "oklch(0.74 0.002 90)",
+          "oklch(0.85 0.002 90)",
+          "oklch(0.95 0.002 90)"
+        ]
+      },
+      "foreground": {
+        "role": "neutral",
+        "displayName": "Body Ink",
+        "canonical": "oklch(0.2 0.004 70)",
+        "tonalRamp": [
+          "oklch(0.15 0.004 70)",
+          "oklch(0.26 0.004 70)",
+          "oklch(0.38 0.004 70)",
+          "oklch(0.50 0.004 70)",
+          "oklch(0.62 0.004 70)",
+          "oklch(0.74 0.004 70)",
+          "oklch(0.85 0.004 70)",
+          "oklch(0.95 0.004 70)"
+        ]
+      },
+      "muted-foreground": {
+        "role": "neutral",
+        "displayName": "Muted",
+        "canonical": "oklch(0.47 0.01 70)",
+        "tonalRamp": [
+          "oklch(0.15 0.01 70)",
+          "oklch(0.26 0.01 70)",
+          "oklch(0.38 0.01 70)",
+          "oklch(0.50 0.01 70)",
+          "oklch(0.62 0.01 70)",
+          "oklch(0.74 0.01 70)",
+          "oklch(0.85 0.01 70)",
+          "oklch(0.95 0.01 70)"
+        ]
+      },
+      "flame": {
+        "role": "primary",
+        "displayName": "Flame",
+        "canonical": "oklch(0.68 0.21 42)",
+        "tonalRamp": [
+          "oklch(0.15 0.17 42)",
+          "oklch(0.26 0.17 42)",
+          "oklch(0.38 0.17 42)",
+          "oklch(0.50 0.17 42)",
+          "oklch(0.62 0.17 42)",
+          "oklch(0.74 0.17 42)",
+          "oklch(0.85 0.17 42)",
+          "oklch(0.95 0.17 42)"
+        ]
+      },
+      "accent": {
+        "role": "primary",
+        "displayName": "Burnt Accent",
+        "canonical": "oklch(0.53 0.18 40)",
+        "tonalRamp": [
+          "oklch(0.15 0.16 40)",
+          "oklch(0.26 0.16 40)",
+          "oklch(0.38 0.16 40)",
+          "oklch(0.50 0.16 40)",
+          "oklch(0.62 0.16 40)",
+          "oklch(0.74 0.16 40)",
+          "oklch(0.85 0.16 40)",
+          "oklch(0.95 0.16 40)"
+        ]
+      },
+      "saffron": {
+        "role": "secondary",
+        "displayName": "Saffron",
+        "canonical": "oklch(0.8 0.15 60)",
+        "tonalRamp": [
+          "oklch(0.15 0.13 60)",
+          "oklch(0.26 0.13 60)",
+          "oklch(0.38 0.13 60)",
+          "oklch(0.50 0.13 60)",
+          "oklch(0.62 0.13 60)",
+          "oklch(0.74 0.13 60)",
+          "oklch(0.85 0.13 60)",
+          "oklch(0.95 0.13 60)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Page h1s, two lines rising from blur; 68px desktop, 60px small, 32-41.6px phone."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section h2s via the section head; 48px desktop, 38.4/30.4px smaller. 56px for long detail-page h1s."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Serif h3s in rows, timeline steps and cards (28-36px; service index rows to 48px)."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Lead paragraphs and section intros, about 36rem measure."
+      },
+      "body-sm": {
+        "displayName": "Body Small",
+        "purpose": "Card text, FAQ answers, timeline copy."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Nav, metadata, chips, fact terms (13-15px), sentence case, no tracking."
+      },
+      "button": {
+        "displayName": "Button",
+        "purpose": "Serif pill labels; 15px in compact pills."
+      },
+      "data": {
+        "displayName": "Data",
+        "purpose": "Real machine output only: logs, timers, code."
+      }
+    },
+    "typeScalePx": [
+      13,
+      14,
+      15,
+      16,
+      18,
+      20,
+      24,
+      28,
+      36,
+      48,
+      56,
+      68
+    ],
+    "shadows": [
+      {
+        "name": "hairline-ring",
+        "value": "inset 0 0 0 1px var(--border)",
+        "purpose": "White cards on the ground: testimonial, image frames, rating chip."
+      },
+      {
+        "name": "active-chip",
+        "value": "0 6px 16px -10px oklch(0.2 0.02 70 / 0.5)",
+        "purpose": "Selected segmented option."
+      },
+      {
+        "name": "raised-card",
+        "value": "0 24px 60px -30px oklch(0.2 0.02 60 / 0.35), inset 0 0 0 1px var(--border)",
+        "purpose": "Opened FAQ item."
+      },
+      {
+        "name": "lifted-panel",
+        "value": "0 30px 60px -36px oklch(0.25 0.03 60 / 0.45)",
+        "purpose": "Cards resting on stone, e.g. the CTA chat card."
+      },
+      {
+        "name": "float",
+        "value": "0 40px 80px -30px oklch(0.2 0.02 60 / 0.55)",
+        "purpose": "Floating service preview; project images on hover (-40px spread, 0.45)."
+      },
+      {
+        "name": "button-dark",
+        "value": "inset 0 1px 0 oklch(1 0 0 / .14), 0 1px 2px oklch(0.2 0.02 60 / .25)",
+        "purpose": "Dark pill at rest; hover lengthens to 0 10px 24px -10px at .55."
+      },
+      {
+        "name": "button-light",
+        "value": "inset 0 0 0 1px oklch(0.2 0.02 60 / .14)",
+        "purpose": "Light pill ring at rest; hover firms to .3 with 0 10px 24px -14px at .35."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-settle",
+        "value": "cubic-bezier(.16,1,.3,1)",
+        "purpose": "Reveals, headline lines, FAQ open, stage swaps, hover translations."
+      },
+      {
+        "name": "ease-button",
+        "value": "cubic-bezier(.2,0,0,1)",
+        "purpose": "Button shadow, light and press, 350ms."
+      },
+      {
+        "name": "ease-rise",
+        "value": "cubic-bezier(.2,.7,.2,1)",
+        "purpose": "Hero copy and buttons rising in, 900ms."
+      },
+      {
+        "name": "reveal",
+        "value": "opacity 0, translateY(28px), blur(8px) to rest over 1s",
+        "purpose": "Section content settling on scroll; siblings staggered 50-120ms; 2.5s safety reveal."
+      },
+      {
+        "name": "line-in",
+        "value": "translateY(0.45em), blur(10px) to rest over 1.1s",
+        "purpose": "Headline lines, staggered 120ms."
+      },
+      {
+        "name": "stage-in",
+        "value": "translateY(18px) scale(.985) to rest over .6s",
+        "purpose": "Demo screen and testimonial swaps."
+      },
+      {
+        "name": "press",
+        "value": "scale(.97)",
+        "purpose": "Every pill on :active."
+      },
+      {
+        "name": "wordmark-pan",
+        "value": "background-position pan, 24s ease-in-out alternate",
+        "purpose": "Photo-filled footer wordmark."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "all reveals, line-ins, stage swaps, marquee and wordmark pan disabled",
+        "purpose": "prefers-reduced-motion: reduce."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      }
+    ],
+    "focus": {
+      "value": "outline: 2px solid var(--accent); outline-offset: 3px",
+      "purpose": "Global :focus-visible."
+    },
+    "conventions": {
+      "data-ui": "Interface fragments (laptop stage, principle scenes) carry the data-ui attribute; the depicted app's own styling governs inside them."
+    }
+  },
+  "components": [
+    {
+      "name": "Dark Button",
+      "kind": "button",
+      "refersTo": "button-dark",
+      "description": "Primary pill: dark gradient with a cursor-following soft light. First of a dark/light pair.",
+      "html": "<a class=\"ds-btn ds-btn-dark\" href=\"#\">Chat on WhatsApp</a>",
+      "css": ".ds-btn { position: relative; isolation: isolate; overflow: hidden; display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; white-space: nowrap; border: 0; cursor: pointer; border-radius: 9999px; padding: 0.9rem 1.5rem; font-family: 'Source Serif 4 Variable', Georgia, serif; font-size: 16px; font-weight: 500; letter-spacing: -0.005em; text-decoration: none; transition: box-shadow .35s cubic-bezier(.2,0,0,1), transform .35s cubic-bezier(.2,0,0,1); } .ds-btn::after { content: ''; position: absolute; inset: 0; z-index: -1; opacity: 0; transition: opacity .35s cubic-bezier(.2,0,0,1); background: radial-gradient(140px circle at 50% 50%, var(--ds-light), transparent 70%); } .ds-btn:hover::after { opacity: 1; } .ds-btn:active { transform: scale(.97); } .ds-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; } .ds-btn-dark { --ds-light: oklch(1 0 0 / .22); color: var(--ink-foreground); background-image: linear-gradient(180deg, oklch(0.36 0.012 60) 0%, oklch(0.17 0.008 60) 100%); box-shadow: inset 0 1px 0 oklch(1 0 0 / .14), 0 1px 2px oklch(0.2 0.02 60 / .25); } .ds-btn-dark:hover { box-shadow: inset 0 1px 0 oklch(1 0 0 / .18), 0 10px 24px -10px oklch(0.2 0.02 60 / .55); }"
+    },
+    {
+      "name": "Light Button",
+      "kind": "button",
+      "refersTo": "button-light",
+      "description": "Secondary pill: white-to-stone gradient with an inset ink ring and a warm cursor light.",
+      "html": "<a class=\"ds-btn ds-btn-light\" href=\"#\">See prices</a>",
+      "css": ".ds-btn { position: relative; isolation: isolate; overflow: hidden; display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; white-space: nowrap; border: 0; cursor: pointer; border-radius: 9999px; padding: 0.9rem 1.5rem; font-family: 'Source Serif 4 Variable', Georgia, serif; font-size: 16px; font-weight: 500; letter-spacing: -0.005em; text-decoration: none; transition: box-shadow .35s cubic-bezier(.2,0,0,1), transform .35s cubic-bezier(.2,0,0,1); } .ds-btn::after { content: ''; position: absolute; inset: 0; z-index: -1; opacity: 0; transition: opacity .35s cubic-bezier(.2,0,0,1); background: radial-gradient(140px circle at 50% 50%, var(--ds-light), transparent 70%); } .ds-btn:hover::after { opacity: 1; } .ds-btn:active { transform: scale(.97); } .ds-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; } .ds-btn-light { --ds-light: oklch(0.85 0.12 50 / .35); color: var(--foreground); background-image: linear-gradient(180deg, oklch(1 0 0) 0%, oklch(0.96 0.002 90) 100%); box-shadow: inset 0 0 0 1px oklch(0.2 0.02 60 / .14); } .ds-btn-light:hover { box-shadow: inset 0 0 0 1px oklch(0.2 0.02 60 / .3), 0 10px 24px -14px oklch(0.2 0.02 60 / .35); }"
+    },
+    {
+      "name": "Button on Ink",
+      "kind": "button",
+      "refersTo": "button-on-ink",
+      "description": "Paper pill used inside ink panels and the dark band.",
+      "html": "<div class=\"ds-ink-wrap\"><a class=\"ds-btn ds-btn-on-ink\" href=\"#\">How a project runs</a></div>",
+      "css": ".ds-btn { position: relative; isolation: isolate; overflow: hidden; display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; white-space: nowrap; border: 0; cursor: pointer; border-radius: 9999px; padding: 0.9rem 1.5rem; font-family: 'Source Serif 4 Variable', Georgia, serif; font-size: 16px; font-weight: 500; letter-spacing: -0.005em; text-decoration: none; transition: box-shadow .35s cubic-bezier(.2,0,0,1), transform .35s cubic-bezier(.2,0,0,1); } .ds-btn::after { content: ''; position: absolute; inset: 0; z-index: -1; opacity: 0; transition: opacity .35s cubic-bezier(.2,0,0,1); background: radial-gradient(140px circle at 50% 50%, var(--ds-light), transparent 70%); } .ds-btn:hover::after { opacity: 1; } .ds-btn:active { transform: scale(.97); } .ds-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; } .ds-ink-wrap { background: var(--ink); padding: 28px; border-radius: 24px; } .ds-btn-on-ink { --ds-light: oklch(0.85 0.12 50 / .35); background: var(--ink-foreground); color: var(--ink); }"
+    },
+    {
+      "name": "Segmented Control",
+      "kind": "chip",
+      "refersTo": "segmented",
+      "description": "Stone track of pill options; the selected one lifts to white. Pricing toggle and filters.",
+      "html": "<div class=\"ds-seg\" role=\"group\" aria-label=\"Filter\"><button class=\"ds-seg-opt\" aria-pressed=\"true\">All <span class=\"ds-seg-n\">6</span></button><button class=\"ds-seg-opt\" aria-pressed=\"false\">Websites <span class=\"ds-seg-n\">2</span></button><button class=\"ds-seg-opt\" aria-pressed=\"false\">AI &amp; automation <span class=\"ds-seg-n\">4</span></button></div>",
+      "css": ".ds-seg { display: inline-flex; flex-wrap: wrap; gap: 4px; padding: 6px; border-radius: 22px; background: var(--stone); font-family: 'Host Grotesk Variable', system-ui, sans-serif; } .ds-seg-opt { border: 0; cursor: pointer; border-radius: 9999px; padding: 10px 16px; font: inherit; font-size: 15px; background: transparent; color: var(--muted-foreground); transition: color .3s, background-color .3s; } .ds-seg-opt:hover { color: var(--foreground); } .ds-seg-opt[aria-pressed=true] { background: var(--card); color: var(--foreground); box-shadow: 0 6px 16px -10px oklch(0.2 0.02 70 / 0.5); } .ds-seg-opt:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; } .ds-seg-n { margin-left: 6px; color: var(--muted-foreground); font-variant-numeric: tabular-nums; }"
+    },
+    {
+      "name": "FAQ Item",
+      "kind": "custom",
+      "refersTo": "faq-item",
+      "description": "The single FAQ pattern: stone card at rest, white and raised when open, plus rotates into an ink circle.",
+      "html": "<ul class=\"ds-faq\"><li class=\"ds-faq-item is-open\"><button class=\"ds-faq-q\" aria-expanded=\"true\"><span class=\"ds-faq-n\">01</span><span class=\"ds-faq-t\">How fast can you deliver a website?</span><span class=\"ds-faq-plus\" aria-hidden=\"true\"><svg viewBox=\"0 0 24 24\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><path d=\"M12 5v14M5 12h14\"/></svg></span></button><p class=\"ds-faq-a\">Most business sites launch in 1 to 5 days after the content is ready.</p></li><li class=\"ds-faq-item\"><button class=\"ds-faq-q\" aria-expanded=\"false\"><span class=\"ds-faq-n\">02</span><span class=\"ds-faq-t\">Do you work outside Delhi?</span><span class=\"ds-faq-plus\" aria-hidden=\"true\"><svg viewBox=\"0 0 24 24\" width=\"16\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><path d=\"M12 5v14M5 12h14\"/></svg></span></button></li></ul>",
+      "css": ".ds-faq { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; font-family: 'Host Grotesk Variable', system-ui, sans-serif; } .ds-faq-item { border-radius: 22px; background: var(--stone); transition: background-color .5s, box-shadow .5s; } .ds-faq-item:hover { background: oklch(0.945 0.003 90); } .ds-faq-item.is-open { background: var(--card); box-shadow: 0 24px 60px -30px oklch(0.2 0.02 60 / 0.35), inset 0 0 0 1px var(--border); } .ds-faq-q { display: flex; width: 100%; align-items: center; gap: 24px; padding: 24px 28px; border: 0; background: none; font: inherit; font-size: 18px; text-align: left; color: var(--foreground); cursor: pointer; } .ds-faq-q:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 22px; } .ds-faq-n { width: 28px; font-family: 'Source Serif 4 Variable', Georgia, serif; font-size: 15px; color: oklch(0.2 0.004 70 / .35); font-variant-numeric: tabular-nums; } .is-open .ds-faq-n { color: var(--accent); } .ds-faq-t { flex: 1; } .ds-faq-plus { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 9999px; background: var(--card); transition: all .5s cubic-bezier(.16,1,.3,1); } .is-open .ds-faq-plus { background: var(--ink); color: var(--ink-foreground); transform: rotate(45deg); } .ds-faq-a { margin: 0; padding: 0 28px 28px 84px; font-size: 16px; line-height: 1.625; color: oklch(0.2 0.004 70 / .75); max-width: 42rem; }"
+    },
+    {
+      "name": "Plan Card",
+      "kind": "card",
+      "refersTo": "panel-stone",
+      "description": "Pricing plan on a 28px stone panel; the popular plan flips to ink with a saffron tag.",
+      "html": "<div class=\"ds-plan\"><h3 class=\"ds-plan-h\">Business website <span class=\"ds-tag\">Popular</span></h3><p class=\"ds-plan-p\"><s>₹9,999</s> <b>₹4,999</b></p><ul class=\"ds-plan-f\"><li>Up to 6 pages</li><li>Enquiry form to WhatsApp</li></ul><a class=\"ds-plan-cta\" href=\"#\">Start on WhatsApp</a></div>",
+      "css": ".ds-plan { display: flex; flex-direction: column; max-width: 360px; border-radius: 28px; padding: 36px; background: var(--ink); color: var(--ink-foreground); font-family: 'Host Grotesk Variable', system-ui, sans-serif; } .ds-plan-h { display: flex; justify-content: space-between; align-items: center; margin: 0; font-family: 'Source Serif 4 Variable', Georgia, serif; font-weight: 400; font-size: 24px; } .ds-tag { border-radius: 9999px; background: var(--saffron); color: var(--ink); padding: 4px 12px; font-family: 'Host Grotesk Variable', system-ui, sans-serif; font-size: 13px; font-weight: 500; } .ds-plan-p { margin: 24px 0 0; display: flex; align-items: baseline; gap: 12px; } .ds-plan-p s { font-size: 18px; opacity: .5; } .ds-plan-p b { font-size: 60px; font-weight: 300; letter-spacing: -0.04em; font-variant-numeric: tabular-nums; } .ds-plan-f { margin: 28px 0 0; padding: 0; list-style: none; display: grid; gap: 12px; font-size: 15px; } .ds-plan-f li::before { content: '\\2713'; color: var(--saffron); margin-right: 12px; } .ds-plan-cta { margin-top: 32px; display: block; text-align: center; border-radius: 9999px; padding: 16px 24px; background: var(--ink-foreground); color: var(--ink); font-size: 15px; font-weight: 500; text-decoration: none; transition: background-color .2s; } .ds-plan-cta:hover { background: oklch(0.975 0.002 90 / .85); } .ds-plan-cta:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }"
+    },
+    {
+      "name": "Header Navigation",
+      "kind": "nav",
+      "refersTo": "button-compact",
+      "description": "Sticky header: 15px pill links, current page on stone, compact light and dark buttons at right.",
+      "html": "<nav class=\"ds-nav\"><span class=\"ds-nav-mark\">Kriyvo AI</span><span class=\"ds-nav-links\"><a href=\"#\">Services</a><a href=\"#\" class=\"is-active\">Pricing</a><a href=\"#\">Portfolio</a><a href=\"#\">About</a></span><a class=\"ds-nav-cta\" href=\"#\">Chat on WhatsApp</a></nav>",
+      "css": ".ds-nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 16px 24px; background: oklch(0.985 0.0015 90 / .92); box-shadow: 0 1px 0 var(--border); backdrop-filter: blur(12px); font-family: 'Host Grotesk Variable', system-ui, sans-serif; } .ds-nav-mark { font-size: 20px; font-weight: 500; letter-spacing: -0.02em; } .ds-nav-links { display: flex; gap: 4px; font-size: 15px; } .ds-nav-links a { border-radius: 9999px; padding: 8px 14px; color: oklch(0.2 0.004 70 / .7); text-decoration: none; transition: color .2s; } .ds-nav-links a:hover { color: var(--foreground); } .ds-nav-links a.is-active { background: var(--stone); color: var(--foreground); } .ds-nav-links a:focus-visible, .ds-nav-cta:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; } .ds-nav-cta { border-radius: 9999px; padding: 8px 16px; font-family: 'Source Serif 4 Variable', Georgia, serif; font-size: 15px; font-weight: 500; color: var(--ink-foreground); text-decoration: none; background-image: linear-gradient(180deg, oklch(0.36 0.012 60), oklch(0.17 0.008 60)); box-shadow: inset 0 1px 0 oklch(1 0 0 / .14), 0 1px 2px oklch(0.2 0.02 60 / .25); } .ds-nav-cta:hover { box-shadow: inset 0 1px 0 oklch(1 0 0 / .18), 0 10px 24px -10px oklch(0.2 0.02 60 / .55); }"
+    },
+    {
+      "name": "Fact Strip",
+      "kind": "custom",
+      "refersTo": "",
+      "description": "Ruled row of facts: muted 14px terms over 16px values.",
+      "html": "<dl class=\"ds-facts\"><div><dt>Client</dt><dd>KOCA restaurant</dd></div><div><dt>Service</dt><dd>Custom website</dd></div><div><dt>Delivered</dt><dd>5 days</dd></div></dl>",
+      "css": ".ds-facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px 32px; margin: 0; padding: 28px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); font-family: 'Host Grotesk Variable', system-ui, sans-serif; } .ds-facts dt { font-size: 14px; color: var(--muted-foreground); } .ds-facts dd { margin: 6px 0 0; font-size: 16px; line-height: 1.375; }"
+    },
+    {
+      "name": "Interface Fragment Frame",
+      "kind": "custom",
+      "refersTo": "",
+      "description": "data-ui fragment: a real app screen in a laptop bezel. Inside it, the app's own styling governs.",
+      "html": "<div data-ui class=\"ds-laptop\"><div class=\"ds-laptop-screen\"><div class=\"ds-laptop-bar\"><span class=\"ds-dots\"><i></i><i></i><i></i></span><span class=\"ds-url\">kocaofficial.com</span></div><div class=\"ds-laptop-body\"><p class=\"ds-log\"><span class=\"ds-dot\"></span>lead.received <span>form &rarr; CRM</span></p></div></div><div class=\"ds-laptop-base\"></div></div>",
+      "css": ".ds-laptop { max-width: 520px; } .ds-laptop-screen { background: var(--ink); padding: 14px 14px 0; border-radius: 22px 22px 0 0; } .ds-laptop-bar { display: flex; align-items: center; gap: 12px; height: 36px; padding: 0 16px; background: #f3f2ef; border-radius: 12px 12px 0 0; border-bottom: 1px solid var(--border); } .ds-dots { display: flex; gap: 6px; } .ds-dots i { width: 12px; height: 12px; border-radius: 9999px; background: #ff5f57; } .ds-dots i:nth-child(2) { background: #febc2e; } .ds-dots i:nth-child(3) { background: #28c840; } .ds-url { margin: 0 auto; width: 46%; text-align: center; border-radius: 6px; background: var(--card); padding: 4px 12px; font-family: 'Host Grotesk Variable', system-ui, sans-serif; font-size: 12px; color: var(--muted-foreground); } .ds-laptop-body { height: 160px; background: var(--card); display: grid; place-items: center; } .ds-log { display: flex; align-items: center; gap: 12px; font-family: 'Geist Mono Variable', ui-monospace, monospace; font-size: 12.5px; } .ds-log span:last-child { color: var(--muted-foreground); } .ds-dot { width: 6px; height: 6px; border-radius: 9999px; background: var(--flame); } .ds-laptop-base { margin: 0 -3%; height: 20px; border-radius: 0 0 14px 14px; background: linear-gradient(180deg, #d9d6d0, #bdb9b2); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Working Screen",
+    "overview": "Kriyvo is presented with the calm polish of an AI product company. The page itself stays quiet: a near-white neutral ground, warm stone panels, near-black ink panels, a light serif display and a plain grotesk body. The noise is reserved for proof. Every service is drawn on the real screen it lives on (a laptop running the client's site, a chat widget, WhatsApp Web, an n8n canvas, a call console, a log stream) and those screens move, type and fill in as the visitor watches.\n\nDensity is generous. Sections sit 128–176px apart inside a 1240px container, headings are short and set in a regular-weight serif, and most surfaces are soft rounded panels separated by tone rather than lines or shadows. Orange is the brand, but it appears as signal, never as paint: a progress line, a filled timeline step, a rating star, a link, a check mark, the focus ring.\n\nMotion is the second voice. Headline lines rise out of a blur one after another, sections settle from blur as they enter, the process timeline fills on scroll, project images tilt toward the cursor, and both button styles carry a soft light that follows the pointer. Everything respects `prefers-reduced-motion`.",
+    "keyCharacteristics": [
+      "Neutral near-white ground with stone and ink panels; tone carries the hierarchy.",
+      "Source Serif 4 at about 360 for display, Host Grotesk for everything read, Geist Mono only for real data.",
+      "Orange held to signal; saffron for small highlights, mostly on ink.",
+      "Pill buttons in two finishes (dark gradient, light ringed) with a cursor-following light.",
+      "Product proof drawn as real interface fragments, marked with `data-ui`.",
+      "Heroes are type, two buttons and a quiet proof line: no glow blobs, no eyebrow pills."
+    ],
+    "rules": [
+      {
+        "name": "The Signal Orange Rule",
+        "body": "Flame and accent mark state, progress and links only. They never fill a panel, a section band or a headline, and never colour a primary button.",
+        "section": "colors"
+      },
+      {
+        "name": "The Saffron on Ink Rule",
+        "body": "Saffron is a highlight for small things (a tag, a chip, a numeral, an icon) and lives mostly on ink, where it reads warm without competing with flame.",
+        "section": "colors"
+      },
+      {
+        "name": "The Tone Not Grey Rule",
+        "body": "Secondary text is the body colour at reduced opacity (70%, 75%, 80%); on ink it is paper at 55–65%. Do not introduce new greys.",
+        "section": "colors"
+      },
+      {
+        "name": "The Quiet Serif Rule",
+        "body": "h1 and h2 are Source Serif 4 at 360 with tight tracking and balanced wrapping. Never set display type bold, uppercase or tracked out.",
+        "section": "typography"
+      },
+      {
+        "name": "The Real Data Mono Rule",
+        "body": "Geist Mono appears only where the content is actual machine output: logs, timers, code. It is never a decorative label face.",
+        "section": "typography"
+      },
+      {
+        "name": "The Tabular Figures Rule",
+        "body": "Prices, counts, step numbers and pagers use tabular figures so they do not jitter as they change.",
+        "section": "typography"
+      },
+      {
+        "name": "The One Dark Band Rule",
+        "body": "A page carries at most one full-bleed ink band (the about page's principles, a case study's results). Ink otherwise appears as contained panels.",
+        "section": "layout"
+      },
+      {
+        "name": "The Settle Rule",
+        "body": "Content enters by settling: 28px rise, 8px blur to sharp, opacity 0 to 1 over one second on an expo-out curve, staggered 50–120ms between siblings. Anything not revealed within 2.5s is shown regardless.",
+        "section": "layout"
+      },
+      {
+        "name": "The Tonal First Rule",
+        "body": "Reach for a tone step (ground, stone, card, ink) before a shadow. A shadow means \"raised or active\", never \"this is a box\".",
+        "section": "elevation"
+      },
+      {
+        "name": "The Pill and Panel Rule",
+        "body": "Interactive controls are pills; containers are 22–28px panels. Do not mix in square-cornered boxes or small 4–8px card radii outside thumbnails and interface fragments.",
+        "section": "shapes"
+      },
+      {
+        "name": "The Real Screen Rule",
+        "body": "Inside a `data-ui` fragment the depicted app's own styling governs: WhatsApp greens and bubble shadows, macOS window dots, a client site's tracked caps, 11–12px UI labels, mono log rows. Site-level rules about tracking, hex colours and the type scale apply outside fragments, not inside them.",
+        "section": "components"
+      }
+    ],
+    "dos": [
+      "**Do** separate surfaces by tone (ground, stone, white, ink) before reaching for a border or shadow.",
+      "**Do** keep orange to signal: progress, live states, stars, links, check marks, focus.",
+      "**Do** open heroes with a serif headline of one or two lines, one sentence with real prices, a dark and a light pill, and a quiet proof line.",
+      "**Do** show a service on its real screen as a `data-ui` fragment rather than with an icon or an adjective.",
+      "**Do** use pills for every control and 22–28px radii for every panel.",
+      "**Do** let content settle from blur, stagger siblings by 50–120ms, and honour reduced motion."
+    ],
+    "donts": [
+      "**Don't** place glow blobs, gradient orbs or blurred colour fields behind a hero.",
+      "**Don't** put eyebrow pills, kickers or tracked uppercase labels above headings.",
+      "**Don't** build grids of cards headed by icon tiles; show the work instead.",
+      "**Don't** fill panels, bands or primary buttons with flame or accent.",
+      "**Don't** set the display serif bold, uppercase or letter-spaced.",
+      "**Don't** use Geist Mono for labels, tags or decoration.",
+      "**Don't** use more than one full-bleed ink band on a page."
+    ]
+  }
+}

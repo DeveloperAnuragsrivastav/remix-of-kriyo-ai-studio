@@ -30,3 +30,28 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+# Playwright CLI output (may contain credentials)
+.playwright-cli/
+# TasteSkill inspector output
+.taste-skill/
+
+# Playwright test output
+test-results/
+playwright-report/
+
+# Secrets (never commit)
+.env
+.env.*
+!.env.example
+
+# Netlify local state
+.netlify/
+# Vercel build output
+.vercel/
+
+# Local agent tooling and design-review captures
+.claude/
+.agents/
+skills-lock.json
+.impeccable/review/
+.impeccable/questions/

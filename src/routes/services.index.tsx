@@ -1,7 +1,30 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { AgencyLayout, PageIntro, ProjectCTA } from "@/components/AgencyLayout";
+import { SectionHead } from "@/components/Kit";
+import { Reveal } from "@/components/Reveal";
+import { ServiceIndex } from "@/components/ServiceIndex";
 import { services } from "@/lib/services-data";
 import { pageMeta } from "@/lib/page-meta";
-export const Route = createFileRoute("/services/")({ head: () => pageMeta("Freelance services", "AI automation, n8n workflows, LLM agents, website chatbots and custom web development from Kriyvo AI."), component: Services });
-function Services() { return <AgencyLayout><PageIntro label="Freelance services" title="Web development, AI & automation." description="Start with your business need. We build websites, connect your tools and develop AI applications around a clearly defined task." /><section className="mx-auto grid max-w-6xl gap-x-8 gap-y-12 px-6 pb-16 md:grid-cols-2">{services.map((service, i) => <Link key={service.slug} to="/services/$slug" params={{ slug: service.slug }} className={`group ${i === 0 ? "md:col-span-2" : ""}`}><img src={service.image} alt={service.title} loading={i === 0 ? "eager" : "lazy"} className={`w-full rounded-lg object-cover ${i === 0 ? "aspect-[16/6] max-md:aspect-[16/10]" : "aspect-[16/10]"}`} /><div className="mt-5 flex items-start justify-between gap-5"><div><p className="text-xs font-semibold text-accent">{service.category}</p><h2 className="mt-2 text-2xl md:text-3xl group-hover:text-accent">{service.title}</h2></div><ArrowUpRight className="mt-5 h-6 w-6 shrink-0" /></div><p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground">{service.description}</p></Link>)}</section><section className="bg-secondary/60"><div className="mx-auto max-w-6xl px-6 py-16"><h2 className="text-3xl md:text-4xl">Which service fits your task?</h2><div className="mt-8">{services.map(service => <Link key={service.slug} to="/services/$slug" params={{ slug: service.slug }} className="grid gap-4 border-t border-border py-6 md:grid-cols-[1fr_1fr_24px]"><p className="text-sm leading-relaxed">{service.need}</p><div><p className="font-medium text-accent">{service.title}</p><p className="mt-2 text-sm text-muted-foreground">{service.boundary}</p></div><ArrowUpRight className="h-5 w-5" /></Link>)}</div></div></section><ProjectCTA /></AgencyLayout>; }
+export const Route = createFileRoute("/services/")({ head: () => pageMeta("Web Development & AI Automation Services", "AI automation, n8n workflows, LLM agents, website chatbots and custom web development from Kriyvo AI."), component: Services });
+
+function Services() {
+  return <AgencyLayout>
+    <PageIntro label="Services" title="Websites, AI and automation" description="Start with your business need. I build websites, connect your tools and develop AI applications around a clearly defined task." />
+    <section className="mx-auto max-w-[1240px] px-4 sm:px-6"><div className="border-t border-border"><ServiceIndex /></div></section>
+
+    {/* Match a need to a service */}
+    <section className="mx-auto mt-20 max-w-[1240px] px-4 sm:px-6 md:mt-36">
+      <SectionHead title="Not sure which one you need?" text="Find the sentence that sounds like your business today." />
+      <div className="mt-12 grid gap-4 md:grid-cols-2">
+        {services.map((s, i) => <Reveal key={s.slug} delay={(i % 2) * 80}>
+          <Link to="/services/$slug" params={{ slug: s.slug }} className="group flex h-full flex-col justify-between gap-6 rounded-[22px] bg-stone p-7 transition-colors duration-300 hover:bg-[oklch(0.94_0.003_90)] md:p-8">
+            <p className="font-display text-xl leading-snug">“{s.need}”</p>
+            <span className="flex items-center justify-between gap-4 text-[15px]"><span><span className="text-muted-foreground">You need: </span>{s.title}</span><ArrowRight aria-hidden className="h-5 w-5 text-accent transition-transform group-hover:translate-x-1" /></span>
+          </Link>
+        </Reveal>)}
+      </div>
+    </section>
+    <ProjectCTA />
+  </AgencyLayout>;
+}

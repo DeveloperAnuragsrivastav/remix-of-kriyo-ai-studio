@@ -8,47 +8,42 @@ import {
   Scripts,
   type ErrorComponentProps,
 } from "@tanstack/react-router";
-import { useEffect, type ReactNode } from "react";
+import type { ReactNode } from "react";
 
 import appCss from "../styles.css?url";
-import { reportLovableError } from "../lib/lovable-error-reporting";
+import { BUSINESS } from "../lib/business";
+import displayFont from "@fontsource-variable/source-serif-4/files/source-serif-4-latin-wght-normal.woff2?url";
+import bodyFont from "@fontsource-variable/host-grotesk/files/host-grotesk-latin-wght-normal.woff2?url";
+import { AgencyLayout } from "../components/AgencyLayout";
 
 function NotFoundComponent() {
+  const links = [["Home", "/"], ["Services", "/services"], ["Portfolio", "/portfolio"], ["Blog", "/blog"], ["Contact", "/contact"]] as const;
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background px-4">
-      <div className="max-w-md text-center">
-        <h1 className="text-7xl font-bold text-foreground">404</h1>
-        <h2 className="mt-4 text-xl font-semibold text-foreground">Page not found</h2>
-        <p className="mt-2 text-sm text-muted-foreground">
-          The page you're looking for doesn't exist or has been moved.
-        </p>
-        <div className="mt-6">
-          <Link
-            to="/"
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
-          >
-            Go home
-          </Link>
-        </div>
-      </div>
-    </div>
+    <AgencyLayout>
+      <section className="mx-auto max-w-[1240px] px-4 sm:px-6 py-24 md:py-32">
+        <p className="font-display text-[7rem] leading-none text-foreground/15 md:text-[11rem]" aria-hidden>404</p>
+        <h1 className="mt-4 max-w-2xl text-[2.6rem] md:text-6xl">This page took a wrong turn.</h1>
+        <p className="mt-5 max-w-xl text-lg leading-relaxed text-foreground/70">The link may be old or mistyped. Here are the places people usually look for:</p>
+        <nav aria-label="Helpful links" className="mt-10 flex flex-wrap gap-3">
+          {links.map(([label, to], i) => (
+            <Link key={to} to={to} className={`btn ${i === 0 ? "btn-dark" : "btn-light"}`}>{label}</Link>
+          ))}
+        </nav>
+      </section>
+    </AgencyLayout>
   );
 }
 
 function ErrorComponent({ error, reset }: ErrorComponentProps) {
   console.error(error);
   const router = useRouter();
-  useEffect(() => {
-    reportLovableError(error, { boundary: "tanstack_root_error_component" });
-  }, [error]);
-
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
-        <h1 className="text-xl font-semibold tracking-tight text-foreground">
+        <h1 className="text-4xl">
           This page didn't load
         </h1>
-        <p className="mt-2 text-sm text-muted-foreground">
+        <p className="mt-3 text-[16px] text-foreground/70">
           Something went wrong on our end. You can try refreshing or head back home.
         </p>
         <div className="mt-6 flex flex-wrap justify-center gap-2">
@@ -57,13 +52,13 @@ function ErrorComponent({ error, reset }: ErrorComponentProps) {
               router.invalidate();
               reset();
             }}
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+            className="btn btn-dark"
           >
             Try again
           </button>
           <a
             href="/"
-            className="inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
+            className="btn btn-light"
           >
             Go home
           </a>
@@ -73,23 +68,59 @@ function ErrorComponent({ error, reset }: ErrorComponentProps) {
   );
 }
 
+const businessSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": `${BUSINESS.url}/#business`,
+      name: BUSINESS.name,
+      url: BUSINESS.url,
+      logo: `${BUSINESS.url}/favicon.png`,
+      image: `${BUSINESS.url}/og-image.jpg`,
+      description: BUSINESS.description,
+      email: BUSINESS.email,
+      telephone: BUSINESS.phoneE164,
+      priceRange: "₹999+",
+      address: { "@type": "PostalAddress", addressLocality: `${BUSINESS.locality}, ${BUSINESS.city}`, addressRegion: BUSINESS.region, postalCode: BUSINESS.postalCode, addressCountry: BUSINESS.country },
+      areaServed: [{ "@type": "City", name: "New Delhi" }, { "@type": "AdministrativeArea", name: "Delhi NCR" }, { "@type": "Country", name: "India" }],
+      sameAs: [BUSINESS.instagram],
+      knowsAbout: ["Website development", "WordPress", "AI chatbots", "WhatsApp Business API", "Voice AI agents", "n8n workflow automation", "LLM applications"],
+    },
+    { "@type": "WebSite", "@id": `${BUSINESS.url}/#website`, url: BUSINESS.url, name: BUSINESS.name, publisher: { "@id": `${BUSINESS.url}/#business` } },
+  ],
+};
+
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
-  head: () => ({
+  head: ({ matches }) => {
+    const path = matches[matches.length - 1]?.pathname ?? "/";
+    const canonical = `${BUSINESS.url}${path === "/" ? "/" : path.replace(/\/$/, "")}`;
+    return {
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Kriyvo AI" },
-      { name: "description", content: "Kriyvo AI — AI agents, automation and digital products." },
+      { name: "description", content: "Kriyvo AI — freelance web development, AI chatbots and automation in Delhi NCR." },
       { property: "og:type", content: "website" },
+      { property: "og:site_name", content: BUSINESS.name },
+      { property: "og:url", content: canonical },
+      { property: "og:image", content: `${BUSINESS.url}/og-image.jpg` },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: `${BUSINESS.url}/og-image.jpg` },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap" },
+      { rel: "preload", href: displayFont, as: "font", type: "font/woff2", crossOrigin: "anonymous" },
+      { rel: "preload", href: bodyFont, as: "font", type: "font/woff2", crossOrigin: "anonymous" },
       { rel: "icon", type: "image/png", href: "/favicon.png" },
+      { rel: "icon", href: "/favicon.ico", sizes: "48x48" },
+      { rel: "canonical", href: canonical },
     ],
-  }),
+    scripts: [{ type: "application/ld+json", children: JSON.stringify(businessSchema) }],
+    };
+  },
   shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,

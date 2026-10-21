@@ -1,0 +1,8 @@
+# Netlify build settings. Secrets are NOT set here (this file is committed) —
+# add them under Project configuration -> Environment variables. See DEPLOY.md.
+[build]
+  command = "npm run build"
+  publish = "dist/client"
+
+[build.environment]
+  NODE_VERSION = "22"

@@ -1,6 +1,27 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { AgencyLayout, PageIntro, ProjectCTA } from "@/components/AgencyLayout";
 import { process } from "@/lib/kriyo-data";
+import { Reveal } from "@/components/Reveal";
 import { pageMeta } from "@/lib/page-meta";
-export const Route = createFileRoute("/working-together")({ head: () => pageMeta("Working together", "From discovery and proposal to development and handover: how freelance projects with Kriyvo AI work."), component: WorkingTogether });
-function WorkingTogether() { return <AgencyLayout><PageIntro label="Working together" title="From your first idea to a finished project." description="A freelance engagement, not a software subscription. We define the work, agree the milestones and keep review points part of the process." /><section className="mx-auto max-w-6xl px-6 pb-16">{process.map((step, i) => <article key={step.phase} className="grid gap-5 border-t border-border py-10 md:grid-cols-[100px_1fr_1fr]"><span className="font-display text-4xl text-accent">0{i + 1}</span><div><p className="text-xs font-semibold uppercase text-muted-foreground">{step.phase}</p><h2 className="mt-3 text-3xl">{step.title}</h2></div><p className="text-base leading-relaxed text-muted-foreground">{step.text}</p></article>)}</section><section className="bg-secondary"><div className="mx-auto grid max-w-6xl gap-10 px-6 py-16 md:grid-cols-2"><h2 className="text-3xl md:text-4xl">No surprises in the scope.</h2><div className="space-y-5 text-muted-foreground"><p>Bring a new idea, an existing website or a workflow that needs improving. The proposal defines deliverables, dependencies and exclusions before the build starts.</p><p>Hosting, third-party accounts, API usage and maintenance are separate ongoing needs. Any extra work is discussed before it becomes part of the project.</p><p>Source files, documentation and a walkthrough are agreed as part of the handover. Support and follow-on improvements can be scoped to your needs.</p></div></div></section><ProjectCTA /></AgencyLayout>; }
+export const Route = createFileRoute("/working-together")({ head: () => pageMeta("How a Freelance Web & AI Project Works", "From discovery and a fixed-scope proposal to build, review and handover: how website and AI automation projects with Kriyvo AI work, step by step."), component: WorkingTogether });
+function WorkingTogether() {
+  return <AgencyLayout>
+    <PageIntro label="Working together" title="From your first idea to a finished project" description="A freelance engagement, not a software subscription. I define the work with you, agree the milestones and keep review points part of the process." />
+    <section className="mx-auto max-w-[1240px] px-4 sm:px-6">
+      <ol className="space-y-4">
+        {process.map((step, i) => <li key={step.phase}><Reveal delay={i * 70} className="grid items-start gap-4 rounded-[28px] bg-stone p-8 md:grid-cols-[0.35fr_1fr_1.1fr] md:gap-10 md:p-10">
+          <p className="text-[15px] text-muted-foreground">{step.phase}</p>
+          <h2 className="font-display text-[1.75rem] font-normal leading-tight md:text-[2.25rem]">{step.title}</h2>
+          <p className="text-[17px] leading-relaxed text-foreground/75">{step.text}</p>
+        </Reveal></li>)}
+      </ol>
+    </section>
+    <section className="mx-auto mt-24 max-w-[1240px] px-4 sm:px-6">
+      <div className="grid gap-10 rounded-[28px] bg-ink p-8 text-ink-foreground md:grid-cols-[0.9fr_1.1fr] md:p-12">
+        <h2 className="text-[1.9rem] md:text-[2.25rem]">No surprises in the scope</h2>
+        <div className="space-y-5 text-[17px] leading-relaxed text-ink-foreground/75"><p>Bring a new idea, an existing website or a workflow that needs improving. The proposal defines deliverables, dependencies and exclusions before the build starts.</p><p>Hosting, third-party accounts, API usage and maintenance are separate ongoing needs. Any extra work is discussed before it becomes part of the project.</p><p>Source files, documentation and a walkthrough are agreed as part of the handover. Support and follow-on improvements can be scoped to your needs.</p></div>
+      </div>
+    </section>
+    <ProjectCTA />
+  </AgencyLayout>;
+}
