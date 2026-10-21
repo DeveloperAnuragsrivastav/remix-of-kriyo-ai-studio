@@ -84,7 +84,7 @@ const businessSchema = {
       priceRange: "₹999+",
       address: { "@type": "PostalAddress", addressLocality: `${BUSINESS.locality}, ${BUSINESS.city}`, addressRegion: BUSINESS.region, postalCode: BUSINESS.postalCode, addressCountry: BUSINESS.country },
       areaServed: [{ "@type": "City", name: "New Delhi" }, { "@type": "AdministrativeArea", name: "Delhi NCR" }, { "@type": "Country", name: "India" }],
-      sameAs: [BUSINESS.instagram],
+      sameAs: [BUSINESS.instagram, BUSINESS.linkedin],
       knowsAbout: ["Website development", "WordPress", "AI chatbots", "WhatsApp Business API", "Voice AI agents", "n8n workflow automation", "LLM applications"],
     },
     { "@type": "WebSite", "@id": `${BUSINESS.url}/#website`, url: BUSINESS.url, name: BUSINESS.name, publisher: { "@id": `${BUSINESS.url}/#business` } },

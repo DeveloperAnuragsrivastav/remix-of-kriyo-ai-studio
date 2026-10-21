@@ -3,6 +3,7 @@ import { Link } from "@tanstack/react-router";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import { WHATSAPP, EMAIL } from "@/lib/kriyo-data";
 import { ADDRESS_LINE, BUSINESS } from "@/lib/business";
+import { Socials } from "@/components/Kit";
 import mark from "@/assets/kriyvo-mark.webp";
 import texture from "@/assets/portfolio/koca-restaurant-1000.webp";
 
@@ -75,6 +76,7 @@ export function AgencyFooter() {
           <p className="mt-5 max-w-xs text-[15px] leading-relaxed text-muted-foreground">Websites, AI chatbots, WhatsApp bots and automation, built end to end in Delhi.</p>
           <address className="mt-5 text-[15px] not-italic leading-relaxed text-muted-foreground">{ADDRESS_LINE}<br /><a href={`tel:${BUSINESS.phoneE164}`} className="hover:text-foreground">{BUSINESS.phone}</a><br /><a href={`mailto:${EMAIL}`} className="hover:text-foreground">{EMAIL}</a></address>
           <div className="mt-7 flex flex-wrap gap-3"><a href={WHATSAPP} target="_blank" rel="noreferrer" className="btn btn-dark">Chat on WhatsApp <ArrowUpRight aria-hidden className="h-4 w-4" /></a><ProductHuntBadge className="[&_img]:h-[50px] [&_img]:w-auto" /></div>
+          <div className="mt-4"><Socials /></div>
         </div>
         <div className="grid grid-cols-2 gap-6 md:contents">
         <ul className="grid content-start gap-0.5 text-[15px]">{footerLinks.slice(0, 7).map(([label, to]) => <li key={to}><Link to={to} className="inline-block py-1.5 text-muted-foreground transition-colors hover:text-foreground">{label}</Link></li>)}</ul>

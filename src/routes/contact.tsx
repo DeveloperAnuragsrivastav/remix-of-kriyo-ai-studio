@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { ArrowUpRight, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+import { Socials } from "@/components/Kit";
 import { AgencyLayout } from "@/components/AgencyLayout";
 import { WHATSAPP, EMAIL } from "@/lib/kriyo-data";
 import { ADDRESS_LINE, BUSINESS } from "@/lib/business";
@@ -32,6 +33,7 @@ function Contact() {
               <ArrowUpRight aria-hidden className="h-5 w-5 shrink-0 text-muted-foreground transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-foreground" />
             </a></li>)}
           </ul>
+          <div className="mt-3 animate-rise" style={{ animationDelay: "550ms" }}><Socials variant="cards" /></div>
           <p className="mt-6 flex items-center gap-2 text-[15px] text-muted-foreground"><MapPin aria-hidden className="h-4 w-4 text-accent" />{ADDRESS_LINE} · working remotely with clients everywhere</p>
         </div>
 
