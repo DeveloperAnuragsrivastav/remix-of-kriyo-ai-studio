@@ -23,6 +23,19 @@ import reaAiAgent from "@/assets/blog/rea-ai-agent.webp";
 import kocaWebsite from "@/assets/portfolio/koca-restaurant.webp";
 import gignaatiWhatsapp from "@/assets/portfolio/gignaati-whatsapp-bot.webp";
 import aurumOutreach from "@/assets/portfolio/aurum-conventions-outreach.webp";
+import coverWhatIsAiAutomation from "@/assets/blog/what-is-ai-automation.webp";
+import coverN8nAutomationGuide from "@/assets/blog/n8n-automation-guide.webp";
+import coverWhatsappAutomationForBusiness from "@/assets/blog/whatsapp-automation-for-business.webp";
+import coverBestAiAutomationTools from "@/assets/blog/best-ai-automation-tools.webp";
+import coverAiAgentsVsTraditionalAutomation from "@/assets/blog/ai-agents-vs-traditional-automation.webp";
+import coverAiMarketingAutomation from "@/assets/blog/ai-marketing-automation.webp";
+import coverAiWorkflowAutomationExamples from "@/assets/blog/ai-workflow-automation-examples.webp";
+import coverHowToChooseAiAutomationAgency from "@/assets/blog/how-to-choose-ai-automation-agency.webp";
+import coverYoutubeAutomationWithAi from "@/assets/blog/youtube-automation-with-ai.webp";
+import coverN8nVsMakeVsZapier from "@/assets/blog/n8n-vs-make-vs-zapier.webp";
+import coverPhp2ShellVulnerability from "@/assets/blog/php2shell-vulnerability-cve-2026-109618-109619.webp";
+import coverCheckPhpVersionUpdate from "@/assets/blog/check-php-version-update-fix-security-vulnerability.webp";
+import coverPhpWebsiteSecurityChecklist from "@/assets/blog/php-website-security-checklist.webp";
 
 const covers: Record<string, string> = {
   "website-development-cost-india-2026": kocaWebsite,
@@ -50,6 +63,19 @@ const covers: Record<string, string> = {
   "rag-systems-explained-simply": ragKnowledgeSystems,
   "ai-agent-business-workflow-automation": coverAiAgentBusinessWorkflowAutomation,
   "n8n-vs-python-ai-automation": nEightnVsPython,
+  "what-is-ai-automation": coverWhatIsAiAutomation,
+  "n8n-automation-guide": coverN8nAutomationGuide,
+  "whatsapp-automation-for-business": coverWhatsappAutomationForBusiness,
+  "best-ai-automation-tools": coverBestAiAutomationTools,
+  "ai-agents-vs-traditional-automation": coverAiAgentsVsTraditionalAutomation,
+  "ai-marketing-automation": coverAiMarketingAutomation,
+  "ai-workflow-automation-examples": coverAiWorkflowAutomationExamples,
+  "how-to-choose-ai-automation-agency": coverHowToChooseAiAutomationAgency,
+  "youtube-automation-with-ai": coverYoutubeAutomationWithAi,
+  "n8n-vs-make-vs-zapier": coverN8nVsMakeVsZapier,
+  "php2shell-vulnerability-cve-2026-109618-109619": coverPhp2ShellVulnerability,
+  "check-php-version-update-fix-security-vulnerability": coverCheckPhpVersionUpdate,
+  "php-website-security-checklist": coverPhpWebsiteSecurityChecklist,
 };
 const content: { slug: string; title: string; description: string; category: string; imageKey: string; sections: { heading: string; blocks: (string | string[])[] }[] }[] = [
   {
@@ -1446,6 +1472,1856 @@ const content: { slug: string; title: string; description: string; category: str
         "blocks": [
           "For an AI agent or business workflow, choose an implementation that fits the use case rather than defaulting to one tool. Start with the simplest architecture that meets the requirements, then add complexity only when the workflow justifies it.",
           "The linked AI outreach and BMRC case studies show documented n8n workflows. Their pages distinguish the published implementation details from results that have not been independently measured."
+        ]
+      }
+    ]
+  },
+{
+    "slug": "what-is-ai-automation",
+    "title": "What Is AI Automation? A Practical Guide for Businesses",
+    "description": "Learn what AI automation is, how it works, where businesses can use it, and how to choose a practical first workflow.",
+    "category": "AI & automation",
+    "imageKey": "workflows",
+    "sections": [
+      {
+        "heading": "What is AI automation?",
+        "blocks": [
+          "AI automation combines artificial intelligence with software workflows to help complete tasks that would otherwise require repeated manual effort. Traditional automation follows defined rules: when a specific event happens, perform a specified action. AI can add the ability to interpret language, classify information, summarize content, extract details from documents, or choose between predefined next steps.",
+          "For example, a traditional workflow might copy every new website enquiry into a spreadsheet. An AI-assisted workflow could also read the enquiry, identify the service the person is interested in, summarize their requirements, assign a priority, and prepare a response for a team member to review.",
+          "AI automation does not mean removing people from every process. In many businesses, the best approach is to automate repetitive steps while keeping people involved in decisions that are sensitive, expensive, unusual, or important to customer trust."
+        ]
+      },
+      {
+        "heading": "How does AI automation work?",
+        "blocks": [
+          "A useful AI automation system usually has five parts:",
+          [
+            "Trigger: Something starts the workflow, such as a new form submission, email, customer message, scheduled event, or database update.",
+            "Data collection: The system gathers the information required to do the task. It might retrieve a customer record, read a document, or check an order status.",
+            "AI processing: A model interprets the input, extracts structured fields, classifies the request, or drafts a response.",
+            "Rules and actions: The workflow checks the AI result against business rules and then takes an approved action, such as updating a CRM, notifying a team, or routing a conversation.",
+            "Monitoring and review: The system records what happened, detects errors, and sends uncertain or high-risk cases to a person."
+          ],
+          "A reliable workflow separates the model's interpretation from the business rules. An AI model might classify a message as a refund request, but the actual refund should still follow the company's verified refund policy and authorization process."
+        ]
+      },
+      {
+        "heading": "AI automation vs. traditional automation",
+        "blocks": [
+          [
+            "Input — Traditional automation: Usually structured and predictable. AI-assisted automation: Can handle unstructured text, documents, and messages.",
+            "Logic — Traditional automation: Explicit rules and conditions. AI-assisted automation: AI interpretation combined with rules.",
+            "Best suited to — Traditional automation: Repetitive, stable processes. AI-assisted automation: Processes involving language or variable inputs.",
+            "Reliability — Traditional automation: Highly predictable when inputs and rules are controlled. AI-assisted automation: Requires evaluation, monitoring, and fallback handling.",
+            "Example — Traditional automation: Send a confirmation after a form is submitted. AI-assisted automation: Categorize the enquiry and draft a tailored confirmation."
+          ],
+          "These approaches are complementary. Use ordinary code and workflow rules whenever they are sufficient; use AI where interpretation or generation provides a real benefit."
+        ]
+      },
+      {
+        "heading": "Practical examples of AI automation",
+        "blocks": [
+          [
+            "Lead qualification: A business receives enquiries from a website, WhatsApp, or email. An AI step can extract the person's requirements, identify the requested service, and summarize the conversation. Rules can then route the lead to the appropriate team."
+          ],
+          "Keep in mind: Do not treat an AI-generated lead score as an unquestionable fact. Define the criteria, test the output, and allow staff to correct it.",
+          [
+            "Customer support: An assistant can answer common questions using approved business information, such as delivery policies, service descriptions, or appointment rules. If the question is unclear or the answer is not in the knowledge source, the workflow should say so or hand the conversation to a human."
+          ],
+          [
+            "Document processing: AI can extract fields from invoices, forms, applications, or PDFs and put them into a structured format. Validation rules should check required fields, dates, totals, and identifiers before information reaches accounting or other business systems."
+          ],
+          [
+            "Marketing operations: Workflows can help classify incoming leads, prepare draft follow-up messages, summarize campaign responses, and create internal task reminders. Consent, opt-out preferences, platform policies, and human approval remain essential where relevant."
+          ],
+          [
+            "Internal knowledge search: A retrieval-based assistant can search approved company documents and provide an answer with links or references to the source material. This is useful when staff repeatedly ask the same questions or need to find information across many documents."
+          ]
+        ]
+      },
+      {
+        "heading": "Benefits of AI automation",
+        "blocks": [
+          [
+            "Less repetitive work: Reduce copying, sorting, summarizing, and routine data entry.",
+            "Faster response handling: Route incoming enquiries without waiting for someone to manually review every message.",
+            "More consistent processes: Apply the same checklist and rules across similar requests.",
+            "Better visibility: Keep logs of workflow steps, failures, approvals, and outcomes.",
+            "More useful data: Convert unstructured messages into fields that teams can search and report on."
+          ],
+          "These benefits depend on the quality of the workflow, data, integrations, and ongoing maintenance. AI automation is not automatically faster or cheaper for every task."
+        ]
+      },
+      {
+        "heading": "Risks and limitations to plan for",
+        "blocks": [
+          "AI systems can misunderstand requests, invent details, miss context, or produce inconsistent output. They may also process personal or confidential information. Reduce these risks by:",
+          [
+            "limiting the information each workflow can access;",
+            "using approved sources for factual answers;",
+            "validating outputs against schemas and business rules;",
+            "requiring human approval for financial, legal, medical, or otherwise high-impact decisions;",
+            "logging outcomes and monitoring error rates;",
+            "providing a safe fallback when a model is uncertain or a connected service fails;",
+            "reviewing privacy, retention, consent, and vendor requirements before launch."
+          ]
+        ]
+      },
+      {
+        "heading": "How to identify the right first workflow",
+        "blocks": [
+          "Choose a process that happens frequently, has a clear beginning and end, and currently consumes time through repetitive handling. Document the current steps before selecting tools.",
+          "A practical evaluation checklist:",
+          [
+            "How many times does the task happen each week?",
+            "How long does a person spend on each case?",
+            "What mistakes occur, and what do they cost?",
+            "Are the required data and permissions available?",
+            "Can a person review exceptions?",
+            "What would count as success after a pilot?"
+          ],
+          "Start with a narrow workflow and compare its results with the existing process. Track completion rate, error rate, time saved, escalation rate, and user satisfaction—not just the number of automated actions."
+        ]
+      },
+      {
+        "heading": "A simple example workflow",
+        "blocks": [
+          "Imagine a service business receives an enquiry through a website form.",
+          [
+            "The form submission triggers the workflow.",
+            "The workflow saves the original message and contact details.",
+            "An AI step extracts the requested service, urgency, and key requirements into structured fields.",
+            "Validation checks that the output is complete and uses allowed categories.",
+            "The CRM is updated and the correct team is notified.",
+            "If the message is unclear, the workflow flags it for manual review.",
+            "The team records whether the classification was useful, helping improve the process."
+          ],
+          "This is a better starting point than trying to build a fully autonomous sales agent before the business has reliable lead data and clear routing rules."
+        ]
+      },
+      {
+        "heading": "How Kriyvo AI can help",
+        "blocks": [
+          "Kriyvo AI can help businesses assess repetitive workflows, design integrations, and implement practical solutions such as website enquiry automation, WhatsApp chatbots, and connected business tools. The right solution depends on your existing systems, process, data, and approval requirements.",
+          "Next step: List one repetitive task your team performs every day. Document the steps and the systems involved, then assess whether an automated workflow would improve speed or consistency.",
+          "Suggested CTA: Discuss an AI automation workflow with Kriyvo AI."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "n8n-automation-guide",
+    "title": "How to Automate Business Tasks with n8n: A Beginner's Guide",
+    "description": "Learn how n8n workflows work, which business tasks to automate first, and how to build a reliable workflow with triggers, nodes, credentials, and error handling.",
+    "category": "Workflow design",
+    "imageKey": "workflows",
+    "sections": [
+      {
+        "heading": "What is n8n?",
+        "blocks": [
+          "n8n is a workflow automation platform that connects apps and services so information can move between them automatically. A workflow consists of nodes connected in a sequence or branching structure. Nodes can receive events, transform data, call APIs, apply conditions, and send results to another system.",
+          "Businesses use workflow automation to reduce repetitive operations—for example, moving website leads into a CRM, sending internal alerts, synchronizing records, or preparing a support summary. n8n can also be combined with AI model APIs, databases, and retrieval systems for workflows that need language understanding or content generation.",
+          "Before choosing a deployment method, check n8n's current pricing, license terms, hosting options, and feature availability. These details can change."
+        ]
+      },
+      {
+        "heading": "How an n8n workflow works",
+        "blocks": [
+          "Most workflows include some combination of the following:",
+          [
+            "Trigger node: Starts the workflow when an event occurs, on a schedule, or when a webhook receives a request.",
+            "Application node: Connects to an app or service using an available integration.",
+            "Data transformation: Renames fields, filters records, combines values, or converts information into the expected format.",
+            "Condition: Routes items down different branches based on rules.",
+            "Action: Creates a record, sends a notification, updates a database, or calls an API.",
+            "Error handling and logging: Records failures and enables retries or human intervention."
+          ],
+          "A workflow may run in a simple sequence, or it may branch when the data meets different conditions."
+        ]
+      },
+      {
+        "heading": "Five useful business workflows",
+        "blocks": [
+          [
+            "Website enquiry to CRM: Trigger: A new form submission arrives."
+          ],
+          "Steps: 1. Validate required fields such as name, contact details, and enquiry text. 2. Normalize the data and check whether the record already exists. 3. Create or update the lead in the CRM. 4. Send a notification to the responsible team. 5. Record the workflow result and route invalid submissions for review.",
+          "Avoid sending marketing messages just because a person submitted a form. Make sure the intended communication is covered by the person's choices and applicable rules.",
+          [
+            "Customer support routing: Trigger: A new support message is received."
+          ],
+          "Steps: 1. Save the original message. 2. Classify it into a small set of categories. 3. Check whether the category is allowed and the model's output is complete. 4. Route billing, technical, sales, or general questions to the right queue. 5. Escalate unclear or sensitive cases to a person.",
+          [
+            "Scheduled reporting: Trigger: A scheduled time."
+          ],
+          "Steps: 1. Retrieve data from the reporting source. 2. Check that the query returned the expected period and fields. 3. Calculate summaries using deterministic code where possible. 4. Generate a short report. 5. Send it to the authorized recipients and store a run log.",
+          [
+            "Document intake: Trigger: A new document appears in an approved folder or upload endpoint."
+          ],
+          "Steps: 1. Verify file type and size. 2. Extract text or send the document through an approved extraction service. 3. Parse required fields into structured data. 4. Validate totals, dates, and mandatory fields. 5. Send uncertain results for review before updating business records.",
+          [
+            "AI-assisted research or summarization: Trigger: A new item enters a queue."
+          ],
+          "Steps: 1. Retrieve the source content from an approved location. 2. Ask the model to summarize using a defined structure. 3. Preserve source links and distinguish facts from interpretation. 4. Check the output for missing fields or unsupported claims. 5. Save the draft for review rather than automatically publishing it."
+        ]
+      },
+      {
+        "heading": "Building your first workflow",
+        "blocks": [
+          "Use a small test case before connecting live business data.",
+          "Step 1: Define the result — Write one sentence describing what the workflow should accomplish. For example: \"When a valid website enquiry arrives, create a CRM record and notify the assigned team.\"",
+          "Step 2: Identify the trigger — Choose a form integration, webhook, schedule, or other appropriate trigger. If using a webhook, understand its authentication and exposure requirements.",
+          "Step 3: Connect credentials safely — Use n8n's credential management rather than placing API keys directly inside nodes or expressions. Give credentials only the permissions the workflow needs, and keep development credentials separate from production where practical.",
+          "Step 4: Inspect incoming data — Run a test event and examine the actual field names and types. Do not assume every submission includes every field. Account for empty values, unexpected formats, and multiple items.",
+          "Step 5: Transform and validate — Normalize phone numbers, dates, identifiers, and text fields before using them. Validate required fields and reject or quarantine invalid records rather than allowing bad data to spread.",
+          "Step 6: Add the action — Connect the workflow to the destination system. Confirm whether the action creates a new record, updates an existing one, or could accidentally create duplicates.",
+          "Step 7: Test failure cases — Test missing fields, invalid credentials, rate limits, duplicate events, timeouts, and service outages. A workflow that works only with perfect sample data is not ready for production.",
+          "Step 8: Deploy and monitor — Enable the workflow only after reviewing permissions and test results. Monitor executions, failures, processing time, and any downstream side effects."
+        ]
+      },
+      {
+        "heading": "Where AI fits into n8n",
+        "blocks": [
+          "AI is useful when a workflow needs to interpret unstructured information, summarize text, extract meaning, or draft a response. It is usually unnecessary for simple transformations such as adding two numbers or checking whether a required field exists.",
+          "For AI steps, use a clear prompt, constrained output format, and validation. Do not assume that a model's output is correct just because it is valid JSON. Verify facts and enforce business rules separately."
+        ]
+      },
+      {
+        "heading": "Common mistakes to avoid",
+        "blocks": [
+          [
+            "Building too much at once: Begin with one workflow and one measurable outcome.",
+            "Ignoring duplicate events: Use unique IDs or idempotency checks where possible.",
+            "Hard-coding secrets: Store credentials securely.",
+            "Skipping error paths: Define what happens when an API is unavailable.",
+            "Overusing AI: Prefer deterministic rules for predictable tasks.",
+            "No monitoring: Track failures and check that workflows continue to deliver the intended outcome.",
+            "Unsafe permissions: Limit access to the required data and systems.",
+            "No ownership: Assign someone to maintain credentials, integrations, and workflow changes."
+          ]
+        ]
+      },
+      {
+        "heading": "n8n reliability checklist",
+        "blocks": [
+          "Before production, confirm that:",
+          [
+            "The workflow has a clear owner and purpose.",
+            "Required inputs are validated.",
+            "Credentials are stored securely.",
+            "Duplicate processing is handled.",
+            "Errors and retries are configured thoughtfully.",
+            "Sensitive data is not unnecessarily logged.",
+            "Permissions are limited to what is required.",
+            "A person can handle exceptions.",
+            "A rollback or disable procedure is documented.",
+            "Success is measured against a baseline."
+          ]
+        ]
+      },
+      {
+        "heading": "Is n8n right for every business?",
+        "blocks": [
+          "Not necessarily. A simple built-in integration may be enough for a very basic task. A custom service may be better for strict latency, complex application logic, or very high throughput. A workflow platform can be useful when a business needs to connect multiple systems quickly, but hosting, security, maintenance, and licensing must be considered.",
+          "Next step: Choose one repetitive process, draw its current steps, and identify the trigger, data, rules, and destination. Build and test a small version before expanding it.",
+          "Suggested CTA: Ask Kriyvo AI to assess an n8n workflow for your business."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "whatsapp-automation-for-business",
+    "title": "WhatsApp Automation for Businesses: Chatbots, Leads and Customer Support",
+    "description": "Learn how WhatsApp automation can support lead qualification, FAQs, bookings, and customer service—and what to consider for consent, templates, and human handover.",
+    "category": "AI & automation",
+    "imageKey": "whatsapp",
+    "sections": [
+      {
+        "heading": "What is WhatsApp automation?",
+        "blocks": [
+          "WhatsApp automation uses approved business messaging tools and connected software to handle defined parts of a customer conversation. It can answer common questions, collect enquiry details, route leads, send permitted updates, and connect conversations to a CRM or support team.",
+          "Automation should improve the customer's experience, not turn WhatsApp into an uncontrolled bulk-messaging channel. The business must follow current WhatsApp Business Platform policies, applicable privacy requirements, and the customer's communication preferences."
+        ]
+      },
+      {
+        "heading": "What can a WhatsApp chatbot do?",
+        "blocks": [
+          "Answer frequently asked questions: A chatbot can respond to questions about services, business hours, delivery, pricing information, or booking procedures using approved and current information. When the answer is not available, it should avoid guessing and offer a human handover.",
+          "Qualify incoming leads: The bot can ask a small number of useful questions, such as which service the customer needs, their preferred timeline, and the best way for the team to follow up. Collect only information needed for the stated purpose.",
+          "Support bookings: A workflow can show available appointment options from a connected scheduling system, confirm the selected slot, and send a reminder when permitted. The scheduling system—not the language model—should be the source of truth for availability.",
+          "Check order or request status: If a customer asks about an order, the system can look up the status from an authorized source after verifying enough information to protect the customer's data. It should not expose another customer's order details.",
+          "Hand over to a person: A good bot recognizes when it cannot help. It should preserve the conversation context, explain that a person will take over, and route the case to the appropriate team."
+        ]
+      },
+      {
+        "heading": "How a WhatsApp automation workflow works",
+        "blocks": [
+          "A typical implementation includes these stages:",
+          [
+            "A customer sends a message through WhatsApp.",
+            "The business messaging integration receives the event.",
+            "The system identifies the relevant business account and conversation.",
+            "The workflow checks opt-out status, routing rules, and relevant context.",
+            "A rule-based flow or AI component prepares the next step.",
+            "The response is checked against business rules and sent through the supported messaging interface.",
+            "The conversation and workflow outcome are recorded.",
+            "The case is escalated when the answer is uncertain or a human is needed."
+          ],
+          "Exact capabilities depend on the provider, account setup, messaging product, and current platform rules."
+        ]
+      },
+      {
+        "heading": "Example: lead qualification for a service business",
+        "blocks": [
+          "Imagine someone messages a web development agency asking for a website.",
+          "The bot might:",
+          [
+            "Acknowledge the enquiry",
+            "Ask whether the person needs a new website or a redesign",
+            "Ask about the type of business",
+            "Collect a preferred contact time",
+            "Summarize the requirements",
+            "Create a lead in the CRM",
+            "Notify a salesperson."
+          ],
+          "The bot should not invent a quote or promise a delivery date unless the business has approved rules and data for doing so. A human can review complex requirements and provide the final proposal."
+        ]
+      },
+      {
+        "heading": "Consent, messaging windows, and templates",
+        "blocks": [
+          "WhatsApp messaging has platform-specific rules that can change. Before launch, check the latest official WhatsApp Business Platform documentation and your provider's guidance.",
+          "Key practices include:",
+          [
+            "Permission and expectations: Use contact information for the purpose the person agreed to. Do not assume that possessing a phone number means the person agreed to receive promotional messages.",
+            "Opt-outs: Provide a clear way to stop promotional communication, honor requests promptly, and keep suppression records so opted-out contacts are not accidentally re-added.",
+            "Message templates: Business-initiated messages may require approved templates depending on the type of message and the applicable messaging window. Check the current rules for the specific use case.",
+            "Message categories: Utility, authentication, and marketing messages may be treated differently under platform rules. Do not label promotional content as utility simply to bypass restrictions.",
+            "Quality and delivery limits: Delivery is not guaranteed. Quality signals, user engagement, account status, limits, and other platform controls can affect sending.",
+            "Accurate records: Keep evidence of consent where required, and record when and how a preference was collected."
+          ],
+          "A workflow should check consent and suppression status immediately before sending, not only when a contact is first uploaded."
+        ]
+      },
+      {
+        "heading": "Why messages may fail",
+        "blocks": [
+          "A failed message can have several causes: an invalid number, a recipient who is not available on the platform, policy restrictions, a messaging limit, a template issue, or a platform quality control. Use the actual error code and provider logs to diagnose the cause rather than repeatedly retrying every failed message.",
+          "Build a failure process that: 1. records the error and recipient status; 2. distinguishes temporary from permanent failures; 3. avoids repeated retries that could worsen quality or cost; 4. excludes opted-out contacts; 5. alerts an administrator when account-level issues occur; 6. allows the team to correct data before retrying where appropriate."
+        ]
+      },
+      {
+        "heading": "AI chatbot or rule-based chatbot?",
+        "blocks": [
+          "A rule-based bot follows defined choices and is often suitable for booking menus, status checks, and structured intake. An AI-assisted bot can understand more varied language and answer questions using approved knowledge sources, but it needs stronger safeguards.",
+          "A practical hybrid approach is often best:",
+          [
+            "Use rules for consent, identity checks, permissions, pricing rules, booking availability, and other business-critical decisions",
+            "Use AI to interpret a customer's message or summarize a conversation",
+            "Validate any generated response",
+            "Route exceptions to a human."
+          ]
+        ]
+      },
+      {
+        "heading": "What to measure",
+        "blocks": [
+          "Track metrics that reflect actual service quality:",
+          [
+            "First response time",
+            "Proportion of conversations resolved without human assistance",
+            "Handover rate and handover completion time",
+            "Lead qualification completion",
+            "Booking completion",
+            "Customer satisfaction",
+            "Opt-out and complaint rates",
+            "Message delivery failures",
+            "Cost per useful outcome."
+          ],
+          "A high automation rate is not automatically good if customers cannot get help or if the bot gives incorrect answers."
+        ]
+      },
+      {
+        "heading": "Implementation checklist",
+        "blocks": [
+          [
+            "Define the business purpose and customer journey.",
+            "Use an approved messaging integration.",
+            "Document consent and opt-out handling.",
+            "Configure and test templates where needed.",
+            "Connect only the required CRM or business data.",
+            "Add human handover and fallback behavior.",
+            "Test incorrect inputs and unsupported questions.",
+            "Monitor message quality, delivery failures, and customer feedback.",
+            "Keep customer information protected.",
+            "Review platform policies before changing the workflow."
+          ]
+        ]
+      },
+      {
+        "heading": "How Kriyvo AI can help",
+        "blocks": [
+          "Kriyvo AI can help plan WhatsApp chatbot flows, lead qualification, support automation, and integrations with business systems. The implementation should be designed around the company's use case, consent process, message policies, and handover requirements.",
+          "Next step: Map the five most common questions your customers ask, then decide which can be answered safely by automation and which should go to a person.",
+          "Suggested CTA: Discuss a WhatsApp chatbot workflow with Kriyvo AI."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "best-ai-automation-tools",
+    "title": "Best AI Automation Tools for Small Businesses in 2026",
+    "description": "Compare workflow automation, AI assistants, integrations, and customer messaging tools by use case, cost, complexity, and maintenance needs.",
+    "category": "AI & automation",
+    "imageKey": "engineering",
+    "sections": [
+      {
+        "heading": "How should a small business choose an AI automation tool?",
+        "blocks": [
+          "The best tool is the one that fits the workflow, existing systems, security requirements, budget, and team's technical ability. A popular platform is not necessarily the best choice for every business.",
+          "Before comparing products, define the task: What starts the workflow? What data does it need? Which systems must it connect to? What happens when an action fails? Does the process require AI, or would a normal rule-based integration be enough?"
+        ]
+      },
+      {
+        "heading": "Main categories of tools",
+        "blocks": [
+          [
+            "Workflow automation platforms: These connect applications and move data through triggers, conditions, and actions. Examples include n8n, Make, and Zapier."
+          ],
+          "They are useful for lead routing, notifications, data synchronization, scheduled reports, and multi-step business processes. Compare available integrations, execution limits, hosting choices, debugging, access control, and pricing at the scale you expect to use.",
+          [
+            "AI model and assistant platforms: AI model providers can classify messages, summarize documents, extract information, and generate drafts. The right choice depends on language quality, context requirements, latency, data handling, structured output support, reliability, and price."
+          ],
+          "Do not choose a model based only on a demo. Test it on representative examples, including ambiguous and difficult cases.",
+          [
+            "Customer communication tools: Business messaging and support platforms can organize conversations, support templates, assign agents, and connect chat with customer records. If WhatsApp is important to the business, confirm the provider supports the required WhatsApp Business Platform features and follows current policies."
+          ],
+          [
+            "Databases and CRMs: Automation is only as useful as the records it updates. A CRM stores lead and customer information; a database may support custom applications or structured workflows. Define which system is authoritative for each type of data to prevent conflicting records."
+          ],
+          [
+            "Custom APIs and code: Some workflows need custom code or a small backend service. This is useful when an integration is unavailable, data transformations are complex, security controls are specific, or the process requires predictable behavior beyond a visual workflow."
+          ]
+        ]
+      },
+      {
+        "heading": "A practical tool comparison",
+        "blocks": [
+          [
+            "n8n — Best fit: Flexible, multi-step workflows and technical teams. Things to evaluate: Hosting, maintenance, integrations, security, license and plan limits.",
+            "Make — Best fit: Visual multi-step integrations. Things to evaluate: Scenario complexity, operation limits, pricing and debugging.",
+            "Zapier — Best fit: Straightforward app-to-app automation. Things to evaluate: Available integrations, task limits, pricing and control over complex logic.",
+            "AI model APIs — Best fit: Language understanding, extraction, summarization and generation. Things to evaluate: Accuracy, cost, latency, privacy, evaluation and fallback handling.",
+            "CRM platforms — Best fit: Managing leads and customer records. Things to evaluate: Pipeline fit, permissions, reporting, integrations and data quality.",
+            "WhatsApp Business Platform providers — Best fit: Business messaging and conversation workflows. Things to evaluate: Official support, templates, consent, inbox features, pricing and policy compliance.",
+            "Custom backend/API — Best fit: Specialized or high-control workflows. Things to evaluate: Development time, monitoring, deployment, security and ongoing ownership."
+          ],
+          "This is a category-level guide, not a claim that one tool is universally superior. Product features, plans, and prices change; verify current vendor documentation before purchasing."
+        ]
+      },
+      {
+        "heading": "How to estimate the real cost",
+        "blocks": [
+          "Do not compare only the advertised monthly subscription. Consider:",
+          [
+            "platform subscription or hosting;",
+            "workflow executions, operations, tasks, or API usage;",
+            "AI model input and output usage;",
+            "messaging charges and provider fees where applicable;",
+            "implementation and integration work;",
+            "maintenance, monitoring, and incident handling;",
+            "security and compliance work;",
+            "the cost of errors and manual review."
+          ],
+          "Estimate the total cost for a realistic monthly workload. A low-cost tool can become expensive if every event triggers many operations or repeated model calls."
+        ]
+      },
+      {
+        "heading": "A selection framework",
+        "blocks": [
+          "Score each shortlisted tool from 1 to 5 against the requirements below:",
+          [
+            "Workflow fit: Can it perform the required steps without awkward workarounds?",
+            "Integration: Does it connect to the actual systems and data you use?",
+            "Reliability: Can it handle retries, timeouts, and duplicate events?",
+            "Security: Can you control access and protect credentials and data?",
+            "Maintainability: Can your team understand and troubleshoot it?",
+            "Cost: Is the total cost acceptable at expected volume?",
+            "Flexibility: Can it support the next likely workflow without a complete rebuild?"
+          ],
+          "Weight the criteria based on the importance of the workflow. A customer messaging system may need stronger consent and delivery controls than an internal notification workflow."
+        ]
+      },
+      {
+        "heading": "Recommended starting stacks by need",
+        "blocks": [
+          "A non-technical team automating simple tasks: Start with a tool that has the necessary integrations and a user interface your team can maintain. Keep the workflow small and document who owns it.",
+          "A technical team connecting multiple services: Evaluate n8n or another flexible workflow platform, with custom code where it genuinely helps. Plan hosting, credentials, monitoring, and backups from the beginning.",
+          "A business building an AI support assistant: Use an approved knowledge source, a model tested on real questions, rules for sensitive actions, and a human escalation path. The chatbot interface is only one part of the solution.",
+          "A business automating WhatsApp leads: Choose a supported messaging setup and design the workflow around consent, templates, opt-outs, CRM records, and human handover. Verify platform and provider requirements before launch."
+        ]
+      },
+      {
+        "heading": "Mistakes to avoid",
+        "blocks": [
+          [
+            "Buying a platform before defining the process.",
+            "Automating a broken process without improving it first.",
+            "Sending sensitive data to services without reviewing their data practices.",
+            "Assuming AI output is correct without validation.",
+            "Ignoring plan limits and usage-based charges.",
+            "Building workflows nobody is responsible for maintaining.",
+            "Switching tools because of a feature announcement without measuring the current workflow."
+          ]
+        ]
+      },
+      {
+        "heading": "Final recommendation",
+        "blocks": [
+          "Start with one measurable problem and compare two or three tools against it. Build a small pilot, test failure scenarios, calculate real operating cost, and ask the people who will use it whether the process improved.",
+          "Next step: Write down your workflow, the systems involved, and expected monthly volume before choosing a platform.",
+          "Suggested CTA: Ask Kriyvo AI to help evaluate the right automation stack for your business."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "ai-agents-vs-traditional-automation",
+    "title": "AI Agents vs Traditional Automation: What's the Difference?",
+    "description": "Understand AI agents, rule-based automation, and hybrid workflows. Learn when each approach fits and how to control risk in business systems.",
+    "category": "AI perspectives",
+    "imageKey": "engineering",
+    "sections": [
+      {
+        "heading": "What is traditional automation?",
+        "blocks": [
+          "Traditional automation executes predefined steps based on explicit rules. If a form arrives, create a record. If the status changes, notify the owner. If a required field is missing, stop and request correction.",
+          "This approach is highly effective when the process is stable and the rules can be stated clearly. It is usually easier to test because the same input should produce the same result when the system state is unchanged."
+        ]
+      },
+      {
+        "heading": "What is an AI agent?",
+        "blocks": [
+          "An AI agent is a system that uses a model to interpret a goal, decide among available steps, and sometimes call tools to gather information or take actions. The exact level of autonomy varies widely. Some systems only recommend the next action; others can execute multiple steps within defined permissions.",
+          "For example, a support agent might search an approved knowledge base, retrieve an order status, draft a response, and decide whether the issue needs a human. It should not have unrestricted access to customer records or be allowed to issue refunds without the required checks."
+        ]
+      },
+      {
+        "heading": "Key differences",
+        "blocks": [
+          [
+            "Decision logic — Traditional automation: Explicit rules. AI agent: Model-assisted interpretation and step selection.",
+            "Input — Traditional automation: Often structured. AI agent: Can work with more varied language and context.",
+            "Predictability — Traditional automation: Generally more deterministic. AI agent: Can vary and may make mistakes.",
+            "Best use — Traditional automation: Stable, repeatable processes. AI agent: Tasks requiring interpretation or flexible sequencing.",
+            "Testing — Traditional automation: Test rules and expected outcomes. AI agent: Test scenarios, tool use, factual accuracy, and boundaries.",
+            "Control — Traditional automation: Conditions and permissions. AI agent: Permissions plus model constraints, validation, and monitoring.",
+            "Cost — Traditional automation: Often predictable. AI agent: May include model calls and additional tool usage."
+          ],
+          "An AI agent is not automatically better than a conventional workflow. The question is whether flexible interpretation provides enough value to justify the extra complexity."
+        ]
+      },
+      {
+        "heading": "When traditional automation is the better choice",
+        "blocks": [
+          "Use explicit rules for:",
+          [
+            "Calculating totals",
+            "Checking required fields",
+            "Enforcing opt-out status",
+            "Verifying permissions",
+            "Scheduling from a system of record",
+            "Applying approved price rules",
+            "Updating known fields",
+            "Sending a notification after a confirmed event."
+          ],
+          "These actions should not depend on a model's guess."
+        ]
+      },
+      {
+        "heading": "When an AI agent may help",
+        "blocks": [
+          "An agent may be useful when:",
+          [
+            "The user describes a request in natural language",
+            "The relevant information is spread across approved sources",
+            "The system needs to choose among several permitted tools",
+            "A task requires multiple steps that depend on intermediate results",
+            "The system must summarize context before recommending an action."
+          ],
+          "Examples include research assistants, knowledge-base support, document review, and internal operations assistants. The tasks should still have clear limits and a safe way to stop."
+        ]
+      },
+      {
+        "heading": "Why hybrid systems are often practical",
+        "blocks": [
+          "A hybrid workflow uses deterministic automation for the parts that must be controlled and AI for the parts that require interpretation.",
+          "Consider a lead enquiry: 1. A webhook receives the message. 2. Rules validate the source and required fields. 3. AI classifies the enquiry and extracts the requested service. 4. Code validates the output against an allowed schema. 5. Rules assign the lead based on territory and service. 6. A CRM update runs with the required permissions. 7. An employee reviews unusual or incomplete cases.",
+          "The model helps interpret the message, but it does not decide whether the business is allowed to contact the person or which records it may access."
+        ]
+      },
+      {
+        "heading": "Common agent risks",
+        "blocks": [
+          "Hallucination: The model may state something that is not supported by the available information. Use retrieval from approved sources, ask for source references where useful, and make the system acknowledge when evidence is missing.",
+          "Incorrect tool use: An agent may call the wrong tool or use the right tool with incorrect arguments. Validate arguments, restrict available tools, and require confirmation for consequential actions.",
+          "Prompt injection: Content retrieved from a webpage, email, document, or customer message may contain instructions designed to manipulate the model. Treat external content as data, not as trusted instructions. Separate system rules from retrieved content and limit tool permissions.",
+          "Excessive autonomy: A multi-step agent can compound errors if it acts without checkpoints. Limit the number of steps, scope of actions, data access, and allowed destinations. Use approval gates for important changes.",
+          "Cost and latency: Multiple reasoning and tool calls can make an agent slower or more expensive than a simple workflow. Measure end-to-end performance and use simpler methods where possible."
+        ]
+      },
+      {
+        "heading": "How to evaluate an AI agent",
+        "blocks": [
+          "Create a test set from real, appropriately protected examples. Include common cases, edge cases, ambiguous requests, malicious instructions, missing data, and tool failures.",
+          "Measure:",
+          [
+            "Task completion rate",
+            "Factual accuracy",
+            "Correct tool selection",
+            "Invalid or unauthorized action rate",
+            "Escalation quality",
+            "Average latency",
+            "Cost per completed task",
+            "User satisfaction."
+          ],
+          "Test changes before deployment and retain logs that are useful for debugging without collecting unnecessary sensitive data."
+        ]
+      },
+      {
+        "heading": "A safe rollout plan",
+        "blocks": [
+          [
+            "Start in read-only mode.",
+            "Let the agent propose actions without executing them.",
+            "Compare recommendations with human decisions.",
+            "Add limited, reversible actions.",
+            "Introduce approval gates for consequential actions.",
+            "Monitor errors and establish a clear shutdown procedure.",
+            "Expand permissions only when evidence supports it."
+          ]
+        ]
+      },
+      {
+        "heading": "Conclusion",
+        "blocks": [
+          "Traditional automation is best for predictable rules. AI agents can help with flexible interpretation and multi-step tasks. A hybrid approach often provides the strongest balance: AI handles language and ambiguity while normal code enforces permissions, validation, and business rules.",
+          "Next step: Identify which steps in your process are repetitive and predictable, and which require interpretation. Automate the predictable steps first, then test whether AI adds value to the rest.",
+          "Suggested CTA: Discuss a controlled AI agent or hybrid workflow with Kriyvo AI."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "ai-marketing-automation",
+    "title": "AI Marketing Automation: How to Automate Lead Follow-Ups",
+    "description": "Learn how to connect lead capture, qualification, CRM updates, and follow-ups with AI while respecting consent and measuring real business outcomes.",
+    "category": "AI & automation",
+    "imageKey": "workflows",
+    "sections": [
+      {
+        "heading": "What is AI marketing automation?",
+        "blocks": [
+          "AI marketing automation combines marketing workflows with AI features that help interpret enquiries, summarize customer needs, prepare content, or route leads. It can connect website forms, CRM systems, email or messaging platforms, and reporting tools.",
+          "The goal is not to send as many messages as possible. It is to respond appropriately, keep records organized, and help the right team member follow up with people who have shown relevant interest."
+        ]
+      },
+      {
+        "heading": "A practical lead follow-up workflow",
+        "blocks": [
+          "Imagine a customer fills in a form asking about a service.",
+          "Step 1: Capture the enquiry — Collect the fields necessary to respond, such as name, contact details, requested service, and message. Explain how the information will be used and capture any required communication preferences.",
+          "Step 2: Validate and deduplicate — Check required fields, normalize contact details, and detect likely duplicates. Keep the original submission for auditing where appropriate, and avoid creating multiple leads for the same enquiry.",
+          "Step 3: Understand the request — AI can summarize the message, extract the requested service, and classify the enquiry into predefined categories. Require structured output and validate it before it affects routing.",
+          "Step 4: Route the lead — Use explicit business rules to assign the enquiry to the appropriate team. The model may suggest a category, but rules should enforce territory, capacity, ownership, and other operational constraints.",
+          "Step 5: Send an appropriate response — A confirmation may acknowledge receipt and explain the next step. Promotional follow-up should be sent only where the required permission and platform rules allow it. Keep messages truthful and avoid unsupported promises.",
+          "Step 6: Create a task and monitor progress — If a human needs to follow up, create a CRM task and notify the assigned person. Track whether the lead was contacted and whether the next step was completed."
+        ]
+      },
+      {
+        "heading": "Where AI can help",
+        "blocks": [
+          [
+            "Message summaries: Give a salesperson the key details without making them reread a long conversation.",
+            "Enquiry classification: Identify which service or team may be relevant.",
+            "Draft creation: Prepare a response for review using approved service information.",
+            "Data extraction: Turn free-text requirements into structured fields.",
+            "Reporting: Summarize common questions or lead sources for a marketing review."
+          ],
+          "Use deterministic logic for consent checks, suppression lists, permissions, and other conditions that must not be guessed."
+        ]
+      },
+      {
+        "heading": "Personalization without being intrusive",
+        "blocks": [
+          "Useful personalization reflects information the person has provided in the current context. For example, a response can mention the service they asked about or refer to the meeting they booked.",
+          "Avoid using sensitive or unexpected personal inferences. Do not pretend a message was individually written by a human if it was automatically generated. Make it easy to contact a real person and to change communication preferences."
+        ]
+      },
+      {
+        "heading": "Consent and channel rules",
+        "blocks": [
+          "The requirements differ by channel and jurisdiction. Review applicable privacy laws, email rules, messaging-platform policies, and the terms of the tools you use.",
+          "Before launching a campaign:",
+          [
+            "Confirm that the intended contact method and purpose are permitted",
+            "Record the source and scope of consent where required",
+            "Check suppression and opt-out status before each send",
+            "Use the correct message type and approved templates where required",
+            "Avoid uploading lists of uncertain origin or permission",
+            "Process opt-out requests promptly",
+            "Monitor complaints, failed delivery, and engagement quality."
+          ],
+          "Do not assume an old customer list can automatically be used for a new promotional campaign. Previous transactions do not necessarily establish permission for every channel or purpose."
+        ]
+      },
+      {
+        "heading": "How to measure performance",
+        "blocks": [
+          "Track the full journey rather than focusing on opens or clicks alone.",
+          [
+            "Valid lead rate: How many submissions contain usable information",
+            "First response time: How quickly the business acknowledges an enquiry",
+            "Contact rate: Whether the team successfully reaches leads",
+            "Qualification completion: Whether the required details are collected",
+            "Meeting or quote rate: Whether the enquiry progresses",
+            "Conversion rate: Whether qualified opportunities become customers",
+            "Opt-out and complaint rate: Whether communication is unwanted or poorly targeted",
+            "Cost per qualified lead: How much it costs to generate a useful opportunity",
+            "Workflow error rate: How often the automation needs intervention"
+          ],
+          "Use a consistent measurement period and compare results with a baseline. Do not attribute all changes to automation if advertising spend, seasonality, or sales processes changed at the same time."
+        ]
+      },
+      {
+        "heading": "Common mistakes",
+        "blocks": [
+          [
+            "Automating follow-ups before fixing lead quality.",
+            "Sending the same generic message to every contact.",
+            "Treating AI-generated scores as objective truth.",
+            "Ignoring opt-outs or channel restrictions.",
+            "Letting AI invent discounts, prices, or service promises.",
+            "Measuring message volume instead of business outcomes.",
+            "Failing to assign ownership for leads that need human follow-up."
+          ]
+        ]
+      },
+      {
+        "heading": "A simple 30-day pilot",
+        "blocks": [
+          "Week 1: Map the lead journey, confirm permissions, and define success metrics.",
+          "Week 2: Build a small workflow for one lead source and test validation, deduplication, routing, and logging.",
+          "Week 3: Run the workflow with appropriate human review. Collect examples of correct classifications and errors.",
+          "Week 4: Compare results with the original process, review complaints and failures, and decide whether to expand, change, or stop the pilot."
+        ]
+      },
+      {
+        "heading": "Conclusion",
+        "blocks": [
+          "AI marketing automation works best when it improves the quality and timing of relevant communication. Start with clean data, explicit permission rules, reliable routing, and measurable follow-up. Add AI only where it makes the process more useful.",
+          "Next step: Map what happens from the moment a lead submits a form to the moment a sales representative follows up.",
+          "Suggested CTA: Plan a lead follow-up automation workflow with Kriyvo AI."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "ai-workflow-automation-examples",
+    "title": "AI Workflow Automation: 7 Business Processes You Can Automate",
+    "description": "Explore seven business workflows where AI can help with enquiries, documents, customer support, reporting, and internal knowledge—plus safeguards to plan.",
+    "category": "Workflow design",
+    "imageKey": "workflows",
+    "sections": [
+      {
+        "heading": "What is AI workflow automation?",
+        "blocks": [
+          "AI workflow automation combines connected software steps with AI for tasks that involve interpreting language, extracting meaning, or generating a useful draft. A workflow still needs a trigger, access to the right data, validation rules, actions, and a way to handle failures.",
+          "The examples below are starting points. A business should adapt each one to its own systems, policies, and customers."
+        ]
+      },
+      {
+        "heading": "1. Website enquiries and lead routing",
+        "blocks": [
+          "Problem: Enquiries arrive from different forms and are manually copied into a CRM.",
+          "Workflow: 1. Receive the form submission. 2. Validate contact details and required fields. 3. Check for duplicate records. 4. Use AI to summarize the request and classify the service. 5. Apply routing rules. 6. Create or update the CRM record. 7. Notify the owner and log the outcome.",
+          "Human checkpoint: Review incomplete, ambiguous, or high-priority enquiries.",
+          "Success metrics: Data completeness, response time, duplicate rate, and lead routing accuracy."
+        ]
+      },
+      {
+        "heading": "2. Customer support and FAQ responses",
+        "blocks": [
+          "Problem: Staff repeatedly answer the same questions.",
+          "Workflow: 1. Receive a customer question. 2. Search an approved knowledge base. 3. Generate a response using relevant source material. 4. Check that the response is supported by the retrieved information. 5. Send a low-risk answer or route it for review. 6. Preserve the conversation and feedback.",
+          "Human checkpoint: Escalate complaints, account-specific issues, sensitive topics, and questions with insufficient evidence.",
+          "Success metrics: Resolution rate, factual accuracy, escalation quality, and customer satisfaction."
+        ]
+      },
+      {
+        "heading": "3. Document intake and data extraction",
+        "blocks": [
+          "Problem: Employees manually read documents and copy fields into a system.",
+          "Workflow: 1. Receive a file through an approved channel. 2. Check file type, size, and access permissions. 3. Extract text or use an appropriate document processing service. 4. Extract fields into a defined schema. 5. Validate totals, dates, IDs, and required fields. 6. Route uncertain results to a person. 7. Store the approved result with appropriate access controls.",
+          "Human checkpoint: Verify records that affect money, contracts, eligibility, or other consequential decisions.",
+          "Success metrics: Field accuracy, manual correction rate, processing time, and exception rate."
+        ]
+      },
+      {
+        "heading": "4. Appointment scheduling and reminders",
+        "blocks": [
+          "Problem: Customers and staff exchange multiple messages to find a suitable time.",
+          "Workflow: 1. Ask for the preferred service and time range. 2. Query the scheduling system for real availability. 3. Present only valid options. 4. Confirm the customer's selection. 5. Create the booking in the scheduling system. 6. Send confirmation and permitted reminders. 7. Provide a cancellation or rescheduling path.",
+          "Human checkpoint: Handle special requests or booking conflicts that cannot be resolved by the system.",
+          "Important rule: Do not let an AI model invent availability. The scheduling system is the source of truth.",
+          "Success metrics: Booking completion, missed appointments, double bookings, and rescheduling success."
+        ]
+      },
+      {
+        "heading": "5. Sales conversation summaries",
+        "blocks": [
+          "Problem: Salespeople spend time writing notes after calls or long message exchanges.",
+          "Workflow: 1. Retrieve authorized conversation notes or transcripts. 2. Summarize customer needs, objections, and agreed next steps. 3. Separate confirmed facts from inferred possibilities. 4. Validate the summary format. 5. Save it to the correct CRM record. 6. Create follow-up tasks for review.",
+          "Human checkpoint: The salesperson verifies important commitments before the summary becomes an official record.",
+          "Success metrics: Note completion, correction rate, follow-up completion, and time spent on administration."
+        ]
+      },
+      {
+        "heading": "6. Internal reporting",
+        "blocks": [
+          "Problem: Teams manually collect figures from several systems each week.",
+          "Workflow: 1. Run scheduled queries against approved data sources. 2. Validate the reporting period and data freshness. 3. Calculate totals and changes using deterministic logic. 4. Use AI to explain patterns or draft a plain-language summary. 5. Check the narrative against the calculated data. 6. Send the report to authorized recipients.",
+          "Human checkpoint: Review surprising movements, missing data, and explanations that could affect business decisions.",
+          "Success metrics: Reporting time, data errors, delivery reliability, and usefulness to recipients."
+        ]
+      },
+      {
+        "heading": "7. Internal knowledge search",
+        "blocks": [
+          "Problem: Employees do not know which document contains the answer to a policy or process question.",
+          "Workflow: 1. Index approved documents and keep their access permissions. 2. Retrieve relevant passages for a question. 3. Generate an answer grounded in those passages. 4. Include source names or links where possible. 5. Say when the available information does not answer the question. 6. Record feedback and update stale documents.",
+          "Human checkpoint: Route policy conflicts and high-impact questions to the responsible owner.",
+          "Success metrics: Answer accuracy, source relevance, unanswered-question rate, and time to find information."
+        ]
+      },
+      {
+        "heading": "How to choose which workflow to automate first",
+        "blocks": [
+          "Evaluate each process against:",
+          [
+            "Frequency",
+            "Time spent on manual steps",
+            "Error rate",
+            "Clarity of the business rules",
+            "Availability and quality of the required data",
+            "Integration effort",
+            "Risk if the automation is wrong",
+            "Ability to measure the result."
+          ],
+          "A repetitive workflow with clear rules and a low-risk failure mode is usually a better first pilot than a complex process requiring many subjective decisions."
+        ]
+      },
+      {
+        "heading": "A simple implementation method",
+        "blocks": [
+          [
+            "Document the existing process.",
+            "Identify the trigger, inputs, actions, and exceptions.",
+            "Define the expected result and baseline metrics.",
+            "Build the smallest useful workflow.",
+            "Test normal cases and failure cases.",
+            "Keep a human review path.",
+            "Monitor performance after launch.",
+            "Expand only when the pilot shows reliable value."
+          ]
+        ]
+      },
+      {
+        "heading": "Final thoughts",
+        "blocks": [
+          "The strongest AI workflow is not necessarily the one with the most AI. Use ordinary automation for reliable rules and use AI for language, classification, extraction, or summarization when those capabilities solve a real problem.",
+          "Next step: Select one of the seven processes and estimate how many times it happens in a typical week.",
+          "Suggested CTA: Explore a practical workflow automation project with Kriyvo AI."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "how-to-choose-ai-automation-agency",
+    "title": "How to Choose an AI Automation Agency for Your Business",
+    "description": "Use this checklist to evaluate an AI automation agency, compare proposals, check security and maintenance, and avoid paying for unnecessary complexity.",
+    "category": "Costs & hiring",
+    "imageKey": "costs",
+    "sections": [
+      {
+        "heading": "Why choose an AI automation agency?",
+        "blocks": [
+          "An automation agency can help a business understand which processes are suitable for automation, connect its existing tools, build and test workflows, and plan for maintenance. The value should come from solving a business problem—not from adding AI to a process simply because the technology is available.",
+          "A good provider should be able to explain what will be automated, what will remain manual, what data is needed, what could fail, and how the business will measure the result."
+        ]
+      },
+      {
+        "heading": "1. Start with the business problem",
+        "blocks": [
+          "Before discussing tools, write down:",
+          [
+            "The current process",
+            "Who performs it",
+            "How often it happens",
+            "Which systems are involved",
+            "Where delays and errors occur",
+            "The expected improvement",
+            "The risks of an incorrect action."
+          ],
+          "A provider should help clarify the scope if the problem is not yet well defined. Be cautious if the first conversation jumps straight to an expensive AI agent without understanding the process."
+        ]
+      },
+      {
+        "heading": "2. Ask for a clear solution design",
+        "blocks": [
+          "A useful proposal should explain:",
+          [
+            "The trigger and main workflow steps",
+            "Systems and integrations required",
+            "Data inputs and outputs",
+            "AI components and their specific role",
+            "Validation and approval points",
+            "Error handling and human handover",
+            "Security and access requirements",
+            "How the result will be tested",
+            "What is included in delivery and ongoing support."
+          ],
+          "Ask the provider to distinguish confirmed capabilities from assumptions that still need a technical test."
+        ]
+      },
+      {
+        "heading": "3. Evaluate practical experience",
+        "blocks": [
+          "Relevant evidence is more useful than broad claims about being an AI expert. Ask for a demonstration, sample workflow, or case study that explains the problem, approach, limitations, and outcome.",
+          "Useful questions include:",
+          [
+            "Have you connected systems similar to ours",
+            "How do you prevent duplicate records or repeated actions",
+            "What happens if an external API fails",
+            "How do you monitor workflows after launch",
+            "How are AI errors detected",
+            "Can our team understand and maintain the system",
+            "What parts depend on a third-party provider?"
+          ],
+          "A provider should be honest about what they have not built before and how they would validate it."
+        ]
+      },
+      {
+        "heading": "4. Review security and data handling",
+        "blocks": [
+          "Automation may connect customer records, messages, documents, and internal systems. Ask:",
+          [
+            "Where will data be processed and stored",
+            "Which third-party services receive data",
+            "How are credentials stored and rotated",
+            "Who can access production systems",
+            "What information appears in logs",
+            "How long is data retained",
+            "How are backups and recovery handled",
+            "How are permissions revoked when a team member leaves",
+            "What happens if a vendor changes its terms or discontinues a feature?"
+          ],
+          "The right controls depend on the data and applicable legal requirements. Do not send sensitive information to a provider before the data-handling arrangements are understood."
+        ]
+      },
+      {
+        "heading": "5. Check ownership and portability",
+        "blocks": [
+          "Clarify who owns the workflow configuration, custom code, documentation, prompts, and business data. Confirm how the business can access its own accounts and what happens if the engagement ends.",
+          "Prefer arrangements that avoid unnecessary dependence on one individual. Documentation should explain deployment, credentials, failure handling, and how to disable the workflow safely."
+        ]
+      },
+      {
+        "heading": "6. Understand the full cost",
+        "blocks": [
+          "Compare proposals using the same scope. Separate:",
+          [
+            "Discovery and planning",
+            "Implementation",
+            "Subscriptions and hosting",
+            "AI usage",
+            "Messaging or API fees",
+            "Maintenance and support",
+            "Future changes",
+            "Training and documentation."
+          ],
+          "Ask what is excluded and what might create additional charges. A low implementation quote may not include monitoring, troubleshooting, or ongoing changes."
+        ]
+      },
+      {
+        "heading": "7. Ask how success will be measured",
+        "blocks": [
+          "Agree on a baseline and measurable targets before work begins. Depending on the workflow, metrics might include:",
+          [
+            "Time spent per case",
+            "Completion and error rates",
+            "Response time",
+            "Manual correction rate",
+            "Qualified leads",
+            "Booking completion",
+            "Cost per processed item",
+            "Customer satisfaction."
+          ],
+          "Avoid guarantees that cannot reasonably be supported. A provider can commit to defined deliverables and testing, but business outcomes can also depend on data quality, customer behavior, and third-party services."
+        ]
+      },
+      {
+        "heading": "8. Watch for warning signs",
+        "blocks": [
+          "Be cautious if a provider:",
+          [
+            "Promises perfect AI accuracy",
+            "Cannot explain how errors are handled",
+            "Ignores consent or privacy",
+            "Requests broad account access without justification",
+            "Refuses to document the solution",
+            "Cannot identify third-party costs",
+            "Proposes automating every process at once",
+            "Claims AI can replace human judgment in every situation",
+            "Cannot define a practical acceptance test."
+          ]
+        ]
+      },
+      {
+        "heading": "9. Compare proposals fairly",
+        "blocks": [
+          "Use a consistent scorecard:",
+          [
+            "Business understanding: Does the proposal address the actual problem?",
+            "Technical fit: Does it work with our current systems?",
+            "Reliability: Are retries, validation, and exceptions covered?",
+            "Security: Are access and data handling explained?",
+            "Transparency: Are scope, exclusions, and costs clear?",
+            "Maintainability: Is documentation and handover included?",
+            "Measurement: Are success criteria agreed in advance?",
+            "Support: Who handles incidents and future changes?"
+          ],
+          "Choose based on fit and evidence, not just the number of features in the proposal."
+        ]
+      },
+      {
+        "heading": "10. Start with a pilot",
+        "blocks": [
+          "A small pilot should prove that the workflow works with realistic data and failure scenarios. Agree on:",
+          [
+            "The scope",
+            "Test cases",
+            "Success metrics",
+            "Approval requirements",
+            "Delivery date and dependencies",
+            "Who reviews results",
+            "The decision process for expanding or stopping."
+          ],
+          "A pilot reduces the risk of committing to a large build before the team understands the process and its constraints."
+        ]
+      },
+      {
+        "heading": "Questions to ask in your first meeting",
+        "blocks": [
+          [
+            "Which part of our process would you automate first, and why?",
+            "What should remain under human control?",
+            "Which systems and permissions are required?",
+            "How will the workflow handle missing or incorrect data?",
+            "How will we measure whether the project worked?",
+            "What are the recurring costs?",
+            "Who owns and maintains the solution after launch?",
+            "What will you deliver if the pilot does not meet its success criteria?"
+          ]
+        ]
+      },
+      {
+        "heading": "Conclusion",
+        "blocks": [
+          "The right AI automation agency combines technical implementation with process understanding, transparent costs, sensible safeguards, and ongoing support. A clear problem, a small pilot, and measurable acceptance criteria are usually more valuable than an ambitious promise.",
+          "Next step: Prepare a short description of one repetitive process and use it to compare providers on the same scope.",
+          "Suggested CTA: Talk to Kriyvo AI about a practical automation pilot."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "youtube-automation-with-ai",
+    "title": "YouTube Automation with AI: Tools, Workflows and Limitations",
+    "description": "Learn how AI can assist YouTube research, scripting, editing, captions, and publishing workflows while keeping content original, accurate, and compliant with platform rules.",
+    "category": "AI & automation",
+    "imageKey": "engineering",
+    "sections": [
+      {
+        "heading": "What does YouTube automation with AI mean?",
+        "blocks": [
+          "YouTube automation with AI means using software to assist with parts of the video production process. It can help with topic research, outlining, script drafts, transcription, captions, editing assistance, thumbnail concepts, metadata drafts, and publishing checklists.",
+          "It does not guarantee views, subscribers, monetization, or income. Successful channels still need a clear audience, original value, editorial judgment, quality control, and consistent learning from audience feedback."
+        ]
+      },
+      {
+        "heading": "Which parts of production can AI assist with?",
+        "blocks": [
+          [
+            "Topic research: AI can organize a list of possible topics, cluster related ideas, and help identify questions an audience may have. Validate topics using actual audience feedback, search data, competitor research, and the channel's own analytics. Do not present invented search-volume numbers as facts."
+          ],
+          [
+            "Outlines and script drafts: AI can create an initial structure, suggest examples, and improve clarity. Verify factual claims, add original insight, and rewrite the draft in the creator's own voice. Publishing unreviewed, generic scripts can result in weak content that offers little value."
+          ],
+          [
+            "Voice and narration: Text-to-speech tools can create narration for some formats. Check commercial-use rights, voice permissions, pronunciation, and disclosure requirements that may apply. Never imitate a real person's voice deceptively or use a voice without appropriate authorization."
+          ],
+          [
+            "Video editing: AI features can assist with transcription, silence removal, rough cuts, scene organization, or caption generation. A person should review timing, context, visual quality, and whether the final edit accurately represents the source material."
+          ],
+          [
+            "Captions and accessibility: Automatic captions can save time but may misrecognize names, technical terms, accents, and numbers. Review captions and synchronize them with the final video."
+          ],
+          [
+            "Titles, descriptions, and thumbnails: AI can generate options, but the final metadata should accurately describe the video. Avoid misleading titles, keyword stuffing, and thumbnails that promise something the content does not deliver."
+          ]
+        ]
+      },
+      {
+        "heading": "Example workflow for a tutorial channel",
+        "blocks": [
+          [
+            "Select a topic based on audience need.",
+            "Research the subject and save reliable sources.",
+            "Draft an outline and identify claims that need verification.",
+            "Write and edit the script.",
+            "Record narration or prepare permitted synthetic narration.",
+            "Assemble visuals and edit the video.",
+            "Review copyright, licenses, factual accuracy, and disclosures.",
+            "Generate and correct captions.",
+            "Draft the title, description, and thumbnail.",
+            "Upload and review every field before publishing.",
+            "Analyze retention, click-through rate, comments, and viewer feedback.",
+            "Use the findings to improve the next video."
+          ],
+          "Some steps can be connected through a workflow platform, but creative and editorial decisions should not be removed without considering quality."
+        ]
+      },
+      {
+        "heading": "Example of a workflow automation",
+        "blocks": [
+          "A content planning workflow might start when an editor approves a topic in a project board.",
+          [
+            "The workflow creates a task and a source-research checklist.",
+            "An AI step drafts a proposed outline.",
+            "A human reviews the outline and factual sources.",
+            "After approval, the workflow creates script and editing tasks.",
+            "A caption file and metadata draft are stored for review.",
+            "The editor marks the video approved before the publishing step is enabled."
+          ],
+          "This uses automation for coordination and AI for drafts while keeping final publication under human control."
+        ]
+      },
+      {
+        "heading": "Quality, originality, copyright, and platform rules",
+        "blocks": [
+          "Before publishing, review the current YouTube policies, monetization requirements, copyright rules, and any disclosure requirements for altered or synthetic content. These policies can change.",
+          "Important practices:",
+          [
+            "Add original explanation, demonstration, commentary, or analysis",
+            "Check the rights for music, footage, images, and generated assets",
+            "Do not copy another creator's script or distinctive work",
+            "Do not assume that AI-generated content is automatically free of rights issues",
+            "Avoid mass-producing repetitive videos that offer little original value",
+            "Disclose synthetic or altered content when required by the platform's current rules",
+            "Verify claims and references before publication."
+          ],
+          "The use of AI alone does not determine whether content qualifies for monetization. The content's originality, value, rights, and compliance matter."
+        ]
+      },
+      {
+        "heading": "What should not be fully automated?",
+        "blocks": [
+          "Keep human review for:",
+          [
+            "Factual claims and advice",
+            "Copyright and licensing decisions",
+            "Sensitive or controversial subjects",
+            "Use of real people's likenesses or voices",
+            "Final editing and storytelling",
+            "Thumbnail accuracy",
+            "Final publication approval."
+          ],
+          "A workflow can prepare a video package, but publishing without review increases the chance of factual errors, rights issues, and low-quality output."
+        ]
+      },
+      {
+        "heading": "Metrics worth tracking",
+        "blocks": [
+          [
+            "click-through rate, interpreted alongside impressions and traffic source;",
+            "audience retention and watch time;",
+            "returning viewers;",
+            "subscriber conversion;",
+            "production time per video;",
+            "percentage of drafts needing substantial correction;",
+            "copyright or policy issues;",
+            "viewer feedback and satisfaction."
+          ],
+          "Do not judge a workflow only by how many videos it produces. Evaluate whether it helps create better content for the intended audience."
+        ]
+      },
+      {
+        "heading": "Conclusion",
+        "blocks": [
+          "AI can reduce repetitive work in a YouTube production pipeline, but it cannot replace the need for originality, editorial judgment, and audience understanding. Automate coordination and repetitive editing tasks first, then use AI for research and drafts with human review.",
+          "Next step: Map your current video process and identify one time-consuming step that can be assisted without reducing quality.",
+          "Suggested CTA: Explore AI content workflow automation with Kriyvo AI."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "n8n-vs-make-vs-zapier",
+    "title": "n8n vs Make vs Zapier: Which Automation Tool Should You Choose?",
+    "description": "Compare n8n, Make, and Zapier for business automation by ease of use, workflow complexity, hosting, integrations, cost, and maintenance.",
+    "category": "Workflow design",
+    "imageKey": "workflows",
+    "sections": [
+      {
+        "heading": "Why compare n8n, Make, and Zapier?",
+        "blocks": [
+          "n8n, Make, and Zapier help connect applications and automate tasks, but they differ in their approach, deployment choices, interface, and operational trade-offs. The right option depends on your workflow, technical experience, expected volume, security requirements, and maintenance capacity.",
+          "Product features and pricing can change. Check current official documentation and pricing pages before making a purchasing decision."
+        ]
+      },
+      {
+        "heading": "At-a-glance comparison",
+        "blocks": [
+          [
+            "General approach — n8n: Visual workflow automation with technical flexibility. Make: Visual scenario-based automation. Zapier: App-to-app automation with a broad integration ecosystem.",
+            "Common fit — n8n: Technical teams and flexible multi-step workflows. Make: Teams that prefer visual scenario design. Zapier: Teams seeking straightforward integrations.",
+            "Custom logic — n8n: Supports advanced workflow logic and code-based extensions within its capabilities. Make: Visual logic and supported custom options. Zapier: Rules, steps, and supported extensions depending on plan.",
+            "Hosting — n8n: Offers deployment choices; verify current options and terms. Make: Primarily a hosted service; verify current offerings. Zapier: Primarily a hosted service; verify current offerings.",
+            "Maintenance — n8n: Self-hosting requires operational responsibility; managed options have different trade-offs. Make: Provider manages core platform operations. Zapier: Provider manages core platform operations.",
+            "Main decision — n8n: Flexibility versus ownership and operational effort. Make: Visual design versus usage and complexity limits. Zapier: Convenience and integration coverage versus plan constraints."
+          ],
+          "This table is a starting point, not a guarantee that a specific feature is available on every plan."
+        ]
+      },
+      {
+        "heading": "1. Ease of use",
+        "blocks": [
+          "Zapier can be convenient for straightforward trigger-and-action tasks. Make's visual scenario editor is useful for understanding branching and multi-step data flows. n8n can be flexible for technical users who need more control over workflow structure and integrations.",
+          "The best interface is the one the person responsible for maintaining the workflow can understand. Test the same small use case in each shortlisted platform rather than relying on general impressions."
+        ]
+      },
+      {
+        "heading": "2. Workflow complexity",
+        "blocks": [
+          "For a simple task—such as creating a record after a form submission—all three may be suitable if the required integrations are supported.",
+          "For more complex workflows, examine:",
+          [
+            "Branching and conditional logic",
+            "Data transformations",
+            "API support",
+            "Reusable components",
+            "Error handling and retries",
+            "Execution history and debugging",
+            "Handling of multiple records",
+            "Support for custom code or external services."
+          ],
+          "A visually simple workflow can become difficult to maintain if it contains many hidden assumptions or repeated steps."
+        ]
+      },
+      {
+        "heading": "3. Integrations and APIs",
+        "blocks": [
+          "Create a list of the exact systems you need to connect. Check not only whether an integration exists, but also whether it supports the operations you need.",
+          "If a native integration does not support a required action, verify whether the platform can call the relevant API, authenticate securely, handle pagination, and process errors. Do not assume that a listed integration supports every feature of the connected app."
+        ]
+      },
+      {
+        "heading": "4. Hosting and control",
+        "blocks": [
+          "Hosting matters when the workflow processes sensitive information, needs specific network access, or requires control over infrastructure.",
+          "With self-hosting, the organization may gain more control over deployment and data flows, but it also becomes responsible for updates, backups, monitoring, security configuration, and recovery. A managed platform can reduce infrastructure work but still requires review of the vendor's data practices, access controls, and terms.",
+          "Choose based on actual operational needs rather than assuming that self-hosting is automatically secure or that a hosted service is automatically unsuitable."
+        ]
+      },
+      {
+        "heading": "5. Cost and usage limits",
+        "blocks": [
+          "Compare the expected cost of a real workflow, not just the starting subscription price.",
+          "Check:",
+          [
+            "How executions, tasks, operations, or steps are counted",
+            "Whether retries and test runs consume usage",
+            "Whether higher limits require another plan",
+            "AI model costs",
+            "Hosting and database costs",
+            "API and messaging charges",
+            "Monitoring and maintenance time."
+          ],
+          "Estimate monthly volume and test the number of operations generated by one typical case. Multiply that by expected usage, then include failures and retries."
+        ]
+      },
+      {
+        "heading": "6. AI workflow support",
+        "blocks": [
+          "All three platforms may be used as part of AI-assisted workflows, directly or through integrations, but the available features and supported nodes change over time.",
+          "For AI use cases, evaluate:",
+          [
+            "Access to the model or provider you need",
+            "Structured output and validation",
+            "Retrieval from approved documents",
+            "Tool and API access",
+            "Handling of rate limits",
+            "Observability and debugging",
+            "Data retention and privacy",
+            "Support for human review."
+          ],
+          "Do not select a platform solely because it advertises AI features. Test the complete workflow, including incorrect model output and service failures."
+        ]
+      },
+      {
+        "heading": "7. Reliability and maintenance",
+        "blocks": [
+          "Before deployment, test:",
+          [
+            "Duplicate trigger events",
+            "Missing fields",
+            "Invalid credentials",
+            "API timeouts",
+            "Rate limits",
+            "Partial failures",
+            "Retries that could repeat an action",
+            "Changes in external API responses."
+          ],
+          "Use idempotency controls or duplicate checks where appropriate. Maintain a clear owner, documented credentials process, and a way to disable the workflow if it behaves unexpectedly."
+        ]
+      },
+      {
+        "heading": "Which should you choose?",
+        "blocks": [
+          "Consider n8n if... You need flexible workflows, custom API integrations, and technical control, and you can manage the hosting and maintenance implications of the deployment model you choose.",
+          "Consider Make if... Your team prefers visual scenario design and the required integrations and usage model fit your workflows. Validate complex cases in a small pilot.",
+          "Consider Zapier if... Your priority is connecting supported applications quickly and the available triggers, actions, and plan limits fit your use case.",
+          "These are general selection guidelines. None of the platforms is the best choice for every business."
+        ]
+      },
+      {
+        "heading": "A fair comparison test",
+        "blocks": [
+          "Choose one real workflow, such as moving a website enquiry into a CRM and notifying a team member.",
+          "For each platform: 1. Build the same workflow. 2. Test valid and invalid input. 3. Test duplicate events and API failures. 4. Measure setup and maintenance effort. 5. Estimate cost at realistic monthly volume. 6. Check credential handling and access permissions. 7. Ask the intended owner to troubleshoot a simulated failure. 8. Compare the results against your requirements.",
+          "The test will provide better evidence than selecting a platform based only on popularity or a feature list."
+        ]
+      },
+      {
+        "heading": "Final recommendation",
+        "blocks": [
+          "Start with the business process, not the platform. Choose the tool that can deliver the required result reliably, securely, and at a maintainable cost. Revisit the decision if the workflow's complexity, volume, or operational needs change.",
+          "Next step: Write down the apps, triggers, actions, expected volume, and failure cases for your first workflow, then compare the platforms against that same specification.",
+          "Suggested CTA: Ask Kriyvo AI to help design and compare an automation workflow."
+        ]
+      }
+    ]
+  },
+{
+    "slug": "php2shell-vulnerability-cve-2026-109618-109619",
+    "title": "PHP2Shell Vulnerability Explained: CVE-2026-109618 and CVE-2026-109619",
+    "description": "Learn what the PHP2Shell vulnerability means, which CVEs are involved, why the issue matters, and the practical steps website owners should take.",
+    "category": "Engineering",
+    "imageKey": "engineering",
+    "sections": [
+      {
+        "heading": "What is the PHP2Shell vulnerability?",
+        "blocks": [
+          "When a serious vulnerability is reported in a widely used technology such as PHP, website owners need clear answers: what has been reported, whether their systems could be affected, and what to do next. The name “PHP2Shell” has been used in reporting about two PHP security issues identified as CVE-2026-109618 and CVE-2026-109619.",
+          "A vulnerability name is a convenient label, but it is not enough to determine whether a particular website is exposed. The actual risk depends on the affected PHP versions, the deployment environment, how PHP is configured, and whether the relevant code path is reachable. Always use the official advisory and your hosting provider's guidance as the source of truth."
+        ]
+      },
+      {
+        "heading": "Why are CVE numbers important?",
+        "blocks": [
+          "A CVE identifier is a unique reference for a publicly documented cybersecurity vulnerability. It helps developers, hosting providers, security teams, and website owners refer to the same issue even when articles use different headlines or shorthand names.",
+          "For this topic, searchers may use several variations:",
+          [
+            "PHP2Shell vulnerability",
+            "CVE-2026-109618",
+            "CVE-2026-109619",
+            "latest PHP security vulnerability",
+            "PHP remote code execution vulnerability",
+            "PHP security update 2026"
+          ],
+          "These terms are related, but they do not all represent the same intent. A reader searching for the name wants a plain-English explanation; someone searching for a CVE may be looking for technical advisory details; and a site owner searching for a fix needs practical remediation steps."
+        ]
+      },
+      {
+        "heading": "What does a serious PHP vulnerability mean for a website?",
+        "blocks": [
+          "PHP often runs application logic behind websites, content management systems, APIs, ecommerce stores, and internal tools. A flaw in a runtime component can therefore matter to many different kinds of deployments.",
+          "However, do not assume every PHP website is affected in the same way. Exposure depends on the exact versions and conditions documented by the advisory. A website can also use PHP indirectly through a managed platform or hosting control panel, so the person maintaining the application may not be the person who updates the runtime.",
+          "Potential consequences of a serious remote-code-execution flaw can include unauthorized execution of code under certain conditions. The exact impact must be taken from the relevant technical advisory; do not infer exploitability or impact from the nickname alone."
+        ]
+      },
+      {
+        "heading": "How to find out whether your website may be affected",
+        "blocks": [
+          "Use this defensive review:",
+          [
+            "Identify the PHP runtime. Check the PHP version used by the live website, not only the version installed on a developer laptop.",
+            "Check every environment. Review production, staging, worker processes, scheduled jobs, containers, and any separate application instances.",
+            "Compare with the official advisory. Confirm the affected version ranges and any stated configuration requirements.",
+            "Check the hosting setup. Shared hosting, managed WordPress hosting, VPS instances, containers, and cloud deployments may be updated in different ways.",
+            "Ask the responsible provider or administrator. If you cannot control the PHP runtime yourself, ask whether the affected runtime is present and when a patched release will be applied.",
+            "Record the result. Note the version, environment, advisory consulted, action owner, and update date."
+          ],
+          "Do not publish your server's detailed configuration, secrets, or sensitive logs in a public support forum."
+        ]
+      },
+      {
+        "heading": "Is this a PHP application bug or a PHP runtime issue?",
+        "blocks": [
+          "These are different categories. An application bug may be in a site's own code or a plugin. A runtime vulnerability is associated with PHP itself or one of its components. A website may need to address both, but the fix process is not necessarily the same.",
+          "For a runtime issue, updating a plugin alone may not resolve the underlying vulnerability. Conversely, updating PHP does not automatically fix insecure application code, abandoned dependencies, weak credentials, or misconfigured access controls."
+        ]
+      },
+      {
+        "heading": "What should a website owner do first?",
+        "blocks": [
+          "Prioritize the following:",
+          [
+            "Confirm the issue and affected versions using official sources.",
+            "Identify the PHP version actually serving the website.",
+            "Apply the appropriate fixed release through the supported hosting or deployment process.",
+            "Test important user journeys in staging where possible.",
+            "Confirm production is using the updated runtime after deployment.",
+            "Review provider advisories and application logs for suspicious activity if the official guidance recommends it.",
+            "Keep a short record of what was updated and when."
+          ],
+          "Avoid copying commands from unverified social posts or installing unofficial “emergency patches.” Use your distribution, hosting provider, container image, or PHP project's trusted release process."
+        ]
+      },
+      {
+        "heading": "Does an updated PHP version guarantee complete website security?",
+        "blocks": [
+          "No. Updating to a fixed PHP release can address the vulnerability covered by that release, but it does not prove that the whole website is secure. Plugins, themes, dependencies, credentials, access permissions, server software, backups, and application logic still need appropriate maintenance.",
+          "Security is a process: patch promptly, verify the deployed version, monitor for unusual activity, and keep other components maintained."
+        ]
+      },
+      {
+        "heading": "Frequently asked questions",
+        "blocks": [
+          "What is the PHP2Shell vulnerability? PHP2Shell is a name used in reporting about the PHP security issue associated with CVE-2026-109618 and CVE-2026-109619. Read the official PHP advisory for the authoritative technical description and affected versions.",
+          "Is every PHP website vulnerable? Not necessarily. Exposure depends on the affected versions and conditions listed in the advisory. Check the PHP runtime used by your actual website and compare it with official guidance.",
+          "What do CVE-2026-109618 and CVE-2026-109619 mean? They are identifiers used to track the two reported security issues. Use each identifier to find the relevant advisory and technical updates.",
+          "Can a WordPress website be affected by a PHP vulnerability? A WordPress site runs on PHP, but whether it is affected by a specific issue depends on the runtime version and advisory details. Check the PHP version provided by your host as well as WordPress, theme, and plugin updates.",
+          "Where should I check for official updates? Start with the PHP project's official news and release announcements, then check your operating system or hosting provider's security notices."
+        ]
+      },
+      {
+        "heading": "Official references",
+        "blocks": [
+          [
+            "PHP news archive: https://www.php.net/archive/2026.php",
+            "PHP supported versions: https://www.php.net/supported-versions.php",
+            "PHP downloads: https://www.php.net/downloads.php"
+          ],
+          "Editorial note: Add direct links to the exact advisory entries for both CVEs after verifying the official source. Re-check all version numbers and descriptions immediately before publication."
+        ]
+      },
+      {
+        "heading": "Need help reviewing your website's technology stack?",
+        "blocks": [
+          "Kriyvo AI helps businesses build and maintain websites and automation workflows. If you need help identifying your site's PHP runtime or planning a safe maintenance process, contact your technical administrator or a qualified provider. Do not share passwords, API keys, or private server credentials in a public form."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "check-php-version-update-fix-security-vulnerability",
+    "title": "How to Check Your PHP Version and Fix a PHP Security Vulnerability",
+    "description": "Find your website's PHP version, check whether it is affected by a security advisory, and follow a safer update and verification checklist.",
+    "category": "Engineering",
+    "imageKey": "engineering",
+    "sections": [
+      {
+        "heading": "Why checking your PHP version matters",
+        "blocks": [
+          "A security announcement is useful only when you can connect it to the software your website actually runs. Your hosting account may offer multiple PHP versions, and command-line tools may use a different runtime from the public website. That is why the first step is to identify the PHP version serving the application, then compare it with the official advisory.",
+          "This guide provides a general defensive workflow. The precise fixed version and update procedure depend on the specific vulnerability, operating system, hosting provider, and deployment setup."
+        ]
+      },
+      {
+        "heading": "Step 1: Find out which PHP version your site uses",
+        "blocks": [
+          "Option A: Use your hosting control panel — Many hosting providers expose a PHP version selector or runtime information in their control panel. Open the website's hosting settings and identify the PHP version assigned to the relevant domain or application.",
+          "The control-panel version is a starting point. If your account supports separate settings for subdomains, staging sites, or different applications, check each one separately.",
+          "Option B: Ask your hosting provider — On managed or shared hosting, you may not have permission to inspect or update the runtime directly. Ask support:",
+          [
+            "Which PHP version serves my live domain?",
+            "Is that version affected by the current advisory?",
+            "Has the provider deployed the applicable security update?",
+            "Do I need to change a setting or take action myself?",
+            "Is a restart, cache refresh, or redeployment required?"
+          ],
+          "Keep the answer and ticket number with your maintenance record.",
+          "Option C: Check a server you administer — If you have shell access, a command such as `php -v` can show the PHP CLI version. But the CLI version may differ from the PHP-FPM or web-server runtime serving requests. Confirm the web runtime separately using your server configuration or trusted hosting tools.",
+          "Avoid leaving a public `phpinfo()` page on a live website. Such a page can expose detailed configuration information. If a temporary diagnostic page is necessary, restrict access and remove it immediately after use."
+        ]
+      },
+      {
+        "heading": "Step 2: Compare the version with the official security advisory",
+        "blocks": [
+          "Open the official advisory for the vulnerability you are investigating. Confirm:",
+          [
+            "the exact affected version ranges;",
+            "whether the issue depends on a particular configuration or feature;",
+            "which releases contain the fix;",
+            "whether your operating system or hosting provider backports the patch;",
+            "whether the provider requires a separate service restart or redeployment."
+          ],
+          "Do not rely on a search snippet, social media post, or a blog title alone. Some Linux distributions backport security fixes without changing the upstream version string in the way a reader might expect. In those cases, the distribution's security notice is essential."
+        ]
+      },
+      {
+        "heading": "Step 3: Choose the correct update route",
+        "blocks": [
+          "Managed or shared hosting: Use the host's documented PHP selector or support process. Check compatibility before switching versions, and ask the provider whether the security patch is already applied.",
+          "VPS or dedicated server: Follow the security guidance for your operating system and installed PHP packages. Before making changes, understand which package repository supplies PHP and whether the system uses multiple PHP-FPM pools or versions.",
+          "Docker or container deployment: Review the PHP base image and rebuild from a trusted, patched image. Deploy the rebuilt image through your normal release pipeline, then verify that the running container—not just the local image—uses the expected release.",
+          "Managed application platform: Follow the platform's runtime upgrade process. A project configuration file may specify the desired version, but the platform's build and runtime settings determine what is actually deployed.",
+          "Do not mix package-management methods or install an untrusted binary just to change the version number."
+        ]
+      },
+      {
+        "heading": "Step 4: Back up and test before updating",
+        "blocks": [
+          "Before a production runtime change:",
+          [
+            "Confirm that a recent backup exists and can be restored.",
+            "Review the application's PHP compatibility and dependency requirements.",
+            "Apply the update in staging if the environment is available.",
+            "Test login, forms, checkout, API endpoints, uploads, scheduled jobs, and other business-critical flows.",
+            "Review application and server logs for new errors.",
+            "Prepare a rollback plan that does not require returning to a vulnerable version longer than necessary."
+          ],
+          "If a vulnerability is actively exploited or the official advisory calls for urgent action, follow the provider's emergency process and balance testing time against the security risk."
+        ]
+      },
+      {
+        "heading": "Step 5: Deploy the update",
+        "blocks": [
+          "Use the documented method for your environment. In general, the process may include selecting a patched package, updating a runtime image, changing the platform runtime setting, or asking a host to patch the managed service.",
+          "The exact commands should come from your operating system, hosting provider, or deployment documentation. There is no single safe command that applies to every PHP installation."
+        ]
+      },
+      {
+        "heading": "Step 6: Verify the production runtime",
+        "blocks": [
+          "After the change:",
+          [
+            "Re-check the PHP version used by the live website.",
+            "Confirm the provider or package status indicates that the security fix is applied.",
+            "Restart or redeploy the relevant service if the documented process requires it.",
+            "Run the same critical tests performed in staging.",
+            "Check logs, uptime monitoring, and error rates.",
+            "Confirm that background workers and scheduled jobs use the intended runtime too."
+          ],
+          "A successful deployment command is not proof that every application instance has been updated."
+        ]
+      },
+      {
+        "heading": "Step 7: Review for signs of compromise when appropriate",
+        "blocks": [
+          "Patching prevents exposure to the specific vulnerability going forward, but it does not undo a compromise that may have happened earlier. If the official advisory or your security monitoring indicates possible exploitation, follow your incident-response plan.",
+          "That may include preserving logs, reviewing unexpected file changes and accounts, rotating potentially exposed credentials, restoring from a known-good backup, and contacting a qualified incident-response provider. Do not delete evidence before it has been assessed."
+        ]
+      },
+      {
+        "heading": "Common mistakes to avoid",
+        "blocks": [
+          [
+            "Checking the PHP version on a laptop instead of production.",
+            "Updating only the CLI while the web runtime remains unchanged.",
+            "Assuming a plugin update patches the PHP runtime.",
+            "Upgrading to an arbitrary newer version without checking application compatibility.",
+            "Using unofficial patch files or commands from untrusted posts.",
+            "Forgetting workers, staging environments, containers, or secondary domains.",
+            "Assuming a version string alone proves that a distribution's backported fix is absent or present.",
+            "Treating a successful update as proof that no prior compromise occurred."
+          ]
+        ]
+      },
+      {
+        "heading": "PHP security update checklist",
+        "blocks": [
+          "Use this checklist during maintenance:",
+          [
+            "Official advisory reviewed",
+            "Affected version and conditions confirmed",
+            "Production runtime identified",
+            "Hosting provider or package security notice checked",
+            "Backup and rollback plan reviewed",
+            "Compatibility tested",
+            "Patched update applied through a trusted process",
+            "Web runtime verified after deployment",
+            "Workers and other environments checked",
+            "Logs and critical site functions reviewed",
+            "Maintenance record updated"
+          ]
+        ]
+      },
+      {
+        "heading": "Frequently asked questions",
+        "blocks": [
+          "How do I check my PHP version? Use your hosting control panel, ask your provider, or inspect the server you administer. Remember that `php -v` commonly reports the command-line version, which may differ from the website's runtime.",
+          "How do I know which PHP version fixes a vulnerability? Check the official PHP release announcement and any applicable operating-system or hosting-provider security advisory. Use the fixed version specified for your environment.",
+          "Can I update PHP without breaking my website? Testing compatibility and dependencies first reduces the risk, but no update can be guaranteed to be impact-free. Use staging, backups, a controlled deployment, and post-update checks.",
+          "Does updating PHP remove malware? No. Updating addresses the vulnerability covered by the patch; it does not automatically find or remove malware or reverse an earlier compromise.",
+          "Should I update PHP myself on shared hosting? Use the host's documented process. If you do not administer the runtime, ask the provider to confirm whether the patch has been applied and whether any action is needed from you."
+        ]
+      },
+      {
+        "heading": "Official references",
+        "blocks": [
+          [
+            "PHP downloads and releases: https://www.php.net/downloads.php",
+            "PHP supported versions: https://www.php.net/supported-versions.php",
+            "PHP news archive: https://www.php.net/archive/2026.php"
+          ],
+          "Editorial note: For an article tied to a specific CVE, add the exact official advisory and fixed-release details after checking them immediately before publishing."
+        ]
+      },
+      {
+        "heading": "Need a safer website maintenance process?",
+        "blocks": [
+          "Kriyvo AI works on business websites and automation solutions. If you need technical help, begin by identifying who controls your hosting runtime and ask for a documented update and verification plan. Never share passwords or private credentials to request a basic review."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "php-website-security-checklist",
+    "title": "PHP Security Checklist for Website Owners: Updates, Hosting, and Prevention",
+    "description": "Use this practical PHP website security checklist to maintain supported software, manage dependencies, secure hosting, protect backups, and respond to security advisories.",
+    "category": "Engineering",
+    "imageKey": "engineering",
+    "sections": [
+      {
+        "heading": "Why every PHP website needs a security routine",
+        "blocks": [
+          "A newly reported PHP vulnerability can prompt a sudden rush of searches, but long-term security depends on routine maintenance. Website owners need a repeatable way to review runtime updates, dependencies, access controls, backups, and hosting configuration—not just react to one headline.",
+          "This checklist is designed for business owners, site managers, developers, and teams that maintain PHP-based websites. Adapt it to your architecture and follow your hosting provider's and framework's official security guidance."
+        ]
+      },
+      {
+        "heading": "1. Keep PHP on a supported release",
+        "blocks": [
+          "Check whether your PHP branch receives security support. Unsupported branches may no longer receive fixes from the PHP project, which increases maintenance risk.",
+          [
+            "Review the PHP project's supported-versions page.",
+            "Plan upgrades before support ends.",
+            "Check compatibility with your application and dependencies.",
+            "Confirm the version serving production.",
+            "Track runtime versions across separate applications and environments."
+          ],
+          "A version that is “new enough” in a tutorial may not be supported today. Use the current official support policy rather than a static blog post."
+        ]
+      },
+      {
+        "heading": "2. Establish a security-advisory process",
+        "blocks": [
+          "Choose someone responsible for monitoring security announcements from PHP, the operating system, framework, hosting provider, and important dependencies.",
+          "For each relevant advisory:",
+          [
+            "Record the advisory identifier and publication date.",
+            "Determine whether your deployed version or configuration is affected.",
+            "Identify the owner of the update: your team, host, platform, or vendor.",
+            "Set a priority and target remediation date based on severity and exposure.",
+            "Apply the fix using the supported process.",
+            "Verify the production deployment and record the result."
+          ],
+          "For urgent advisories, use your organization's emergency patching procedure rather than waiting for the next routine maintenance window."
+        ]
+      },
+      {
+        "heading": "3. Maintain application dependencies",
+        "blocks": [
+          "PHP applications often rely on frameworks, libraries, CMS plugins, themes, and vendor packages. A secure runtime does not make vulnerable dependencies safe.",
+          [
+            "Keep a current inventory of direct and transitive dependencies.",
+            "Remove packages and plugins that are no longer needed.",
+            "Update maintained dependencies through trusted package sources.",
+            "Check official security advisories for your framework and CMS.",
+            "Test updates before production deployment.",
+            "Avoid abandoned plugins or packages without a clear maintenance plan."
+          ],
+          "If your project uses Composer, review the project's dependency files and lockfile through your normal development workflow. Do not blindly update every dependency in production without testing."
+        ]
+      },
+      {
+        "heading": "4. Protect secrets and credentials",
+        "blocks": [
+          "Database passwords, API tokens, cloud credentials, and signing keys should not be exposed in public repositories, client-side code, logs, or screenshots.",
+          [
+            "Store secrets using your platform's secret-management mechanism or protected environment configuration.",
+            "Restrict access to the people and services that need it.",
+            "Rotate credentials when they may have been exposed.",
+            "Use separate credentials for development, staging, and production.",
+            "Remove secrets from public repositories and address the exposure, not just the visible line of code.",
+            "Never share credentials in support requests or public vulnerability discussions."
+          ],
+          "If a secret is exposed, treat it as potentially compromised until it has been rotated and the access reviewed."
+        ]
+      },
+      {
+        "heading": "5. Use least-privilege access",
+        "blocks": [
+          "Give each account and service only the permissions needed for its job.",
+          [
+            "Use separate administrative accounts.",
+            "Remove former staff and unused accounts promptly.",
+            "Enable multi-factor authentication where available.",
+            "Restrict database and server access to trusted users and networks.",
+            "Avoid using administrator-level credentials for routine application tasks.",
+            "Review file and directory permissions against your application's requirements."
+          ],
+          "Do not solve permission problems by making the entire application directory writable by everyone."
+        ]
+      },
+      {
+        "heading": "6. Validate inputs and handle output safely",
+        "blocks": [
+          "Application-level vulnerabilities can exist independently of the PHP runtime. Follow secure coding practices for every route that accepts user input.",
+          [
+            "Validate input against the expected type, format, length, and allowed values.",
+            "Use parameterized database queries or the framework's safe query interface.",
+            "Apply context-appropriate output encoding.",
+            "Protect state-changing requests against cross-site request forgery where applicable.",
+            "Restrict file uploads by type, size, storage location, and processing needs.",
+            "Avoid executing user-controlled input as code or shell commands.",
+            "Return generic error messages to users while keeping detailed diagnostics in protected logs."
+          ],
+          "Security controls should be designed and reviewed in the context of the application; no single validation function fixes every class of bug."
+        ]
+      },
+      {
+        "heading": "7. Configure production errors and logs safely",
+        "blocks": [
+          "Detailed error messages can reveal internal paths, software versions, queries, or configuration details. In production, configure the application to avoid displaying sensitive diagnostic output to visitors.",
+          "At the same time, preserve useful logs in a protected location. Restrict who can read them, define a retention period, and avoid logging passwords, tokens, session identifiers, or unnecessary personal data.",
+          "Review logs for unexpected failures, unfamiliar administrative activity, suspicious requests, or other indicators relevant to your application. Logging is most useful when someone is responsible for reviewing alerts and responding to them."
+        ]
+      },
+      {
+        "heading": "8. Secure file uploads and writable directories",
+        "blocks": [
+          "File uploads and writable paths need careful handling because they may be exposed to untrusted users.",
+          [
+            "Store uploads outside executable application directories when possible.",
+            "Apply file size and type restrictions.",
+            "Generate safe server-side filenames rather than trusting user-supplied paths.",
+            "Prevent uploaded files from being interpreted as executable code.",
+            "Restrict write permissions to the directories that need them.",
+            "Keep temporary files and caches from exposing sensitive data.",
+            "Review how image, document, and archive processing is performed."
+          ],
+          "The exact controls depend on the web server and hosting environment. Follow the provider's guidance for disabling script execution in upload locations."
+        ]
+      },
+      {
+        "heading": "9. Protect backups and test restoration",
+        "blocks": [
+          "A backup is useful only if it is available, sufficiently current, and restorable.",
+          [
+            "Back up application files and required data.",
+            "Restrict access to backup storage.",
+            "Encrypt backups when appropriate.",
+            "Keep a copy isolated from the production account where practical.",
+            "Define retention and deletion policies.",
+            "Test restoration periodically.",
+            "Document the person responsible for recovery."
+          ],
+          "If you suspect a compromise, do not automatically restore a backup without assessing whether it contains the same malicious change or vulnerable application version."
+        ]
+      },
+      {
+        "heading": "10. Use HTTPS and review hosting configuration",
+        "blocks": [
+          "Use HTTPS across the site and ensure certificates renew reliably. Review the hosting environment's access controls, server updates, database exposure, and application configuration.",
+          "Depending on the stack, relevant controls may include secure cookie attributes, appropriate security headers, restricted administrative endpoints, network access controls, and disabling unnecessary services. Avoid copying a generic server configuration without checking whether it fits your application."
+        ]
+      },
+      {
+        "heading": "11. Create a repeatable PHP update workflow",
+        "blocks": [
+          "A dependable workflow should answer four questions:",
+          [
+            "Discover: Which PHP versions and applications do we operate?",
+            "Assess: Which advisories apply to those versions and configurations?",
+            "Remediate: Who applies the fix, and through which supported deployment process?",
+            "Verify: How do we prove the production runtime is updated and the site still works?"
+          ],
+          "Use a lightweight register with the application, environment, PHP version, advisory, action owner, status, deployment date, and verification result. The goal is not paperwork for its own sake; it is to avoid forgotten systems and ambiguous ownership."
+        ]
+      },
+      {
+        "heading": "12. What to do when a new PHP vulnerability is announced",
+        "blocks": [
+          "When a high-impact issue appears:",
+          [
+            "Find the official advisory and confirm the affected versions.",
+            "Inventory the PHP runtimes you control.",
+            "Ask your hosting provider about managed systems.",
+            "Prioritize exposed production systems according to the advisory and your risk.",
+            "Apply the documented fixed release or provider patch.",
+            "Test and verify the deployed runtime.",
+            "Follow incident-response guidance if exploitation may have occurred.",
+            "Record the outcome and schedule any remaining upgrades."
+          ],
+          "Do not assume that an online vulnerability scanner can prove a system is safe. Scanners can miss affected configurations, and a version banner alone may not accurately represent a vendor's backported security fix."
+        ]
+      },
+      {
+        "heading": "Monthly PHP website security checklist",
+        "blocks": [
+          [
+            "Confirm PHP is on a supported release",
+            "Review relevant PHP, framework, CMS, and hosting advisories",
+            "Check runtime versions across production and secondary environments",
+            "Update maintained dependencies and remove unused packages",
+            "Review administrator accounts and access permissions",
+            "Check secret storage and rotate exposed credentials",
+            "Verify backups and perform restoration tests",
+            "Review application and server logs",
+            "Check HTTPS and certificate renewal",
+            "Test the documented incident and rollback process"
+          ]
+        ]
+      },
+      {
+        "heading": "Frequently asked questions",
+        "blocks": [
+          "What is the best way to secure a PHP website? Start with supported software and timely security updates, then maintain dependencies, least-privilege access, secure input handling, protected secrets, backups, logging, and a tested incident-response process.",
+          "Are PHP updates enough to secure my website? No. Runtime updates address runtime issues, but application code, plugins, server configuration, access controls, and operational processes also matter.",
+          "How often should I update PHP? Apply security fixes according to their urgency and official guidance. Plan supported-version upgrades before end of support, and test compatibility through your normal deployment process.",
+          "Can a website be compromised even if PHP is patched? Yes. Other software flaws, exposed credentials, weak access controls, or previously installed malicious code may still create risk. Patching is necessary but not a guarantee that the whole site is clean.",
+          "What should a small business do if it has no in-house developer? Ask the hosting provider or a qualified website-maintenance professional to identify the production runtime, confirm patch status, and document who is responsible for future security updates."
+        ]
+      },
+      {
+        "heading": "Official references",
+        "blocks": [
+          [
+            "PHP supported versions: https://www.php.net/supported-versions.php",
+            "PHP downloads and releases: https://www.php.net/downloads.php",
+            "PHP news archive: https://www.php.net/archive/2026.php",
+            "OWASP Cheat Sheet Series: https://cheatsheetseries.owasp.org/"
+          ]
+        ]
+      },
+      {
+        "heading": "Keep your website maintenance predictable",
+        "blocks": [
+          "Kriyvo AI helps businesses with websites and automation solutions. A clear maintenance plan makes it easier to respond to security advisories, keep software supported, and know who is responsible for updates. For a production system, coordinate changes with the person or provider who administers your hosting environment."
         ]
       }
     ]
