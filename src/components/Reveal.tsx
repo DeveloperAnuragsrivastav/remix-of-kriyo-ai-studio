@@ -1,11 +1,16 @@
-import { createElement, useEffect, useRef, type ReactNode } from "react";
+import { createElement, useEffect, useRef, useState, type ReactNode } from "react";
 
+/**
+ * Fades its children in when they scroll into view. "Shown" lives in React state (not a class added by
+ * hand) so a re-render that changes `className`, like opening an FAQ card, can never hide it again.
+ */
 export function Reveal({ children, delay = 0, className = "", as = "div" }: { children: ReactNode; delay?: number; className?: string; as?: "div" | "li" }) {
   const ref = useRef<HTMLElement>(null);
+  const [shown, setShown] = useState(false);
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-    const show = () => el.classList.add("is-in");
+    const show = () => setShown(true);
     if (typeof IntersectionObserver === "undefined") { show(); return; }
     // Any pixel on screen reveals it, so tall blocks and fast scrolls never stay hidden.
     const io = new IntersectionObserver(
@@ -18,5 +23,5 @@ export function Reveal({ children, delay = 0, className = "", as = "div" }: { ch
     const t = window.setTimeout(show, 2500);
     return () => { io.disconnect(); window.clearTimeout(t); };
   }, []);
-  return createElement(as, { ref, className: `reveal ${className}`, style: { transitionDelay: `${delay}ms` } }, children);
+  return createElement(as, { ref, className: `reveal ${shown ? "is-in" : ""} ${className}`, style: { transitionDelay: `${delay}ms` } }, children);
 }
