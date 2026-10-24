@@ -15,9 +15,9 @@ export function seoTitle(title: string) {
   return clamp(title, MAX_TITLE);
 }
 
-export function pageMeta(title: string, description: string, article = false) {
-  const t = seoTitle(title);
-  const d = clamp(description, MAX_DESC);
+export function pageMeta(title: string, description: string, article = false, exact = false) {
+  const t = exact ? title : seoTitle(title);
+  const d = exact ? description : clamp(description, MAX_DESC);
   return { meta: [
     { title: t },
     { name: "description", content: d },
