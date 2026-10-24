@@ -12,8 +12,9 @@ const categories = ["All articles", "AI & automation", "Workflow design", "Voice
 function Blog() {
   const [category, setCategory] = useState("All articles");
   const [search, setSearch] = useState("");
-  const featured = articles.find(a => a.slug === "multilingual-feedback-routing-workflow");
-  const filtered = articles.filter(a => (category === "All articles" || a.category === category) && `${a.title} ${a.description}`.toLowerCase().includes(search.toLowerCase()));
+  const visibleArticles = articles.filter(a => !a.unlisted);
+  const featured = visibleArticles.find(a => a.slug === "multilingual-feedback-routing-workflow");
+  const filtered = visibleArticles.filter(a => (category === "All articles" || a.category === category) && `${a.title} ${a.description}`.toLowerCase().includes(search.toLowerCase()));
   // The featured article sits above the grid; skip it in the unfiltered list so it is not shown twice.
   const grid = category === "All articles" && !search && featured ? filtered.filter(a => a.slug !== featured.slug) : filtered;
   return <AgencyLayout>

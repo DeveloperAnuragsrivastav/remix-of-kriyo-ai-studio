@@ -48,7 +48,7 @@ function ReadingProgress() {
 
 function Article() {
   const article = Route.useLoaderData();
-  const related = articles.filter(a => a.slug !== article.slug && a.category === article.category).slice(0, 3);
+  const related = articles.filter(a => !a.unlisted && a.slug !== article.slug && a.category === article.category).slice(0, 3);
   const svc = relatedService(article.slug, article.category);
   return <AgencyLayout>
     <ReadingProgress />

@@ -3,8 +3,32 @@ import { BUSINESS } from "@/lib/business";
 import { articles } from "@/lib/blog-data";
 import { caseStudies, projects } from "@/lib/kriyo-data";
 import { services } from "@/lib/services-data";
+import { day2SeoPages } from "@/lib/seo-landing-pages";
 
-const STATIC_PAGES = ["/", "/services", "/pricing", "/portfolio", "/case-studies", "/blog", "/about", "/estimate", "/contact", "/deliverables", "/working-together", "/website-developer-east-delhi", "/web-developer-delhi-ncr", "/privacy-policy", "/terms"];
+const STATIC_PAGES = [
+  "/",
+  "/services",
+  "/pricing",
+  "/portfolio",
+  "/case-studies",
+  "/blog",
+  "/about",
+  "/estimate",
+  "/contact",
+  "/deliverables",
+  "/working-together",
+  "/website-developer-east-delhi",
+  "/web-developer-delhi-ncr",
+  "/ai-developer-in-bangalore",
+  "/ai-developer-in-mumbai",
+  "/freelance-web-designer-in-hyderabad",
+  "/web-designer-in-chennai",
+  "/ai-developer-in-delhi",
+  "/freelance-web-designer-in-mumbai",
+  ...day2SeoPages.map(p => p.path),
+  "/privacy-policy",
+  "/terms",
+];
 
 export const Route = createFileRoute("/sitemap.xml")({
   server: {

@@ -11,19 +11,54 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as AiAutomationServicesRouteImport } from './routes/ai-automation-services'
+import { Route as AiDeveloperInBangaloreRouteImport } from './routes/ai-developer-in-bangalore'
+import { Route as AiDeveloperInDelhiRouteImport } from './routes/ai-developer-in-delhi'
+import { Route as AiDeveloperInMumbaiRouteImport } from './routes/ai-developer-in-mumbai'
+import { Route as BestAiToolsForDigitalMarketingIn2026TopPicksForSuccessRouteImport } from './routes/best-ai-tools-for-digital-marketing-in-2026-top-picks-for-success'
 import { Route as BlogRouteImport } from './routes/blog'
 import { Route as CaseStudiesRouteImport } from './routes/case-studies'
+import { Route as ChatbotDevelopmentServicesRouteImport } from './routes/chatbot-development-services'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as CrmDevelopmentServicesRouteImport } from './routes/crm-development-services'
 import { Route as DeliverablesRouteImport } from './routes/deliverables'
 import { Route as EstimateRouteImport } from './routes/estimate'
+import { Route as FreelanceWebDesignerInDelhiRouteImport } from './routes/freelance-web-designer-in-delhi'
+import { Route as FreelanceWebDesignerInHyderabadRouteImport } from './routes/freelance-web-designer-in-hyderabad'
+import { Route as FreelanceWebDesignerInMumbaiRouteImport } from './routes/freelance-web-designer-in-mumbai'
+import { Route as FreelanceWebDesignerIndiaRouteImport } from './routes/freelance-web-designer-india'
+import { Route as FreelanceWebDeveloperInBangaloreRouteImport } from './routes/freelance-web-developer-in-bangalore'
+import { Route as FreelanceWebDeveloperVsAgencyIndiaRouteImport } from './routes/freelance-web-developer-vs-agency-india'
+import { Route as LogoDesignServicesRouteImport } from './routes/logo-design-services'
+import { Route as N8nAutomationFreelancerIndiaRouteImport } from './routes/n8n-automation-freelancer-india'
 import { Route as PortfolioRouteImport } from './routes/portfolio'
 import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
+import { Route as ReactDeveloperServicesRouteImport } from './routes/react-developer-services'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as TermsRouteImport } from './routes/terms'
+import { Route as TopWebDevelopmentFrameworksIn2026ACompleteGuideRouteImport } from './routes/top-web-development-frameworks-in-2026-a-complete-guide'
+import { Route as UiUxDesignServicesRouteImport } from './routes/ui-ux-design-services'
+import { Route as WebDesignServicesRouteImport } from './routes/web-design-services'
+import { Route as WebDesignerInAhmedabadRouteImport } from './routes/web-designer-in-ahmedabad'
+import { Route as WebDesignerInChandigarhRouteImport } from './routes/web-designer-in-chandigarh'
+import { Route as WebDesignerInChennaiRouteImport } from './routes/web-designer-in-chennai'
+import { Route as WebDesignerInGurgaonRouteImport } from './routes/web-designer-in-gurgaon'
+import { Route as WebDesignerInIndoreRouteImport } from './routes/web-designer-in-indore'
+import { Route as WebDesignerInJaipurRouteImport } from './routes/web-designer-in-jaipur'
+import { Route as WebDesignerInKochiRouteImport } from './routes/web-designer-in-kochi'
+import { Route as WebDesignerInKolkataRouteImport } from './routes/web-designer-in-kolkata'
+import { Route as WebDesignerInLucknowRouteImport } from './routes/web-designer-in-lucknow'
+import { Route as WebDesignerInNagpurRouteImport } from './routes/web-designer-in-nagpur'
+import { Route as WebDesignerInNoidaRouteImport } from './routes/web-designer-in-noida'
+import { Route as WebDesignerInPuneRouteImport } from './routes/web-designer-in-pune'
+import { Route as WebDesignerInSuratRouteImport } from './routes/web-designer-in-surat'
 import { Route as WebDeveloperDelhiNcrRouteImport } from './routes/web-developer-delhi-ncr'
 import { Route as WebsiteDeveloperEastDelhiRouteImport } from './routes/website-developer-east-delhi'
+import { Route as WhatsappChatbotDeveloperIndiaRouteImport } from './routes/whatsapp-chatbot-developer-india'
+import { Route as WhyYouShouldHireAFreelanceWebDesignerInIndiaTodayRouteImport } from './routes/why-you-should-hire-a-freelance-web-designer-in-india-today'
+import { Route as WordpressDevelopmentServicesRouteImport } from './routes/wordpress-development-services'
 import { Route as WorkingTogetherRouteImport } from './routes/working-together'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
@@ -44,6 +79,32 @@ const AboutRoute = AboutRouteImport.update({
   path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AiAutomationServicesRoute = AiAutomationServicesRouteImport.update({
+  id: '/ai-automation-services',
+  path: '/ai-automation-services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AiDeveloperInBangaloreRoute = AiDeveloperInBangaloreRouteImport.update({
+  id: '/ai-developer-in-bangalore',
+  path: '/ai-developer-in-bangalore',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AiDeveloperInDelhiRoute = AiDeveloperInDelhiRouteImport.update({
+  id: '/ai-developer-in-delhi',
+  path: '/ai-developer-in-delhi',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AiDeveloperInMumbaiRoute = AiDeveloperInMumbaiRouteImport.update({
+  id: '/ai-developer-in-mumbai',
+  path: '/ai-developer-in-mumbai',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BestAiToolsForDigitalMarketingIn2026TopPicksForSuccessRoute =
+  BestAiToolsForDigitalMarketingIn2026TopPicksForSuccessRouteImport.update({
+    id: '/best-ai-tools-for-digital-marketing-in-2026-top-picks-for-success',
+    path: '/best-ai-tools-for-digital-marketing-in-2026-top-picks-for-success',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const BlogRoute = BlogRouteImport.update({
   id: '/blog',
   path: '/blog',
@@ -54,9 +115,20 @@ const CaseStudiesRoute = CaseStudiesRouteImport.update({
   path: '/case-studies',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ChatbotDevelopmentServicesRoute =
+  ChatbotDevelopmentServicesRouteImport.update({
+    id: '/chatbot-development-services',
+    path: '/chatbot-development-services',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CrmDevelopmentServicesRoute = CrmDevelopmentServicesRouteImport.update({
+  id: '/crm-development-services',
+  path: '/crm-development-services',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DeliverablesRoute = DeliverablesRouteImport.update({
@@ -69,6 +141,53 @@ const EstimateRoute = EstimateRouteImport.update({
   path: '/estimate',
   getParentRoute: () => rootRouteImport,
 } as any)
+const FreelanceWebDesignerInDelhiRoute =
+  FreelanceWebDesignerInDelhiRouteImport.update({
+    id: '/freelance-web-designer-in-delhi',
+    path: '/freelance-web-designer-in-delhi',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const FreelanceWebDesignerInHyderabadRoute =
+  FreelanceWebDesignerInHyderabadRouteImport.update({
+    id: '/freelance-web-designer-in-hyderabad',
+    path: '/freelance-web-designer-in-hyderabad',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const FreelanceWebDesignerInMumbaiRoute =
+  FreelanceWebDesignerInMumbaiRouteImport.update({
+    id: '/freelance-web-designer-in-mumbai',
+    path: '/freelance-web-designer-in-mumbai',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const FreelanceWebDesignerIndiaRoute =
+  FreelanceWebDesignerIndiaRouteImport.update({
+    id: '/freelance-web-designer-india',
+    path: '/freelance-web-designer-india',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const FreelanceWebDeveloperInBangaloreRoute =
+  FreelanceWebDeveloperInBangaloreRouteImport.update({
+    id: '/freelance-web-developer-in-bangalore',
+    path: '/freelance-web-developer-in-bangalore',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const FreelanceWebDeveloperVsAgencyIndiaRoute =
+  FreelanceWebDeveloperVsAgencyIndiaRouteImport.update({
+    id: '/freelance-web-developer-vs-agency-india',
+    path: '/freelance-web-developer-vs-agency-india',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const LogoDesignServicesRoute = LogoDesignServicesRouteImport.update({
+  id: '/logo-design-services',
+  path: '/logo-design-services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const N8nAutomationFreelancerIndiaRoute =
+  N8nAutomationFreelancerIndiaRouteImport.update({
+    id: '/n8n-automation-freelancer-india',
+    path: '/n8n-automation-freelancer-india',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const PortfolioRoute = PortfolioRouteImport.update({
   id: '/portfolio',
   path: '/portfolio',
@@ -82,6 +201,11 @@ const PricingRoute = PricingRouteImport.update({
 const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
   id: '/privacy-policy',
   path: '/privacy-policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReactDeveloperServicesRoute = ReactDeveloperServicesRouteImport.update({
+  id: '/react-developer-services',
+  path: '/react-developer-services',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ServicesRoute = ServicesRouteImport.update({
@@ -99,6 +223,87 @@ const TermsRoute = TermsRouteImport.update({
   path: '/terms',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TopWebDevelopmentFrameworksIn2026ACompleteGuideRoute =
+  TopWebDevelopmentFrameworksIn2026ACompleteGuideRouteImport.update({
+    id: '/top-web-development-frameworks-in-2026-a-complete-guide',
+    path: '/top-web-development-frameworks-in-2026-a-complete-guide',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const UiUxDesignServicesRoute = UiUxDesignServicesRouteImport.update({
+  id: '/ui-ux-design-services',
+  path: '/ui-ux-design-services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WebDesignServicesRoute = WebDesignServicesRouteImport.update({
+  id: '/web-design-services',
+  path: '/web-design-services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WebDesignerInAhmedabadRoute = WebDesignerInAhmedabadRouteImport.update({
+  id: '/web-designer-in-ahmedabad',
+  path: '/web-designer-in-ahmedabad',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WebDesignerInChandigarhRoute = WebDesignerInChandigarhRouteImport.update({
+  id: '/web-designer-in-chandigarh',
+  path: '/web-designer-in-chandigarh',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WebDesignerInChennaiRoute = WebDesignerInChennaiRouteImport.update({
+  id: '/web-designer-in-chennai',
+  path: '/web-designer-in-chennai',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WebDesignerInGurgaonRoute = WebDesignerInGurgaonRouteImport.update({
+  id: '/web-designer-in-gurgaon',
+  path: '/web-designer-in-gurgaon',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WebDesignerInIndoreRoute = WebDesignerInIndoreRouteImport.update({
+  id: '/web-designer-in-indore',
+  path: '/web-designer-in-indore',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WebDesignerInJaipurRoute = WebDesignerInJaipurRouteImport.update({
+  id: '/web-designer-in-jaipur',
+  path: '/web-designer-in-jaipur',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WebDesignerInKochiRoute = WebDesignerInKochiRouteImport.update({
+  id: '/web-designer-in-kochi',
+  path: '/web-designer-in-kochi',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WebDesignerInKolkataRoute = WebDesignerInKolkataRouteImport.update({
+  id: '/web-designer-in-kolkata',
+  path: '/web-designer-in-kolkata',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WebDesignerInLucknowRoute = WebDesignerInLucknowRouteImport.update({
+  id: '/web-designer-in-lucknow',
+  path: '/web-designer-in-lucknow',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WebDesignerInNagpurRoute = WebDesignerInNagpurRouteImport.update({
+  id: '/web-designer-in-nagpur',
+  path: '/web-designer-in-nagpur',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WebDesignerInNoidaRoute = WebDesignerInNoidaRouteImport.update({
+  id: '/web-designer-in-noida',
+  path: '/web-designer-in-noida',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WebDesignerInPuneRoute = WebDesignerInPuneRouteImport.update({
+  id: '/web-designer-in-pune',
+  path: '/web-designer-in-pune',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WebDesignerInSuratRoute = WebDesignerInSuratRouteImport.update({
+  id: '/web-designer-in-surat',
+  path: '/web-designer-in-surat',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const WebDeveloperDelhiNcrRoute = WebDeveloperDelhiNcrRouteImport.update({
   id: '/web-developer-delhi-ncr',
   path: '/web-developer-delhi-ncr',
@@ -108,6 +313,24 @@ const WebsiteDeveloperEastDelhiRoute =
   WebsiteDeveloperEastDelhiRouteImport.update({
     id: '/website-developer-east-delhi',
     path: '/website-developer-east-delhi',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const WhatsappChatbotDeveloperIndiaRoute =
+  WhatsappChatbotDeveloperIndiaRouteImport.update({
+    id: '/whatsapp-chatbot-developer-india',
+    path: '/whatsapp-chatbot-developer-india',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const WhyYouShouldHireAFreelanceWebDesignerInIndiaTodayRoute =
+  WhyYouShouldHireAFreelanceWebDesignerInIndiaTodayRouteImport.update({
+    id: '/why-you-should-hire-a-freelance-web-designer-in-india-today',
+    path: '/why-you-should-hire-a-freelance-web-designer-in-india-today',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const WordpressDevelopmentServicesRoute =
+  WordpressDevelopmentServicesRouteImport.update({
+    id: '/wordpress-development-services',
+    path: '/wordpress-development-services',
     getParentRoute: () => rootRouteImport,
   } as any)
 const WorkingTogetherRoute = WorkingTogetherRouteImport.update({
@@ -159,19 +382,54 @@ const ServicesSlugRoute = ServicesSlugRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/ai-automation-services': typeof AiAutomationServicesRoute
+  '/ai-developer-in-bangalore': typeof AiDeveloperInBangaloreRoute
+  '/ai-developer-in-delhi': typeof AiDeveloperInDelhiRoute
+  '/ai-developer-in-mumbai': typeof AiDeveloperInMumbaiRoute
+  '/best-ai-tools-for-digital-marketing-in-2026-top-picks-for-success': typeof BestAiToolsForDigitalMarketingIn2026TopPicksForSuccessRoute
   '/blog': typeof BlogRouteWithChildren
   '/case-studies': typeof CaseStudiesRouteWithChildren
+  '/chatbot-development-services': typeof ChatbotDevelopmentServicesRoute
   '/contact': typeof ContactRoute
+  '/crm-development-services': typeof CrmDevelopmentServicesRoute
   '/deliverables': typeof DeliverablesRoute
   '/estimate': typeof EstimateRoute
+  '/freelance-web-designer-in-delhi': typeof FreelanceWebDesignerInDelhiRoute
+  '/freelance-web-designer-in-hyderabad': typeof FreelanceWebDesignerInHyderabadRoute
+  '/freelance-web-designer-in-mumbai': typeof FreelanceWebDesignerInMumbaiRoute
+  '/freelance-web-designer-india': typeof FreelanceWebDesignerIndiaRoute
+  '/freelance-web-developer-in-bangalore': typeof FreelanceWebDeveloperInBangaloreRoute
+  '/freelance-web-developer-vs-agency-india': typeof FreelanceWebDeveloperVsAgencyIndiaRoute
+  '/logo-design-services': typeof LogoDesignServicesRoute
+  '/n8n-automation-freelancer-india': typeof N8nAutomationFreelancerIndiaRoute
   '/portfolio': typeof PortfolioRouteWithChildren
   '/pricing': typeof PricingRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
+  '/react-developer-services': typeof ReactDeveloperServicesRoute
   '/services': typeof ServicesRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
+  '/top-web-development-frameworks-in-2026-a-complete-guide': typeof TopWebDevelopmentFrameworksIn2026ACompleteGuideRoute
+  '/ui-ux-design-services': typeof UiUxDesignServicesRoute
+  '/web-design-services': typeof WebDesignServicesRoute
+  '/web-designer-in-ahmedabad': typeof WebDesignerInAhmedabadRoute
+  '/web-designer-in-chandigarh': typeof WebDesignerInChandigarhRoute
+  '/web-designer-in-chennai': typeof WebDesignerInChennaiRoute
+  '/web-designer-in-gurgaon': typeof WebDesignerInGurgaonRoute
+  '/web-designer-in-indore': typeof WebDesignerInIndoreRoute
+  '/web-designer-in-jaipur': typeof WebDesignerInJaipurRoute
+  '/web-designer-in-kochi': typeof WebDesignerInKochiRoute
+  '/web-designer-in-kolkata': typeof WebDesignerInKolkataRoute
+  '/web-designer-in-lucknow': typeof WebDesignerInLucknowRoute
+  '/web-designer-in-nagpur': typeof WebDesignerInNagpurRoute
+  '/web-designer-in-noida': typeof WebDesignerInNoidaRoute
+  '/web-designer-in-pune': typeof WebDesignerInPuneRoute
+  '/web-designer-in-surat': typeof WebDesignerInSuratRoute
   '/web-developer-delhi-ncr': typeof WebDeveloperDelhiNcrRoute
   '/website-developer-east-delhi': typeof WebsiteDeveloperEastDelhiRoute
+  '/whatsapp-chatbot-developer-india': typeof WhatsappChatbotDeveloperIndiaRoute
+  '/why-you-should-hire-a-freelance-web-designer-in-india-today': typeof WhyYouShouldHireAFreelanceWebDesignerInIndiaTodayRoute
+  '/wordpress-development-services': typeof WordpressDevelopmentServicesRoute
   '/working-together': typeof WorkingTogetherRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/case-studies/$slug': typeof CaseStudiesSlugRoute
@@ -185,15 +443,50 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/ai-automation-services': typeof AiAutomationServicesRoute
+  '/ai-developer-in-bangalore': typeof AiDeveloperInBangaloreRoute
+  '/ai-developer-in-delhi': typeof AiDeveloperInDelhiRoute
+  '/ai-developer-in-mumbai': typeof AiDeveloperInMumbaiRoute
+  '/best-ai-tools-for-digital-marketing-in-2026-top-picks-for-success': typeof BestAiToolsForDigitalMarketingIn2026TopPicksForSuccessRoute
+  '/chatbot-development-services': typeof ChatbotDevelopmentServicesRoute
   '/contact': typeof ContactRoute
+  '/crm-development-services': typeof CrmDevelopmentServicesRoute
   '/deliverables': typeof DeliverablesRoute
   '/estimate': typeof EstimateRoute
+  '/freelance-web-designer-in-delhi': typeof FreelanceWebDesignerInDelhiRoute
+  '/freelance-web-designer-in-hyderabad': typeof FreelanceWebDesignerInHyderabadRoute
+  '/freelance-web-designer-in-mumbai': typeof FreelanceWebDesignerInMumbaiRoute
+  '/freelance-web-designer-india': typeof FreelanceWebDesignerIndiaRoute
+  '/freelance-web-developer-in-bangalore': typeof FreelanceWebDeveloperInBangaloreRoute
+  '/freelance-web-developer-vs-agency-india': typeof FreelanceWebDeveloperVsAgencyIndiaRoute
+  '/logo-design-services': typeof LogoDesignServicesRoute
+  '/n8n-automation-freelancer-india': typeof N8nAutomationFreelancerIndiaRoute
   '/pricing': typeof PricingRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
+  '/react-developer-services': typeof ReactDeveloperServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
+  '/top-web-development-frameworks-in-2026-a-complete-guide': typeof TopWebDevelopmentFrameworksIn2026ACompleteGuideRoute
+  '/ui-ux-design-services': typeof UiUxDesignServicesRoute
+  '/web-design-services': typeof WebDesignServicesRoute
+  '/web-designer-in-ahmedabad': typeof WebDesignerInAhmedabadRoute
+  '/web-designer-in-chandigarh': typeof WebDesignerInChandigarhRoute
+  '/web-designer-in-chennai': typeof WebDesignerInChennaiRoute
+  '/web-designer-in-gurgaon': typeof WebDesignerInGurgaonRoute
+  '/web-designer-in-indore': typeof WebDesignerInIndoreRoute
+  '/web-designer-in-jaipur': typeof WebDesignerInJaipurRoute
+  '/web-designer-in-kochi': typeof WebDesignerInKochiRoute
+  '/web-designer-in-kolkata': typeof WebDesignerInKolkataRoute
+  '/web-designer-in-lucknow': typeof WebDesignerInLucknowRoute
+  '/web-designer-in-nagpur': typeof WebDesignerInNagpurRoute
+  '/web-designer-in-noida': typeof WebDesignerInNoidaRoute
+  '/web-designer-in-pune': typeof WebDesignerInPuneRoute
+  '/web-designer-in-surat': typeof WebDesignerInSuratRoute
   '/web-developer-delhi-ncr': typeof WebDeveloperDelhiNcrRoute
   '/website-developer-east-delhi': typeof WebsiteDeveloperEastDelhiRoute
+  '/whatsapp-chatbot-developer-india': typeof WhatsappChatbotDeveloperIndiaRoute
+  '/why-you-should-hire-a-freelance-web-designer-in-india-today': typeof WhyYouShouldHireAFreelanceWebDesignerInIndiaTodayRoute
+  '/wordpress-development-services': typeof WordpressDevelopmentServicesRoute
   '/working-together': typeof WorkingTogetherRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/case-studies/$slug': typeof CaseStudiesSlugRoute
@@ -208,19 +501,54 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/ai-automation-services': typeof AiAutomationServicesRoute
+  '/ai-developer-in-bangalore': typeof AiDeveloperInBangaloreRoute
+  '/ai-developer-in-delhi': typeof AiDeveloperInDelhiRoute
+  '/ai-developer-in-mumbai': typeof AiDeveloperInMumbaiRoute
+  '/best-ai-tools-for-digital-marketing-in-2026-top-picks-for-success': typeof BestAiToolsForDigitalMarketingIn2026TopPicksForSuccessRoute
   '/blog': typeof BlogRouteWithChildren
   '/case-studies': typeof CaseStudiesRouteWithChildren
+  '/chatbot-development-services': typeof ChatbotDevelopmentServicesRoute
   '/contact': typeof ContactRoute
+  '/crm-development-services': typeof CrmDevelopmentServicesRoute
   '/deliverables': typeof DeliverablesRoute
   '/estimate': typeof EstimateRoute
+  '/freelance-web-designer-in-delhi': typeof FreelanceWebDesignerInDelhiRoute
+  '/freelance-web-designer-in-hyderabad': typeof FreelanceWebDesignerInHyderabadRoute
+  '/freelance-web-designer-in-mumbai': typeof FreelanceWebDesignerInMumbaiRoute
+  '/freelance-web-designer-india': typeof FreelanceWebDesignerIndiaRoute
+  '/freelance-web-developer-in-bangalore': typeof FreelanceWebDeveloperInBangaloreRoute
+  '/freelance-web-developer-vs-agency-india': typeof FreelanceWebDeveloperVsAgencyIndiaRoute
+  '/logo-design-services': typeof LogoDesignServicesRoute
+  '/n8n-automation-freelancer-india': typeof N8nAutomationFreelancerIndiaRoute
   '/portfolio': typeof PortfolioRouteWithChildren
   '/pricing': typeof PricingRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
+  '/react-developer-services': typeof ReactDeveloperServicesRoute
   '/services': typeof ServicesRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
+  '/top-web-development-frameworks-in-2026-a-complete-guide': typeof TopWebDevelopmentFrameworksIn2026ACompleteGuideRoute
+  '/ui-ux-design-services': typeof UiUxDesignServicesRoute
+  '/web-design-services': typeof WebDesignServicesRoute
+  '/web-designer-in-ahmedabad': typeof WebDesignerInAhmedabadRoute
+  '/web-designer-in-chandigarh': typeof WebDesignerInChandigarhRoute
+  '/web-designer-in-chennai': typeof WebDesignerInChennaiRoute
+  '/web-designer-in-gurgaon': typeof WebDesignerInGurgaonRoute
+  '/web-designer-in-indore': typeof WebDesignerInIndoreRoute
+  '/web-designer-in-jaipur': typeof WebDesignerInJaipurRoute
+  '/web-designer-in-kochi': typeof WebDesignerInKochiRoute
+  '/web-designer-in-kolkata': typeof WebDesignerInKolkataRoute
+  '/web-designer-in-lucknow': typeof WebDesignerInLucknowRoute
+  '/web-designer-in-nagpur': typeof WebDesignerInNagpurRoute
+  '/web-designer-in-noida': typeof WebDesignerInNoidaRoute
+  '/web-designer-in-pune': typeof WebDesignerInPuneRoute
+  '/web-designer-in-surat': typeof WebDesignerInSuratRoute
   '/web-developer-delhi-ncr': typeof WebDeveloperDelhiNcrRoute
   '/website-developer-east-delhi': typeof WebsiteDeveloperEastDelhiRoute
+  '/whatsapp-chatbot-developer-india': typeof WhatsappChatbotDeveloperIndiaRoute
+  '/why-you-should-hire-a-freelance-web-designer-in-india-today': typeof WhyYouShouldHireAFreelanceWebDesignerInIndiaTodayRoute
+  '/wordpress-development-services': typeof WordpressDevelopmentServicesRoute
   '/working-together': typeof WorkingTogetherRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/case-studies/$slug': typeof CaseStudiesSlugRoute
@@ -236,19 +564,54 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
+    | '/ai-automation-services'
+    | '/ai-developer-in-bangalore'
+    | '/ai-developer-in-delhi'
+    | '/ai-developer-in-mumbai'
+    | '/best-ai-tools-for-digital-marketing-in-2026-top-picks-for-success'
     | '/blog'
     | '/case-studies'
+    | '/chatbot-development-services'
     | '/contact'
+    | '/crm-development-services'
     | '/deliverables'
     | '/estimate'
+    | '/freelance-web-designer-in-delhi'
+    | '/freelance-web-designer-in-hyderabad'
+    | '/freelance-web-designer-in-mumbai'
+    | '/freelance-web-designer-india'
+    | '/freelance-web-developer-in-bangalore'
+    | '/freelance-web-developer-vs-agency-india'
+    | '/logo-design-services'
+    | '/n8n-automation-freelancer-india'
     | '/portfolio'
     | '/pricing'
     | '/privacy-policy'
+    | '/react-developer-services'
     | '/services'
     | '/sitemap.xml'
     | '/terms'
+    | '/top-web-development-frameworks-in-2026-a-complete-guide'
+    | '/ui-ux-design-services'
+    | '/web-design-services'
+    | '/web-designer-in-ahmedabad'
+    | '/web-designer-in-chandigarh'
+    | '/web-designer-in-chennai'
+    | '/web-designer-in-gurgaon'
+    | '/web-designer-in-indore'
+    | '/web-designer-in-jaipur'
+    | '/web-designer-in-kochi'
+    | '/web-designer-in-kolkata'
+    | '/web-designer-in-lucknow'
+    | '/web-designer-in-nagpur'
+    | '/web-designer-in-noida'
+    | '/web-designer-in-pune'
+    | '/web-designer-in-surat'
     | '/web-developer-delhi-ncr'
     | '/website-developer-east-delhi'
+    | '/whatsapp-chatbot-developer-india'
+    | '/why-you-should-hire-a-freelance-web-designer-in-india-today'
+    | '/wordpress-development-services'
     | '/working-together'
     | '/blog/$slug'
     | '/case-studies/$slug'
@@ -262,15 +625,50 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about'
+    | '/ai-automation-services'
+    | '/ai-developer-in-bangalore'
+    | '/ai-developer-in-delhi'
+    | '/ai-developer-in-mumbai'
+    | '/best-ai-tools-for-digital-marketing-in-2026-top-picks-for-success'
+    | '/chatbot-development-services'
     | '/contact'
+    | '/crm-development-services'
     | '/deliverables'
     | '/estimate'
+    | '/freelance-web-designer-in-delhi'
+    | '/freelance-web-designer-in-hyderabad'
+    | '/freelance-web-designer-in-mumbai'
+    | '/freelance-web-designer-india'
+    | '/freelance-web-developer-in-bangalore'
+    | '/freelance-web-developer-vs-agency-india'
+    | '/logo-design-services'
+    | '/n8n-automation-freelancer-india'
     | '/pricing'
     | '/privacy-policy'
+    | '/react-developer-services'
     | '/sitemap.xml'
     | '/terms'
+    | '/top-web-development-frameworks-in-2026-a-complete-guide'
+    | '/ui-ux-design-services'
+    | '/web-design-services'
+    | '/web-designer-in-ahmedabad'
+    | '/web-designer-in-chandigarh'
+    | '/web-designer-in-chennai'
+    | '/web-designer-in-gurgaon'
+    | '/web-designer-in-indore'
+    | '/web-designer-in-jaipur'
+    | '/web-designer-in-kochi'
+    | '/web-designer-in-kolkata'
+    | '/web-designer-in-lucknow'
+    | '/web-designer-in-nagpur'
+    | '/web-designer-in-noida'
+    | '/web-designer-in-pune'
+    | '/web-designer-in-surat'
     | '/web-developer-delhi-ncr'
     | '/website-developer-east-delhi'
+    | '/whatsapp-chatbot-developer-india'
+    | '/why-you-should-hire-a-freelance-web-designer-in-india-today'
+    | '/wordpress-development-services'
     | '/working-together'
     | '/blog/$slug'
     | '/case-studies/$slug'
@@ -284,19 +682,54 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/about'
+    | '/ai-automation-services'
+    | '/ai-developer-in-bangalore'
+    | '/ai-developer-in-delhi'
+    | '/ai-developer-in-mumbai'
+    | '/best-ai-tools-for-digital-marketing-in-2026-top-picks-for-success'
     | '/blog'
     | '/case-studies'
+    | '/chatbot-development-services'
     | '/contact'
+    | '/crm-development-services'
     | '/deliverables'
     | '/estimate'
+    | '/freelance-web-designer-in-delhi'
+    | '/freelance-web-designer-in-hyderabad'
+    | '/freelance-web-designer-in-mumbai'
+    | '/freelance-web-designer-india'
+    | '/freelance-web-developer-in-bangalore'
+    | '/freelance-web-developer-vs-agency-india'
+    | '/logo-design-services'
+    | '/n8n-automation-freelancer-india'
     | '/portfolio'
     | '/pricing'
     | '/privacy-policy'
+    | '/react-developer-services'
     | '/services'
     | '/sitemap.xml'
     | '/terms'
+    | '/top-web-development-frameworks-in-2026-a-complete-guide'
+    | '/ui-ux-design-services'
+    | '/web-design-services'
+    | '/web-designer-in-ahmedabad'
+    | '/web-designer-in-chandigarh'
+    | '/web-designer-in-chennai'
+    | '/web-designer-in-gurgaon'
+    | '/web-designer-in-indore'
+    | '/web-designer-in-jaipur'
+    | '/web-designer-in-kochi'
+    | '/web-designer-in-kolkata'
+    | '/web-designer-in-lucknow'
+    | '/web-designer-in-nagpur'
+    | '/web-designer-in-noida'
+    | '/web-designer-in-pune'
+    | '/web-designer-in-surat'
     | '/web-developer-delhi-ncr'
     | '/website-developer-east-delhi'
+    | '/whatsapp-chatbot-developer-india'
+    | '/why-you-should-hire-a-freelance-web-designer-in-india-today'
+    | '/wordpress-development-services'
     | '/working-together'
     | '/blog/$slug'
     | '/case-studies/$slug'
@@ -311,19 +744,54 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  AiAutomationServicesRoute: typeof AiAutomationServicesRoute
+  AiDeveloperInBangaloreRoute: typeof AiDeveloperInBangaloreRoute
+  AiDeveloperInDelhiRoute: typeof AiDeveloperInDelhiRoute
+  AiDeveloperInMumbaiRoute: typeof AiDeveloperInMumbaiRoute
+  BestAiToolsForDigitalMarketingIn2026TopPicksForSuccessRoute: typeof BestAiToolsForDigitalMarketingIn2026TopPicksForSuccessRoute
   BlogRoute: typeof BlogRouteWithChildren
   CaseStudiesRoute: typeof CaseStudiesRouteWithChildren
+  ChatbotDevelopmentServicesRoute: typeof ChatbotDevelopmentServicesRoute
   ContactRoute: typeof ContactRoute
+  CrmDevelopmentServicesRoute: typeof CrmDevelopmentServicesRoute
   DeliverablesRoute: typeof DeliverablesRoute
   EstimateRoute: typeof EstimateRoute
+  FreelanceWebDesignerInDelhiRoute: typeof FreelanceWebDesignerInDelhiRoute
+  FreelanceWebDesignerInHyderabadRoute: typeof FreelanceWebDesignerInHyderabadRoute
+  FreelanceWebDesignerInMumbaiRoute: typeof FreelanceWebDesignerInMumbaiRoute
+  FreelanceWebDesignerIndiaRoute: typeof FreelanceWebDesignerIndiaRoute
+  FreelanceWebDeveloperInBangaloreRoute: typeof FreelanceWebDeveloperInBangaloreRoute
+  FreelanceWebDeveloperVsAgencyIndiaRoute: typeof FreelanceWebDeveloperVsAgencyIndiaRoute
+  LogoDesignServicesRoute: typeof LogoDesignServicesRoute
+  N8nAutomationFreelancerIndiaRoute: typeof N8nAutomationFreelancerIndiaRoute
   PortfolioRoute: typeof PortfolioRouteWithChildren
   PricingRoute: typeof PricingRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
+  ReactDeveloperServicesRoute: typeof ReactDeveloperServicesRoute
   ServicesRoute: typeof ServicesRouteWithChildren
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TermsRoute: typeof TermsRoute
+  TopWebDevelopmentFrameworksIn2026ACompleteGuideRoute: typeof TopWebDevelopmentFrameworksIn2026ACompleteGuideRoute
+  UiUxDesignServicesRoute: typeof UiUxDesignServicesRoute
+  WebDesignServicesRoute: typeof WebDesignServicesRoute
+  WebDesignerInAhmedabadRoute: typeof WebDesignerInAhmedabadRoute
+  WebDesignerInChandigarhRoute: typeof WebDesignerInChandigarhRoute
+  WebDesignerInChennaiRoute: typeof WebDesignerInChennaiRoute
+  WebDesignerInGurgaonRoute: typeof WebDesignerInGurgaonRoute
+  WebDesignerInIndoreRoute: typeof WebDesignerInIndoreRoute
+  WebDesignerInJaipurRoute: typeof WebDesignerInJaipurRoute
+  WebDesignerInKochiRoute: typeof WebDesignerInKochiRoute
+  WebDesignerInKolkataRoute: typeof WebDesignerInKolkataRoute
+  WebDesignerInLucknowRoute: typeof WebDesignerInLucknowRoute
+  WebDesignerInNagpurRoute: typeof WebDesignerInNagpurRoute
+  WebDesignerInNoidaRoute: typeof WebDesignerInNoidaRoute
+  WebDesignerInPuneRoute: typeof WebDesignerInPuneRoute
+  WebDesignerInSuratRoute: typeof WebDesignerInSuratRoute
   WebDeveloperDelhiNcrRoute: typeof WebDeveloperDelhiNcrRoute
   WebsiteDeveloperEastDelhiRoute: typeof WebsiteDeveloperEastDelhiRoute
+  WhatsappChatbotDeveloperIndiaRoute: typeof WhatsappChatbotDeveloperIndiaRoute
+  WhyYouShouldHireAFreelanceWebDesignerInIndiaTodayRoute: typeof WhyYouShouldHireAFreelanceWebDesignerInIndiaTodayRoute
+  WordpressDevelopmentServicesRoute: typeof WordpressDevelopmentServicesRoute
   WorkingTogetherRoute: typeof WorkingTogetherRoute
 }
 
@@ -343,6 +811,41 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/ai-automation-services': {
+      id: '/ai-automation-services'
+      path: '/ai-automation-services'
+      fullPath: '/ai-automation-services'
+      preLoaderRoute: typeof AiAutomationServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ai-developer-in-bangalore': {
+      id: '/ai-developer-in-bangalore'
+      path: '/ai-developer-in-bangalore'
+      fullPath: '/ai-developer-in-bangalore'
+      preLoaderRoute: typeof AiDeveloperInBangaloreRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ai-developer-in-delhi': {
+      id: '/ai-developer-in-delhi'
+      path: '/ai-developer-in-delhi'
+      fullPath: '/ai-developer-in-delhi'
+      preLoaderRoute: typeof AiDeveloperInDelhiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ai-developer-in-mumbai': {
+      id: '/ai-developer-in-mumbai'
+      path: '/ai-developer-in-mumbai'
+      fullPath: '/ai-developer-in-mumbai'
+      preLoaderRoute: typeof AiDeveloperInMumbaiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/best-ai-tools-for-digital-marketing-in-2026-top-picks-for-success': {
+      id: '/best-ai-tools-for-digital-marketing-in-2026-top-picks-for-success'
+      path: '/best-ai-tools-for-digital-marketing-in-2026-top-picks-for-success'
+      fullPath: '/best-ai-tools-for-digital-marketing-in-2026-top-picks-for-success'
+      preLoaderRoute: typeof BestAiToolsForDigitalMarketingIn2026TopPicksForSuccessRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/blog': {
       id: '/blog'
       path: '/blog'
@@ -357,11 +860,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CaseStudiesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/chatbot-development-services': {
+      id: '/chatbot-development-services'
+      path: '/chatbot-development-services'
+      fullPath: '/chatbot-development-services'
+      preLoaderRoute: typeof ChatbotDevelopmentServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/contact': {
       id: '/contact'
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/crm-development-services': {
+      id: '/crm-development-services'
+      path: '/crm-development-services'
+      fullPath: '/crm-development-services'
+      preLoaderRoute: typeof CrmDevelopmentServicesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/deliverables': {
@@ -376,6 +893,62 @@ declare module '@tanstack/react-router' {
       path: '/estimate'
       fullPath: '/estimate'
       preLoaderRoute: typeof EstimateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/freelance-web-designer-in-delhi': {
+      id: '/freelance-web-designer-in-delhi'
+      path: '/freelance-web-designer-in-delhi'
+      fullPath: '/freelance-web-designer-in-delhi'
+      preLoaderRoute: typeof FreelanceWebDesignerInDelhiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/freelance-web-designer-in-hyderabad': {
+      id: '/freelance-web-designer-in-hyderabad'
+      path: '/freelance-web-designer-in-hyderabad'
+      fullPath: '/freelance-web-designer-in-hyderabad'
+      preLoaderRoute: typeof FreelanceWebDesignerInHyderabadRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/freelance-web-designer-in-mumbai': {
+      id: '/freelance-web-designer-in-mumbai'
+      path: '/freelance-web-designer-in-mumbai'
+      fullPath: '/freelance-web-designer-in-mumbai'
+      preLoaderRoute: typeof FreelanceWebDesignerInMumbaiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/freelance-web-designer-india': {
+      id: '/freelance-web-designer-india'
+      path: '/freelance-web-designer-india'
+      fullPath: '/freelance-web-designer-india'
+      preLoaderRoute: typeof FreelanceWebDesignerIndiaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/freelance-web-developer-in-bangalore': {
+      id: '/freelance-web-developer-in-bangalore'
+      path: '/freelance-web-developer-in-bangalore'
+      fullPath: '/freelance-web-developer-in-bangalore'
+      preLoaderRoute: typeof FreelanceWebDeveloperInBangaloreRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/freelance-web-developer-vs-agency-india': {
+      id: '/freelance-web-developer-vs-agency-india'
+      path: '/freelance-web-developer-vs-agency-india'
+      fullPath: '/freelance-web-developer-vs-agency-india'
+      preLoaderRoute: typeof FreelanceWebDeveloperVsAgencyIndiaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/logo-design-services': {
+      id: '/logo-design-services'
+      path: '/logo-design-services'
+      fullPath: '/logo-design-services'
+      preLoaderRoute: typeof LogoDesignServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/n8n-automation-freelancer-india': {
+      id: '/n8n-automation-freelancer-india'
+      path: '/n8n-automation-freelancer-india'
+      fullPath: '/n8n-automation-freelancer-india'
+      preLoaderRoute: typeof N8nAutomationFreelancerIndiaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/portfolio': {
@@ -399,6 +972,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PrivacyPolicyRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/react-developer-services': {
+      id: '/react-developer-services'
+      path: '/react-developer-services'
+      fullPath: '/react-developer-services'
+      preLoaderRoute: typeof ReactDeveloperServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/services': {
       id: '/services'
       path: '/services'
@@ -420,6 +1000,118 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TermsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/top-web-development-frameworks-in-2026-a-complete-guide': {
+      id: '/top-web-development-frameworks-in-2026-a-complete-guide'
+      path: '/top-web-development-frameworks-in-2026-a-complete-guide'
+      fullPath: '/top-web-development-frameworks-in-2026-a-complete-guide'
+      preLoaderRoute: typeof TopWebDevelopmentFrameworksIn2026ACompleteGuideRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ui-ux-design-services': {
+      id: '/ui-ux-design-services'
+      path: '/ui-ux-design-services'
+      fullPath: '/ui-ux-design-services'
+      preLoaderRoute: typeof UiUxDesignServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/web-design-services': {
+      id: '/web-design-services'
+      path: '/web-design-services'
+      fullPath: '/web-design-services'
+      preLoaderRoute: typeof WebDesignServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/web-designer-in-ahmedabad': {
+      id: '/web-designer-in-ahmedabad'
+      path: '/web-designer-in-ahmedabad'
+      fullPath: '/web-designer-in-ahmedabad'
+      preLoaderRoute: typeof WebDesignerInAhmedabadRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/web-designer-in-chandigarh': {
+      id: '/web-designer-in-chandigarh'
+      path: '/web-designer-in-chandigarh'
+      fullPath: '/web-designer-in-chandigarh'
+      preLoaderRoute: typeof WebDesignerInChandigarhRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/web-designer-in-chennai': {
+      id: '/web-designer-in-chennai'
+      path: '/web-designer-in-chennai'
+      fullPath: '/web-designer-in-chennai'
+      preLoaderRoute: typeof WebDesignerInChennaiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/web-designer-in-gurgaon': {
+      id: '/web-designer-in-gurgaon'
+      path: '/web-designer-in-gurgaon'
+      fullPath: '/web-designer-in-gurgaon'
+      preLoaderRoute: typeof WebDesignerInGurgaonRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/web-designer-in-indore': {
+      id: '/web-designer-in-indore'
+      path: '/web-designer-in-indore'
+      fullPath: '/web-designer-in-indore'
+      preLoaderRoute: typeof WebDesignerInIndoreRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/web-designer-in-jaipur': {
+      id: '/web-designer-in-jaipur'
+      path: '/web-designer-in-jaipur'
+      fullPath: '/web-designer-in-jaipur'
+      preLoaderRoute: typeof WebDesignerInJaipurRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/web-designer-in-kochi': {
+      id: '/web-designer-in-kochi'
+      path: '/web-designer-in-kochi'
+      fullPath: '/web-designer-in-kochi'
+      preLoaderRoute: typeof WebDesignerInKochiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/web-designer-in-kolkata': {
+      id: '/web-designer-in-kolkata'
+      path: '/web-designer-in-kolkata'
+      fullPath: '/web-designer-in-kolkata'
+      preLoaderRoute: typeof WebDesignerInKolkataRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/web-designer-in-lucknow': {
+      id: '/web-designer-in-lucknow'
+      path: '/web-designer-in-lucknow'
+      fullPath: '/web-designer-in-lucknow'
+      preLoaderRoute: typeof WebDesignerInLucknowRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/web-designer-in-nagpur': {
+      id: '/web-designer-in-nagpur'
+      path: '/web-designer-in-nagpur'
+      fullPath: '/web-designer-in-nagpur'
+      preLoaderRoute: typeof WebDesignerInNagpurRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/web-designer-in-noida': {
+      id: '/web-designer-in-noida'
+      path: '/web-designer-in-noida'
+      fullPath: '/web-designer-in-noida'
+      preLoaderRoute: typeof WebDesignerInNoidaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/web-designer-in-pune': {
+      id: '/web-designer-in-pune'
+      path: '/web-designer-in-pune'
+      fullPath: '/web-designer-in-pune'
+      preLoaderRoute: typeof WebDesignerInPuneRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/web-designer-in-surat': {
+      id: '/web-designer-in-surat'
+      path: '/web-designer-in-surat'
+      fullPath: '/web-designer-in-surat'
+      preLoaderRoute: typeof WebDesignerInSuratRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/web-developer-delhi-ncr': {
       id: '/web-developer-delhi-ncr'
       path: '/web-developer-delhi-ncr'
@@ -432,6 +1124,27 @@ declare module '@tanstack/react-router' {
       path: '/website-developer-east-delhi'
       fullPath: '/website-developer-east-delhi'
       preLoaderRoute: typeof WebsiteDeveloperEastDelhiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/whatsapp-chatbot-developer-india': {
+      id: '/whatsapp-chatbot-developer-india'
+      path: '/whatsapp-chatbot-developer-india'
+      fullPath: '/whatsapp-chatbot-developer-india'
+      preLoaderRoute: typeof WhatsappChatbotDeveloperIndiaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/why-you-should-hire-a-freelance-web-designer-in-india-today': {
+      id: '/why-you-should-hire-a-freelance-web-designer-in-india-today'
+      path: '/why-you-should-hire-a-freelance-web-designer-in-india-today'
+      fullPath: '/why-you-should-hire-a-freelance-web-designer-in-india-today'
+      preLoaderRoute: typeof WhyYouShouldHireAFreelanceWebDesignerInIndiaTodayRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/wordpress-development-services': {
+      id: '/wordpress-development-services'
+      path: '/wordpress-development-services'
+      fullPath: '/wordpress-development-services'
+      preLoaderRoute: typeof WordpressDevelopmentServicesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/working-together': {
@@ -557,19 +1270,58 @@ const ServicesRouteWithChildren = ServicesRoute._addFileChildren(
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  AiAutomationServicesRoute: AiAutomationServicesRoute,
+  AiDeveloperInBangaloreRoute: AiDeveloperInBangaloreRoute,
+  AiDeveloperInDelhiRoute: AiDeveloperInDelhiRoute,
+  AiDeveloperInMumbaiRoute: AiDeveloperInMumbaiRoute,
+  BestAiToolsForDigitalMarketingIn2026TopPicksForSuccessRoute:
+    BestAiToolsForDigitalMarketingIn2026TopPicksForSuccessRoute,
   BlogRoute: BlogRouteWithChildren,
   CaseStudiesRoute: CaseStudiesRouteWithChildren,
+  ChatbotDevelopmentServicesRoute: ChatbotDevelopmentServicesRoute,
   ContactRoute: ContactRoute,
+  CrmDevelopmentServicesRoute: CrmDevelopmentServicesRoute,
   DeliverablesRoute: DeliverablesRoute,
   EstimateRoute: EstimateRoute,
+  FreelanceWebDesignerInDelhiRoute: FreelanceWebDesignerInDelhiRoute,
+  FreelanceWebDesignerInHyderabadRoute: FreelanceWebDesignerInHyderabadRoute,
+  FreelanceWebDesignerInMumbaiRoute: FreelanceWebDesignerInMumbaiRoute,
+  FreelanceWebDesignerIndiaRoute: FreelanceWebDesignerIndiaRoute,
+  FreelanceWebDeveloperInBangaloreRoute: FreelanceWebDeveloperInBangaloreRoute,
+  FreelanceWebDeveloperVsAgencyIndiaRoute:
+    FreelanceWebDeveloperVsAgencyIndiaRoute,
+  LogoDesignServicesRoute: LogoDesignServicesRoute,
+  N8nAutomationFreelancerIndiaRoute: N8nAutomationFreelancerIndiaRoute,
   PortfolioRoute: PortfolioRouteWithChildren,
   PricingRoute: PricingRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
+  ReactDeveloperServicesRoute: ReactDeveloperServicesRoute,
   ServicesRoute: ServicesRouteWithChildren,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   TermsRoute: TermsRoute,
+  TopWebDevelopmentFrameworksIn2026ACompleteGuideRoute:
+    TopWebDevelopmentFrameworksIn2026ACompleteGuideRoute,
+  UiUxDesignServicesRoute: UiUxDesignServicesRoute,
+  WebDesignServicesRoute: WebDesignServicesRoute,
+  WebDesignerInAhmedabadRoute: WebDesignerInAhmedabadRoute,
+  WebDesignerInChandigarhRoute: WebDesignerInChandigarhRoute,
+  WebDesignerInChennaiRoute: WebDesignerInChennaiRoute,
+  WebDesignerInGurgaonRoute: WebDesignerInGurgaonRoute,
+  WebDesignerInIndoreRoute: WebDesignerInIndoreRoute,
+  WebDesignerInJaipurRoute: WebDesignerInJaipurRoute,
+  WebDesignerInKochiRoute: WebDesignerInKochiRoute,
+  WebDesignerInKolkataRoute: WebDesignerInKolkataRoute,
+  WebDesignerInLucknowRoute: WebDesignerInLucknowRoute,
+  WebDesignerInNagpurRoute: WebDesignerInNagpurRoute,
+  WebDesignerInNoidaRoute: WebDesignerInNoidaRoute,
+  WebDesignerInPuneRoute: WebDesignerInPuneRoute,
+  WebDesignerInSuratRoute: WebDesignerInSuratRoute,
   WebDeveloperDelhiNcrRoute: WebDeveloperDelhiNcrRoute,
   WebsiteDeveloperEastDelhiRoute: WebsiteDeveloperEastDelhiRoute,
+  WhatsappChatbotDeveloperIndiaRoute: WhatsappChatbotDeveloperIndiaRoute,
+  WhyYouShouldHireAFreelanceWebDesignerInIndiaTodayRoute:
+    WhyYouShouldHireAFreelanceWebDesignerInIndiaTodayRoute,
+  WordpressDevelopmentServicesRoute: WordpressDevelopmentServicesRoute,
   WorkingTogetherRoute: WorkingTogetherRoute,
 }
 export const routeTree = rootRouteImport

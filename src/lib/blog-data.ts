@@ -3329,6 +3329,14 @@ const content: { slug: string; title: string; description: string; category: str
 ];
 
 export type Block = string | string[];
-export type Article = (typeof content)[number] & { image: string; readTime: number };
+
+const unlistedSlugs = new Set<string>();
+
+export type Article = (typeof content)[number] & { image: string; readTime: number; unlisted?: boolean };
 const words = (blocks: Block[]) => blocks.flat().join(" ").split(/\s+/).length;
-export const articles: Article[] = content.map(article => ({ ...article, image: covers[article.slug] ?? enterpriseAiAgent, readTime: Math.max(2, Math.ceil(article.sections.reduce((n, section) => n + words(section.blocks), 0) / 200)) }));
+export const articles: Article[] = content.map(article => ({
+  ...article,
+  unlisted: unlistedSlugs.has(article.slug),
+  image: covers[article.slug] ?? enterpriseAiAgent,
+  readTime: Math.max(2, Math.ceil(article.sections.reduce((n, section) => n + words(section.blocks), 0) / 200)),
+}));
