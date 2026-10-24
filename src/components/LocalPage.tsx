@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowRight, ArrowUpRight, Check, MapPin, Star } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Check, MapPin, ShieldCheck, Star, UserCheck, Zap } from "lucide-react";
 import { FaqSection } from "@/components/Faq";
 import { AgencyLayout, ProjectCTA } from "@/components/AgencyLayout";
 import { Btn, SectionHead, SwipeRow } from "@/components/Kit";
@@ -104,7 +104,7 @@ export function LocalPage({ page }: { page: LocalPageData }) {
               <Reveal
                 key={b.heading}
                 delay={i * 60}
-                className="rounded-[28px] bg-stone p-8 sm:p-12 md:p-14"
+                className="rounded-[28px] bg-stone p-8 sm:p-12 md:p-14 shadow-[inset_0_0_0_1px_var(--color-border)]"
               >
                 {/* Editorial Heading */}
                 <h2 className="font-display text-[2rem] font-light leading-[1.1] tracking-[-0.025em] text-foreground sm:text-[2.5rem] md:text-[2.85rem]">
@@ -135,9 +135,11 @@ export function LocalPage({ page }: { page: LocalPageData }) {
                       {b.bullets.map((bullet, idx) => (
                         <li
                           key={idx}
-                          className="flex items-start gap-3 rounded-2xl bg-card p-4.5 text-[15px] leading-relaxed text-foreground/85"
+                          className="flex items-start gap-3 rounded-2xl bg-card p-4.5 text-[15px] leading-relaxed text-foreground/85 shadow-[inset_0_0_0_1px_var(--color-border)] transition-shadow hover:shadow-2xs"
                         >
-                          <Check className="mt-1 h-4 w-4 shrink-0 text-accent" strokeWidth={2.25} />
+                          <div className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-stone text-accent">
+                            <Check className="h-3 w-3" strokeWidth={2.5} />
+                          </div>
                           <span>{bullet}</span>
                         </li>
                       ))}
@@ -147,7 +149,7 @@ export function LocalPage({ page }: { page: LocalPageData }) {
 
                 {/* Editorial Quote Statement */}
                 {b.highlight && (
-                  <blockquote className="mt-9 rounded-2xl bg-card p-6 md:p-8 font-display text-xl font-light italic leading-snug text-foreground/95 sm:text-2xl">
+                  <blockquote className="mt-9 rounded-2xl bg-card p-6 md:p-8 font-display text-xl font-light italic leading-snug text-foreground/95 sm:text-2xl shadow-[inset_0_0_0_1px_var(--color-border)] border-l-4 border-l-accent">
                     “{b.highlight}”
                   </blockquote>
                 )}
@@ -240,17 +242,24 @@ export function LocalPage({ page }: { page: LocalPageData }) {
           />
           <div className="mt-12">
             <SwipeRow label="Deliverables and capabilities" at="lg" grid="lg:grid-cols-3 lg:gap-6">
-              {page.deliverables.map((d) => (
+              {page.deliverables.map((d, i) => (
                 <div
                   key={d.title}
-                  className="flex h-full flex-col justify-between rounded-[24px] bg-stone p-7 md:p-8"
+                  className="group relative flex h-full flex-col justify-between rounded-[24px] bg-stone p-7 transition-all duration-300 hover:bg-card hover:-translate-y-1.5 hover:shadow-[0_24px_50px_-24px_oklch(0.2_0.02_70/0.14)] shadow-[inset_0_0_0_1px_var(--color-border)] md:p-8"
                 >
                   <div>
-                    {d.badge && (
-                      <span className="inline-block rounded-full bg-card px-3 py-1 text-xs text-muted-foreground mb-3">
-                        {d.badge}
+                    <div className="mb-4 flex items-center justify-between gap-3">
+                      {d.badge ? (
+                        <span className="inline-block rounded-full bg-card px-3 py-1 text-xs font-medium text-muted-foreground shadow-[inset_0_0_0_1px_var(--color-border)]">
+                          {d.badge}
+                        </span>
+                      ) : (
+                        <span />
+                      )}
+                      <span className="font-display text-[14px] text-muted-foreground/60 tabular">
+                        0{i + 1}
                       </span>
-                    )}
+                    </div>
                     <h3 className="font-display text-[1.4rem] font-normal leading-snug text-foreground">
                       {d.title}
                     </h3>
@@ -263,7 +272,9 @@ export function LocalPage({ page }: { page: LocalPageData }) {
                     <ul className="mt-7 space-y-2.5 border-t border-border/70 pt-5">
                       {d.points.map((pt, pIdx) => (
                         <li key={pIdx} className="flex items-start gap-2.5 text-[14px] leading-relaxed text-foreground/80">
-                          <Check className="mt-1 h-3.5 w-3.5 shrink-0 text-accent" strokeWidth={2.25} />
+                          <div className="mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-card shadow-[inset_0_0_0_1px_var(--color-border)]">
+                            <Check className="h-2.5 w-2.5 text-accent" strokeWidth={3} />
+                          </div>
                           <span>{pt}</span>
                         </li>
                       ))}
@@ -284,22 +295,80 @@ export function LocalPage({ page }: { page: LocalPageData }) {
             text="Principled technical choices that guarantee longevity, sub-second speed, and zero platform lock-in."
           />
           <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {page.sections.map((s, i) => (
-              <Reveal
-                key={s.heading}
-                delay={i * 80}
-                className="flex flex-col justify-between rounded-[24px] bg-stone p-7 md:p-8"
-              >
-                <div>
-                  <h3 className="font-display text-[1.45rem] font-normal leading-snug text-foreground">
-                    {s.heading}
-                  </h3>
-                  <p className="mt-3.5 text-[15px] leading-relaxed text-foreground/75 whitespace-pre-line">
-                    {s.text}
-                  </p>
-                </div>
-              </Reveal>
-            ))}
+            {page.sections.map((s, i) => {
+              const h = s.heading.toLowerCase();
+              let icon = <UserCheck className="h-5 w-5 text-accent" />;
+              let tag = "Direct Model";
+              let signal = "Direct 1-on-1 engineer access";
+
+              if (h.includes("builder") || h.includes("freelance") || h.includes("direct") || h.includes("agency") || h.includes("rep")) {
+                icon = <UserCheck className="h-5 w-5 text-accent" />;
+                tag = "Direct Collaboration";
+                signal = "No account managers or agency bloat";
+              } else if (h.includes("price") || h.includes("pricing") || h.includes("cost") || h.includes("scope") || h.includes("proposal") || h.includes("quote") || h.includes("admin")) {
+                icon = <ShieldCheck className="h-5 w-5 text-accent" />;
+                tag = "Scope & Pricing";
+                signal = "Fixed milestone proposals, zero retainers";
+              } else if (h.includes("mobile") || h.includes("speed") || h.includes("fast") || h.includes("seo") || h.includes("code") || h.includes("php") || h.includes("builder") || h.includes("plugin")) {
+                icon = <Zap className="h-5 w-5 text-flame" />;
+                tag = "Performance";
+                signal = "Sub-second 4G speed & schema SEO";
+              } else {
+                if (i === 1) {
+                  icon = <ShieldCheck className="h-5 w-5 text-accent" />;
+                  tag = "Scope Certainty";
+                  signal = "Written scope & clear milestones";
+                } else if (i === 2) {
+                  icon = <Zap className="h-5 w-5 text-flame" />;
+                  tag = "Architecture";
+                  signal = "Clean code & modern standards";
+                }
+              }
+
+              return (
+                <Reveal
+                  key={s.heading}
+                  delay={i * 80}
+                  className="group relative flex h-full flex-col justify-between rounded-[24px] bg-stone p-8 transition-all duration-300 hover:bg-card hover:-translate-y-1.5 hover:shadow-[0_24px_50px_-24px_oklch(0.2_0.02_70/0.14)] shadow-[inset_0_0_0_1px_var(--color-border)] md:p-9"
+                >
+                  <div>
+                    {/* Top Header: Graphic Icon Badge + Category Tag + Number */}
+                    <div className="flex items-center justify-between">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-card shadow-[inset_0_0_0_1px_var(--color-border)] transition-transform duration-300 group-hover:scale-105 group-hover:bg-stone">
+                        {icon}
+                      </div>
+                      <div className="flex items-center gap-2.5">
+                        <span className="rounded-full bg-card px-2.5 py-1 text-[12px] font-medium text-muted-foreground shadow-[inset_0_0_0_1px_var(--color-border)]">
+                          {tag}
+                        </span>
+                        <span className="font-display text-[15px] text-muted-foreground/70 tabular">
+                          0{i + 1}
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Card Heading */}
+                    <h3 className="mt-6 font-display text-[1.45rem] font-normal leading-[1.25] tracking-[-0.015em] text-foreground">
+                      {s.heading}
+                    </h3>
+
+                    {/* Card Body Text */}
+                    <p className="mt-3.5 text-[15px] leading-[1.7] text-foreground/75 whitespace-pre-line">
+                      {s.text}
+                    </p>
+                  </div>
+
+                  {/* Bottom Tangible Proof Strip */}
+                  <div className="mt-8 flex items-center justify-between border-t border-border/70 pt-5 text-xs text-muted-foreground">
+                    <span className="inline-flex items-center gap-1.5 font-medium text-foreground/80">
+                      <Check className="h-3.5 w-3.5 text-accent" strokeWidth={2.5} />
+                      {signal}
+                    </span>
+                    <ArrowUpRight className="h-4 w-4 text-accent transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  </div>
+                </Reveal>
+              );
+            })}
           </div>
         </section>
       )}
