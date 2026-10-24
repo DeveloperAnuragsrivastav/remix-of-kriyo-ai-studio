@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import { Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
 import { projects } from "@/lib/kriyo-data";
 
@@ -29,14 +30,14 @@ export function ServiceIndex() {
       {rows.map((r, i) => {
         const p = find(r.project);
         return <li key={r.name}>
-          <a href={r.href} onPointerEnter={() => setHover(i)} className={`group grid grid-cols-[1fr_auto] items-center gap-x-6 gap-y-2 border-b border-border py-7 transition-colors duration-500 md:grid-cols-[1.1fr_1fr_auto] md:py-9 ${hover !== null && hover !== i ? "text-foreground/35" : ""}`}>
+          <Link to={r.href as any} onPointerEnter={() => setHover(i)} className={`group grid grid-cols-[1fr_auto] items-center gap-x-6 gap-y-2 border-b border-border py-7 transition-colors duration-500 md:grid-cols-[1.1fr_1fr_auto] md:py-9 ${hover !== null && hover !== i ? "text-foreground/35" : ""}`}>
             <span className="font-display text-[1.9rem] font-normal leading-tight tracking-[-0.02em] transition-transform duration-500 ease-[cubic-bezier(.16,1,.3,1)] group-hover:translate-x-2 md:text-[3rem]">{r.name}</span>
             <span className="col-span-2 row-start-2 max-w-md text-[16px] leading-relaxed text-muted-foreground md:col-span-1 md:row-start-auto">{r.line}{p && <span className="mt-1 block text-[14px] text-foreground/60">Built for {p.client.replace(/ \(.*\)/, "")}</span>}</span>
             <span className="flex items-center gap-3">
               {p && <img src={p.image} alt="" loading="lazy" className="h-14 w-20 rounded-lg object-cover md:hidden" />}
               <span className="grid h-12 w-12 place-items-center rounded-full bg-stone transition-colors duration-300 group-hover:bg-ink group-hover:text-ink-foreground"><ArrowUpRight aria-hidden className="h-5 w-5" /></span>
             </span>
-          </a>
+          </Link>
         </li>;
       })}
     </ul>

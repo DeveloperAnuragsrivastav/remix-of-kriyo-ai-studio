@@ -1,5 +1,5 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import { ArrowUpRight, Check } from "lucide-react";
 import { BackLink, SectionHead } from "@/components/Kit";
 import { Reveal } from "@/components/Reveal";
@@ -8,6 +8,29 @@ import { articles } from "@/lib/blog-data";
 import { pageMeta } from "@/lib/page-meta";
 import { BUSINESS } from "@/lib/business";
 import { services } from "@/lib/services-data";
+
+function renderWithLinks(text: string): ReactNode {
+  const parts: ReactNode[] = [];
+  const regex = /\[([^\]]+)\]\(([^)]+)\)/g;
+  let lastIndex = 0;
+  let match: RegExpExecArray | null;
+  while ((match = regex.exec(text)) !== null) {
+    if (match.index > lastIndex) {
+      parts.push(text.slice(lastIndex, match.index));
+    }
+    const [, label, href] = match;
+    parts.push(
+      <Link key={match.index} to={href as any} className="text-accent underline underline-offset-4 hover:text-foreground">
+        {label}
+      </Link>
+    );
+    lastIndex = regex.lastIndex;
+  }
+  if (lastIndex < text.length) {
+    parts.push(text.slice(lastIndex));
+  }
+  return parts.length > 0 ? parts : text;
+}
 
 /** Link each article to the service it most directly supports (internal linking for SEO and readers). */
 function relatedService(slug: string, category: string) {
@@ -67,8 +90,8 @@ function Article() {
           {article.sections.map((s, i) => <section key={s.heading} id={`section-${i}`} className="scroll-mt-28">
             <h2 className="text-[1.75rem] md:text-[2.25rem]">{s.heading}</h2>
             {s.blocks.map((b, j) => typeof b === "string"
-              ? <p key={j} className="mt-5 text-[18px] leading-[1.8] text-foreground/85">{b}</p>
-              : <ul key={j} className="mt-6 space-y-3">{b.map(li => <li key={li} className="flex gap-3 text-[18px] leading-relaxed text-foreground/85"><Check aria-hidden className="mt-1.5 h-4 w-4 shrink-0 text-accent" strokeWidth={2.5} />{li}</li>)}</ul>)}
+              ? <p key={j} className="mt-5 text-[18px] leading-[1.8] text-foreground/85">{renderWithLinks(b)}</p>
+              : <ul key={j} className="mt-6 space-y-3">{b.map(li => <li key={li} className="flex gap-3 text-[18px] leading-relaxed text-foreground/85"><Check aria-hidden className="mt-1.5 h-4 w-4 shrink-0 text-accent" strokeWidth={2.5} />{renderWithLinks(li)}</li>)}</ul>)}
           </section>)}
           {svc && <div className="rounded-[24px] bg-ink p-8 text-ink-foreground md:p-10"><h2 className="text-[1.75rem] md:text-[2.25rem]">Need this built? {svc.title}</h2><p className="mt-3 leading-relaxed text-ink-foreground/75">{svc.description}</p><Link to="/services/$slug" params={{ slug: svc.slug }} className="btn mt-7 bg-ink-foreground text-ink">See the service <ArrowUpRight aria-hidden className="h-4 w-4" /></Link></div>}
           <p className="border-t border-border pt-6 text-[14px] leading-relaxed text-muted-foreground">Written for the Kriyvo journal. Product claims reported by third-party sources are not independent Kriyvo AI benchmarks.</p>

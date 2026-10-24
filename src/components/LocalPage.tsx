@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { type ReactNode } from "react";
 import { ArrowRight, ArrowUpRight, Check, MapPin, ShieldCheck, Star, UserCheck, Zap } from "lucide-react";
 import { FaqSection } from "@/components/Faq";
 import { AgencyLayout, ProjectCTA } from "@/components/AgencyLayout";
@@ -11,6 +12,29 @@ import type { LocalPage as LocalPageData } from "@/lib/local-pages";
 import { services } from "@/lib/services-data";
 
 const FEATURED = ["koca-restaurant-website", "gignaati-whatsapp-bot", "website-ai-chatbot"];
+
+function renderWithLinks(text: string): ReactNode {
+  const parts: ReactNode[] = [];
+  const regex = /\[([^\]]+)\]\(([^)]+)\)/g;
+  let lastIndex = 0;
+  let match: RegExpExecArray | null;
+  while ((match = regex.exec(text)) !== null) {
+    if (match.index > lastIndex) {
+      parts.push(text.slice(lastIndex, match.index));
+    }
+    const [, label, href] = match;
+    parts.push(
+      <Link key={match.index} to={href as any} className="text-accent underline underline-offset-4 hover:text-foreground">
+        {label}
+      </Link>
+    );
+    lastIndex = regex.lastIndex;
+  }
+  if (lastIndex < text.length) {
+    parts.push(text.slice(lastIndex));
+  }
+  return parts.length > 0 ? parts : text;
+}
 
 export function LocalPage({ page }: { page: LocalPageData }) {
   const pageServices = page.services.map(slug => services.find(s => s.slug === slug)).filter(s => s !== undefined);
@@ -71,25 +95,40 @@ export function LocalPage({ page }: { page: LocalPageData }) {
             </div>
 
             <ul className="mt-5 divide-y divide-ink-foreground/[0.08]">
-              {page.areas.map(a => (
-                <li
-                  key={a.name}
-                  className="group flex flex-wrap items-baseline justify-between gap-x-4 py-3 transition-colors hover:text-white"
-                >
-                  <span className="font-display text-[1.2rem] text-ink-foreground/95 transition-transform duration-300 group-hover:translate-x-1">
-                    {a.name}
-                  </span>
-                  {a.note && (
-                    <span className="text-[13px] text-ink-foreground/50">
-                      {a.note}
+              {page.areas.map(a => {
+                const inner = (
+                  <>
+                    <span className="font-display text-[1.2rem] text-ink-foreground/95 transition-transform duration-300 group-hover:translate-x-1">
+                      {a.name}
                     </span>
-                  )}
-                </li>
-              ))}
+                    {a.note && (
+                      <span className="text-[13px] text-ink-foreground/50">
+                        {a.note}
+                      </span>
+                    )}
+                  </>
+                );
+                return (
+                  <li key={a.name}>
+                    {a.href ? (
+                      <Link
+                        to={a.href as any}
+                        className="group flex flex-wrap items-baseline justify-between gap-x-4 py-3 transition-colors hover:text-white"
+                      >
+                        {inner}
+                      </Link>
+                    ) : (
+                      <div className="group flex flex-wrap items-baseline justify-between gap-x-4 py-3 transition-colors hover:text-white">
+                        {inner}
+                      </div>
+                    )}
+                  </li>
+                );
+              })}
             </ul>
 
             <div className="mt-6 border-t border-ink-foreground/10 pt-4 flex flex-wrap items-center justify-between gap-2 text-[13px] text-ink-foreground/55">
-              <span>Studio: {ADDRESS_LINE}</span>
+              <span>Location: {ADDRESS_LINE}</span>
               <span className="text-saffron">Direct 1-on-1 collaboration</span>
             </div>
           </div>
@@ -354,7 +393,7 @@ export function LocalPage({ page }: { page: LocalPageData }) {
 
                     {/* Card Body Text */}
                     <p className="mt-3.5 text-[15px] leading-[1.7] text-foreground/75 whitespace-pre-line">
-                      {s.text}
+                      {renderWithLinks(s.text)}
                     </p>
                   </div>
 

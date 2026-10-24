@@ -11,7 +11,7 @@ import { pageMeta } from "@/lib/page-meta";
 import mark from "@/assets/kriyvo-mark.webp";
 
 export const Route = createFileRoute("/about")({
-  head: () => pageMeta("About Kriyvo AI: Web & AI Studio in Delhi", "Kriyvo AI is an independent studio in Delhi NCR run by a web developer and AI automation engineer. One person designs, codes and automates the whole system."),
+  head: () => pageMeta("About Kriyvo AI: Freelance Web Developer & AI Automation in Delhi", "Kriyvo AI is a freelance web development and AI automation service in Delhi NCR run by an engineer. One person designs, codes and automates the whole system."),
   component: About,
 });
 
@@ -40,7 +40,7 @@ function About() {
         <h1 className="text-[2.6rem] sm:text-6xl lg:text-[4.25rem]">
           {["Developer first.", "Then AI engineer."].map((l, i) => <span key={l} className="block overflow-hidden pb-[0.06em]"><span className="line-in" style={{ animationDelay: `${100 + i * 120}ms` }}>{l}</span></span>)}
         </h1>
-        <p className="mt-7 max-w-xl text-lg leading-relaxed text-foreground/75 animate-rise" style={{ animationDelay: "350ms" }}>Kriyvo AI is my independent studio in Delhi NCR. I design and code the website, build the backend and wire up the AI and automation behind it, so one person owns the whole system and nothing gets lost between teams.</p>
+        <p className="mt-7 max-w-xl text-lg leading-relaxed text-foreground/75 animate-rise" style={{ animationDelay: "350ms" }}>Kriyvo AI is my freelance web development and AI automation service in Delhi NCR. I design and code the website, build the backend and wire up the AI and automation behind it, so one person owns the whole system and nothing gets lost between teams.</p>
         <div className="mt-9 flex flex-wrap gap-3 animate-rise" style={{ animationDelay: "450ms" }}><Btn href="/portfolio">See the work</Btn><Btn href={WHATSAPP} dark={false}>Chat on WhatsApp</Btn></div>
         <dl className="mt-12 grid max-w-xl grid-cols-3 divide-x divide-border border-y border-border animate-rise" style={{ animationDelay: "550ms" }}>
           {([["115+", "Projects delivered"], ["30+", "Clients"], [`${googleRating.score}`, "Rating on Google"]] as const).map(([n, l], i) => <div key={l} className={`flex flex-col-reverse py-5 ${i ? "pl-5" : ""}`}><dt className="mt-1 text-[14px] text-muted-foreground">{l}</dt><dd className="flex items-center gap-1.5 font-display text-[1.75rem] leading-none md:text-[2.25rem]">{n}{i === 2 && <Star aria-hidden className="h-5 w-5 fill-flame text-flame" />}</dd></div>)}

@@ -1,6 +1,6 @@
 # Kriyvo AI
 
-> Kriyvo AI is an independent studio in Delhi NCR, India. One web developer and AI automation engineer designs, builds and hands over custom websites, WordPress and PHP sites, AI chatbots, WhatsApp bots, voice agents and n8n / Python workflow automation. Projects start from ₹15K. 115+ projects delivered.
+> Kriyvo AI is a freelance web development and AI automation service in Delhi NCR, India. One web developer and AI automation engineer designs, builds and hands over custom websites, WordPress and PHP sites, AI chatbots, WhatsApp bots, voice agents and n8n / Python workflow automation. 115+ projects delivered.
 
 ## Services
 - [Custom website development](https://kriyvoai.online/services/freelance-website-developer-noida): React, Next.js or PHP websites and web apps

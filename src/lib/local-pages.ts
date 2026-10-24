@@ -50,7 +50,7 @@ export type LocalPage = {
   title: string;
   intro: string;
   areasHeading: string;
-  areas: { name: string; note?: string }[];
+  areas: { name: string; note?: string; href?: string }[];
   sections: { heading: string; text: string }[];
   services: string[];
   faqs: Faq[];
@@ -108,7 +108,7 @@ export const delhiNcr: LocalPage = {
   intro: "I design and build websites, WordPress and PHP sites, AI chatbots and workflow automation for businesses in Noida, Gurgaon, Ghaziabad and across Delhi NCR. Kriyvo AI is based in New Ashok Nagar, East Delhi, a short distance from Noida, and you work with the developer directly: no account managers and no outsourcing.",
   areasHeading: "Where I work across Delhi NCR",
   areas: [
-    { name: "Noida", note: "Across the border from the studio, including Sector 18, Sector 62 and Sector 63" },
+    { name: "Noida", note: "Across the border from New Ashok Nagar, including Sector 18, Sector 62 and Sector 63", href: "/services/freelance-website-developer-noida" },
     { name: "Greater Noida", note: "Including Greater Noida West" },
     { name: "Ghaziabad", note: "Indirapuram, Vaishali and Kaushambi" },
     { name: "East Delhi", note: "The home area: Mayur Vihar, Laxmi Nagar, Preet Vihar" },
@@ -116,14 +116,14 @@ export const delhiNcr: LocalPage = {
     { name: "Faridabad and the rest of Delhi", note: "South, West and North Delhi included" },
   ],
   sections: [
-    { heading: "Websites, WordPress and PHP", text: "Custom sites in React, Next.js or PHP for businesses that want a site built around their brand, and WordPress sites for teams that want to edit pages themselves. I also take on existing WordPress and PHP sites that need fixing, speeding up, extending or moving to new hosting." },
-    { heading: "Chatbots, WhatsApp and automation", text: "Many NCR businesses get most of their enquiries on WhatsApp. I build website chatbots that answer from your own content, WhatsApp flows that qualify leads from ads, and n8n workflows that send enquiries into your CRM, sheet or inbox so nothing is copied by hand." },
+    { heading: "Websites, WordPress and PHP", text: "Custom sites in React, Next.js or PHP for businesses that want a site built around their brand, and WordPress sites for teams that want to edit pages themselves. For local businesses right across the border, see my dedicated [freelance website developer in Noida](/services/freelance-website-developer-noida) service covering Sector 18, 62, and 63. I also take on existing WordPress and PHP sites that need fixing, speeding up, extending or moving to new hosting." },
+    { heading: "Chatbots, WhatsApp and automation", text: "Many NCR businesses get most of their enquiries on WhatsApp. I build website chatbots that answer from your own content, WhatsApp flows that qualify leads from ads, and [n8n workflow automation](/services/n8n-workflow-automation) alongside [AI automation](/services/ai-automation) systems that send enquiries into your CRM, sheet or inbox so nothing is copied by hand." },
     { heading: "One process, wherever you are", text: "Every project runs remotely over WhatsApp, phone and video calls, so a client in Gurgaon or Faridabad gets exactly the same service as one in Noida. Every project gets a fixed-scope proposal, review points during the build and a documented handover with source files." },
   ],
   services: ["freelance-website-developer-noida", "wordpress-php-development", "ai-chatbot-for-website", "n8n-workflow-automation", "ai-automation"],
   faqs: [
     { q: "Do you work with businesses in Noida and Gurgaon?", a: "Yes. Kriyvo AI is in New Ashok Nagar, East Delhi, next to Noida, and works with clients across Noida, Greater Noida, Ghaziabad, Gurgaon, Faridabad and Delhi." },
-    { q: "Are you a freelancer or an agency?", a: "An independent studio run by one web developer and AI automation engineer. You brief, review and get your handover from the same person." },
+    { q: "Are you a freelancer or an agency?", a: "A freelance web development and AI automation service run by one engineer. You brief, review and get your handover directly from the person building it." },
     { q: "How much does a website cost in Delhi NCR?", a: "Fixed website packages start at ₹999 per page; a 5-page business website is ₹4,999 and an e-commerce store ₹9,999, delivered in 1–5 days. AI chatbots start at ₹1,999 and n8n automation at ₹3,999." },
     { q: "Do you build WordPress sites or only custom code?", a: "Both. WordPress suits teams that want to edit content themselves; custom React, Next.js or PHP suits sites with specific design or functionality needs. The proposal recommends one based on your brief." },
   ],

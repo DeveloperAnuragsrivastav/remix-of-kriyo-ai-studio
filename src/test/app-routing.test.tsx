@@ -18,6 +18,8 @@ describe("App routing", () => {
   it.each([
     ["/services", "/services/"],
     ["/services/ai-automation", "/services/$slug"],
+    ["/services/n8n-workflow-automation", "/services/$slug"],
+    ["/services/freelance-website-developer-noida", "/services/$slug"],
     ["/deliverables", "/deliverables"],
     ["/working-together", "/working-together"],
     ["/case-studies", "/case-studies/"],

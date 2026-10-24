@@ -22,9 +22,17 @@ export const Route = createFileRoute("/portfolio/$slug")({
   component: Project,
 });
 
+const projectServiceMap: Record<string, { label: string; to: string }> = {
+  "koca-restaurant-website": { label: "Custom website development", to: "/services/freelance-website-developer-noida" },
+  "aurum-conventions-outreach": { label: "n8n workflow automation", to: "/services/n8n-workflow-automation" },
+  "bmrc-patient-feedback-pipeline": { label: "AI automation engineering", to: "/services/ai-automation" },
+  "website-ai-chatbot": { label: "AI chatbot for your website", to: "/services/ai-chatbot-for-website" },
+};
+
 function Project() {
   const p = Route.useLoaderData();
   const others = projects.filter(x => x.slug !== p.slug).slice(0, 2);
+  const relSvc = projectServiceMap[p.slug];
   return <AgencyLayout>
     <article className="mx-auto max-w-[1240px] px-4 pt-12 sm:px-6 md:pt-16">
       <BackLink to="/portfolio">All projects</BackLink>
@@ -49,7 +57,7 @@ function Project() {
       </div>}
 
       <div className="mt-12 animate-rise" style={{ animationDelay: "400ms" }}><TiltImage src={p.image} alt={p.title} eager /></div>
-      <div className="mt-12"><FactStrip facts={[["Client", p.client], ["Service", p.category], ["Outcome", p.result], ["Stack", p.stack.join(", ")]]} /></div>
+      <div className="mt-12"><FactStrip facts={[["Client", p.client], ["Service", relSvc ? <Link to={relSvc.to as any} className="text-accent underline underline-offset-4 hover:text-foreground">{relSvc.label}</Link> : p.category], ["Outcome", p.result], ["Stack", p.stack.join(", ")]]} /></div>
 
       <div className="mt-4">
         <Split title="The challenge"><p>{p.challenge}</p></Split>
@@ -57,6 +65,17 @@ function Project() {
         <Split title="What was delivered">
           <ul className="space-y-3">{p.deliverables.map(d => <li key={d} className="flex gap-3"><Check aria-hidden className="mt-2 h-4 w-4 shrink-0 text-accent" strokeWidth={2.5} />{d}</li>)}</ul>
         </Split>
+        {relSvc && (
+          <div className="mt-8 rounded-2xl bg-stone p-6">
+            <p className="text-[15px] leading-relaxed text-foreground/80">
+              Built as part of my{" "}
+              <Link to={relSvc.to as any} className="text-accent underline underline-offset-4 font-medium hover:text-foreground">
+                {relSvc.label}
+              </Link>{" "}
+              service. You work directly with the developer from brief to handover.
+            </p>
+          </div>
+        )}
       </div>
     </article>
 

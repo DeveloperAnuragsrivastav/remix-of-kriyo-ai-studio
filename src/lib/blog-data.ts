@@ -124,7 +124,7 @@ const content: { slug: string; title: string; description: string; category: str
         "blocks": [
           "A DIY website builder is the cheapest way to get online and works for very simple needs, but you are limited to what the platform allows and you pay a monthly fee for as long as the site exists.",
           "An agency gives you a team and a process, usually at a higher price, and you often deal with an account manager rather than the person building the site.",
-          "An independent developer usually costs less than an agency for the same scope, and you talk directly to the person doing the work. The risk is reliability, so check a real portfolio, a real address and a written scope before you pay."
+          "An independent developer usually costs less than an agency for the same scope, and you talk directly to the person doing the work. The risk is reliability, so check a real portfolio, a real address and a written scope before you pay. For businesses in NCR seeking a direct build, see my dedicated [freelance website developer in Noida](/services/freelance-website-developer-noida) service."
         ]
       },
       {
@@ -1515,7 +1515,7 @@ const content: { slug: string; title: string; description: string; category: str
             "Reliability — Traditional automation: Highly predictable when inputs and rules are controlled. AI-assisted automation: Requires evaluation, monitoring, and fallback handling.",
             "Example — Traditional automation: Send a confirmation after a form is submitted. AI-assisted automation: Categorize the enquiry and draft a tailored confirmation."
           ],
-          "These approaches are complementary. Use ordinary code and workflow rules whenever they are sufficient; use AI where interpretation or generation provides a real benefit."
+          "These approaches are complementary. Use ordinary code and workflow rules whenever they are sufficient; use AI where interpretation or generation provides a real benefit. To explore practical workflows for your business, see my [AI automation engineering services](/services/ai-automation)."
         ]
       },
       {
@@ -1620,7 +1620,7 @@ const content: { slug: string; title: string; description: string; category: str
         "heading": "What is n8n?",
         "blocks": [
           "n8n is a workflow automation platform that connects apps and services so information can move between them automatically. A workflow consists of nodes connected in a sequence or branching structure. Nodes can receive events, transform data, call APIs, apply conditions, and send results to another system.",
-          "Businesses use workflow automation to reduce repetitive operations—for example, moving website leads into a CRM, sending internal alerts, synchronizing records, or preparing a support summary. n8n can also be combined with AI model APIs, databases, and retrieval systems for workflows that need language understanding or content generation.",
+          "Businesses use workflow automation to reduce repetitive operations—for example, moving website leads into a CRM, sending internal alerts, synchronizing records, or preparing a support summary. n8n can also be combined with AI model APIs, databases, and retrieval systems for workflows that need language understanding or content generation. If you prefer to have an expert build and configure your flows directly, explore my [n8n workflow automation services](/services/n8n-workflow-automation).",
           "Before choosing a deployment method, check n8n's current pricing, license terms, hosting options, and feature availability. These details can change."
         ]
       },
