@@ -62,9 +62,14 @@ export function AgencyHeader() {
 }
 
 const PRODUCT_HUNT = "https://www.producthunt.com/products/kriyvo-ai?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-kriyvo-ai";
+const LAUNCH_IGNITER = "https://launchigniter.com/product/kriyvo-ai?ref=badge-kriyvo-ai";
 
 export function ProductHuntBadge({ className = "" }: { className?: string }) {
   return <a href={PRODUCT_HUNT} target="_blank" rel="noopener noreferrer" className={`inline-block ${className}`}><img alt="Kriyvo AI - Websites & AI automation, built end to end | Product Hunt" width={250} height={54} loading="lazy" src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1285887&theme=light&t=1792441879982" /></a>;
+}
+
+export function LaunchIgniterBadge({ className = "" }: { className?: string }) {
+  return <a href={LAUNCH_IGNITER} target="_blank" rel="noopener noreferrer" className={`inline-block ${className}`}><img alt="Featured on LaunchIgniter" width={212} height={55} loading="lazy" src="https://launchigniter.com/api/badge/kriyvo-ai?theme=light" /></a>;
 }
 
 export function AgencyFooter() {
@@ -75,7 +80,7 @@ export function AgencyFooter() {
           <Wordmark />
           <p className="mt-5 max-w-xs text-[15px] leading-relaxed text-muted-foreground">Websites, AI chatbots, WhatsApp bots and automation, built end to end in Delhi.</p>
           <address className="mt-5 text-[15px] not-italic leading-relaxed text-muted-foreground">{ADDRESS_LINE}<br /><a href={`tel:${BUSINESS.phoneE164}`} className="hover:text-foreground">{BUSINESS.phone}</a><br /><a href={`mailto:${EMAIL}`} className="hover:text-foreground">{EMAIL}</a></address>
-          <div className="mt-7 flex flex-wrap gap-3"><a href={WHATSAPP} target="_blank" rel="noreferrer" className="btn btn-dark">Chat on WhatsApp <ArrowUpRight aria-hidden className="h-4 w-4" /></a><ProductHuntBadge className="[&_img]:h-[50px] [&_img]:w-auto" /></div>
+          <div className="mt-7 flex flex-wrap items-center gap-3"><a href={WHATSAPP} target="_blank" rel="noreferrer" className="btn btn-dark">Chat on WhatsApp <ArrowUpRight aria-hidden className="h-4 w-4" /></a><ProductHuntBadge className="[&_img]:h-[50px] [&_img]:w-auto" /><LaunchIgniterBadge className="[&_img]:h-[50px] [&_img]:w-auto" /></div>
           <div className="mt-4"><Socials /></div>
         </div>
         <div className="grid grid-cols-2 gap-6 md:contents">
